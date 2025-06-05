@@ -37,7 +37,7 @@
 
   /*첫번째 섹션*/
   .sec1 .con_wrap {
-    gap: clamp(32px, 9vw, 40px);
+    gap: clamp(20px, 6vw, 40px);
   }
 
   .sec1 .content {
@@ -78,6 +78,12 @@
     padding: clamp(20px, 5.6vw, 40px) 0;
   }
 
+  .sec2 form > div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
   /*제목*/
   .sec2 h4 {
     font-size: clamp(var(--sm-size-font), 4vw, var(--lg-size-font2));
@@ -87,9 +93,64 @@
   .sec2 .user_name {
     padding-top: clamp(20px, 5.6vw, 40px);
   }
-}
 
-@media screen and (min-width: 768px) {
+  .sec2 label,
+  .sec2 h5 {
+    font-size: clamp(var(--xsm-size-font), 3vw, var(--lg-size-font));
+  }
+
+  .sec2 input,
+  .sec2 textarea {
+    width: 100%;
+    padding: clamp(12px, 3vw, 16px);
+    font-size: clamp(var(--xsm-size-font1), 3vw, var(--md-size-font));
+  }
+
+  /*내용 입력 부분*/
+  .sec2 .question_content > label {
+    padding-top: 0;
+  }
+
+  /*첨부파일*/
+  .sec2 .file_upload {
+    padding-bottom: clamp(20px, 5.6vw, 40px);
+  }
+
+  .sec2 .file_wrap {
+    width: 100%;
+    gap: clamp(4px, 1vw, 12px);
+  }
+
+  /*input 대신할 label*/
+  .sec2 .file_wrap > label {
+    padding: clamp(12px, 3vw, 16px) clamp(10px, 3vw, 28px);
+    font-size: clamp(var(--xxsm-size-font1), 2.5vw, var(--md-size-font));
+  }
+
+  /*개인정보 수집 동의*/
+  .sec2 .terms {
+    padding: clamp(20px, 5.6vw, 40px) 0;
+  }
+
+  .sec2 .terms label {
+    width: clamp(9px, 2.5vw, 16px);
+    height: clamp(9px, 2.5vw, 16px);
+    border-radius: clamp(2px, 0.5vw, 3px);
+  }
+
+  .sec2 .terms span {
+    font-size: clamp(var(--xsm-size-font1), 3.3vw, var(--md-size-font));
+  }
+
+  /*submit 버튼*/
+  .sec2 form .submit_btn {
+    padding-top: clamp(20px, 5.6vw, 40px);
+  }
+
+  .sec2 .submit_btn > input {
+    padding: 12px clamp(32px, 9vw, 40px);
+    font-size: clamp(var(--xsm-size-font), 3.5vw, var(--lg-size-font1));
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -110,9 +171,35 @@
     display: block;
     font-size: clamp(var(--sm-size-font), 1.3vw, var(--md-size-font));
   }
+
+  /*두번째 섹션*/
+  .sec2 form > div {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .sec2 input,
+  .sec2 textarea {
+    width: 80%;
+  }
+
+  /*개인정보 수집 동의*/
+  .sec2 .terms {
+    flex-direction: column;
+  }
+
+  /*첨부파일*/
+  .sec2 .file_wrap {
+    width: 80%;
+  }
 }
 
 @media screen and (min-width: 1334px) {
+  /*두번째 섹션*/
+  /*개인정보 수집 동의*/
+  .sec2 .terms {
+    flex-direction: row;
+  }
 }
 
 @media screen and (min-width: 1500px) {
