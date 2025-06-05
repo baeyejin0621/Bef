@@ -103,8 +103,8 @@
           </nav>
           <!--아이콘 영역-->
           <div class="icons">
-            <button type="button">
-              <input type="text" />
+            <button type="button" class="click_display">
+              <input type="text" class="display" />
               <img src="../img/common/header/search.svg" alt="검색" />
               <img
                 src="../img/common/header/search_hover.svg"
@@ -252,7 +252,7 @@
               </div>
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <a href="#">
+                  <a href="#" class="stop_bubbling">
                     <!--카드 윗부분-->
                     <div class="top">
                       <div class="profile">
@@ -280,10 +280,15 @@
                       </div>
                       <div class="like">
                         <div>
-                          <img src="./img/main/sec2/heart.svg" alt="하트" />
+                          <img
+                            src="./img/main/sec2/heart.svg"
+                            alt="하트"
+                            class="click_display"
+                          />
                           <img
                             src="./img/main/sec2/heart_clicked.svg"
                             alt="하트"
+                            class="display"
                           />
                         </div>
                         <span>5</span>
@@ -298,7 +303,7 @@
                   </a>
                 </div>
                 <div class="swiper-slide">
-                  <a href="#">
+                  <a href="#" class="stop_bubbling">
                     <div class="top">
                       <div class="profile">
                         <img
@@ -323,10 +328,15 @@
                       </div>
                       <div class="like">
                         <div>
-                          <img src="./img/main/sec2/heart.svg" alt="하트" />
+                          <img
+                            src="./img/main/sec2/heart.svg"
+                            alt="하트"
+                            class="click_display"
+                          />
                           <img
                             src="./img/main/sec2/heart_clicked.svg"
                             alt="하트"
+                            class="display"
                           />
                         </div>
                         <span>5</span>
@@ -341,7 +351,7 @@
                   </a>
                 </div>
                 <div class="swiper-slide">
-                  <a href="#">
+                  <a href="#" class="stop_bubbling">
                     <div class="top">
                       <div class="profile">
                         <img
@@ -366,10 +376,15 @@
                       </div>
                       <div class="like">
                         <div>
-                          <img src="./img/main/sec2/heart.svg" alt="하트" />
+                          <img
+                            src="./img/main/sec2/heart.svg"
+                            alt="하트"
+                            class="click_display"
+                          />
                           <img
                             src="./img/main/sec2/heart_clicked.svg"
                             alt="하트"
+                            class="display"
                           />
                         </div>
                         <span>5</span>
@@ -882,5 +897,7 @@
         </div>
       </footer>
     </div>
+    <!--자바스크립트-->
+    <script src="./js/click_display.js"></script>
   </body>
 </html>

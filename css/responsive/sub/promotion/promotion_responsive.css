@@ -129,8 +129,8 @@
 @media screen and (min-width: 1024px) {
   /*서브 비주얼*/
   .sub_visual {
-    background-size: clamp(500px, 48vw, 750px);
-    background-position: 93% 127px;
+    background-size: clamp(420px, 40vw, 750px);
+    background-position: 77% 90px;
   }
 
   .sub_visual .visual_text {
@@ -147,13 +147,13 @@
 
   /*첫번째 섹션*/
   .sec1 .price {
-    gap: clamp(2px, 0.1vw, 6px);
+    gap: clamp(2px, 0.4vw, 6px);
   }
 
   /*정가 보이기*/
   .sec1 .price .original {
     display: block;
-    font-size: clamp(var(--sm-size-font), 1.2vw, var(--lg-size-font3));
+    font-size: clamp(var(--sm-size-font), 1.2vw, var(--md-size-font3));
   }
 }
 

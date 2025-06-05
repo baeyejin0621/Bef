@@ -211,8 +211,8 @@
 @media screen and (min-width: 1024px) {
   /*서브 비주얼*/
   .sub_visual {
-    background-size: clamp(450px, 48vw, 801px);
-    background-position: 90% 80px;
+    background-size: clamp(400px, 40vw, 801px);
+    background-position: 80% 110px;
   }
 
   .sub_visual .visual_text {

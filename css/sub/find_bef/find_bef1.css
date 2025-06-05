@@ -412,7 +412,7 @@ h3 {
 }
 
 .sec2 .post .time_line input {
-  width: 100px;
+  width: fit-content;
   font-size: var(--sm-size-font);
   font-weight: var(--regular-weight-font);
   color: var(--black-color16);
@@ -440,14 +440,18 @@ h3 {
   color: var(--black-color3);
 }
 
-/*보드게임 선택*/
+/*장소 & 보드게임 선택*/
+.sec2 .post .place {
+  margin-bottom: 6px;
+}
+
 .sec2 .post select {
   color: var(--black-color16);
-  width: 115px;
-  padding-right: 10px;
+  width: fit-content;
+  padding-right: 16px;
   background: url(../../../img/sub/find_bef/find_bef1/sec2/arrow_down.svg)
     no-repeat;
-  background-position: 95% 50%;
+  background-position: 100% 50%;
   padding-left: 8px;
   margin-bottom: 1px;
 }
