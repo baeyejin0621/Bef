@@ -1,0 +1,123 @@
+@charset "utf-8";
+
+@media screen and (min-width: 320px) {
+  /*섹션 공통 속성*/
+  section {
+    margin-top: clamp(100px, 31vw, 220px);
+  }
+
+  /*섹션 제목 설정*/
+  h3 {
+    font-size: clamp(var(--md-size-font), 4.9vw, var(--xxlg-size-font));
+    margin-bottom: clamp(32px, 9.4vw, 64px);
+  }
+
+  /*서브 비주얼*/
+  .sub_visual {
+    height: clamp(346px, 95vw, 540px);
+    background-size: clamp(290px, 70vw, 500px);
+    background-position: 50% clamp(140px, 41vw, 230px);
+  }
+
+  /*서브 비주얼 텍스트*/
+  .sub_visual .visual_text {
+    width: fit-content;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 40%;
+  }
+
+  .sub_visual h2 {
+    font-size: clamp(var(--lg-size-font), 3vw, var(--xxxlg-size-font));
+  }
+
+  .sub_visual p {
+    display: none;
+  }
+
+  /*첫번째 섹션*/
+  .sec1 .con_wrap {
+    gap: clamp(32px, 9vw, 40px);
+  }
+
+  .sec1 .content {
+    padding: clamp(20px, 5vw, 32px) clamp(16px, 4vw, 24px);
+  }
+
+  .sec1 .question {
+    gap: clamp(6px, 1.5vw, 12px);
+    width: 80%;
+  }
+
+  .sec1 .question > span {
+    font-size: clamp(var(--lg-size-font1), 5.7vw, var(--xxxlg-size-font));
+  }
+
+  .sec1 .question > h4 {
+    font-size: clamp(var(--xsm-size-font), 3.2vw, var(--lg-size-font2));
+  }
+
+  .sec1 .top button {
+    width: clamp(18px, 4.7vw, 26px);
+    height: clamp(18px, 4.7vw, 26px);
+  }
+
+  /*내용 영역*/
+  .sec1 .bottom > p {
+    font-size: clamp(var(--xsm-size-font1), 3.3vw, var(--lg-size-font1));
+    padding: clamp(20px, 5vw, 32px) clamp(20px, 3vw, 44px) 0;
+    margin-top: clamp(20px, 5vw, 32px);
+  }
+
+  /*두번째 섹션*/
+  .sec2 {
+    margin-bottom: clamp(64px, 20vw, 160px);
+  }
+
+  .sec2 form {
+    padding: clamp(20px, 5.6vw, 40px) 0;
+  }
+
+  /*제목*/
+  .sec2 h4 {
+    font-size: clamp(var(--sm-size-font), 4vw, var(--lg-size-font2));
+    padding-bottom: clamp(20px, 5.6vw, 40px);
+  }
+
+  .sec2 .user_name {
+    padding-top: clamp(20px, 5.6vw, 40px);
+  }
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1024px) {
+  /*서브 비주얼*/
+  .sub_visual {
+    background-size: clamp(550px, 48vw, 821px);
+    background-position: 100% 127px;
+  }
+
+  .sub_visual .visual_text {
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .sub_visual p {
+    display: block;
+    font-size: clamp(var(--sm-size-font), 1.3vw, var(--md-size-font));
+  }
+}
+
+@media screen and (min-width: 1334px) {
+}
+
+@media screen and (min-width: 1500px) {
+  /*서브 비주얼*/
+  .sub_visual .visual_text {
+    width: 1200px;
+  }
+}

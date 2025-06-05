@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boardgame friend</title>
+    <!--파비콘-->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../img/favicon/favicon-16x16.png"
+    />
+    <!--CSS-->
+    <link
+      rel="stylesheet"
+      href="../../css/sub/boardgame_cafe/boardgame_cafe1.css"
+    />
+    <!--반응형-->
+    <link
+      rel="stylesheet"
+      href="../../css/responsive/sub/boardgame_cafe/boardgame_cafe1_responsive.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="con_wrap">
+          <!--로고-->
+          <h1>
+            <a href="/">
+              <img src="../../img/common/header/logo.svg" alt="로고" />
+            </a>
+          </h1>
+          <!--gnb-->
+          <nav id="gnb">
+            <ul>
+              <!--1차 메뉴-->
+              <li>
+                <a href="../service_guide/service_guide1.html">서비스 소개</a>
+              </li>
+              <!--1차 메뉴-->
+              <li>
+                <a href="../boardgame_guide/boardgame_guide1.html">
+                  보드게임
+                </a>
+                <!--2차 메뉴-->
+                <ul class="submenu submenu_bg">
+                  <li>
+                    <a href="../boardgame_guide/boardgame_guide1.html">
+                      보드게임 가이드
+                    </a>
+                  </li>
+                  <li>
+                    <a href="../boardgame_guide/boardgame_guide2.html">
+                      이달의 보드게임
+                    </a>
+                  </li>
+                  <li>
+                    <a href="../boardgame_guide/boardgame_guide3.html">
+                      신작 보드게임
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <!--1차 메뉴-->
+              <li>
+                <a href="../find_bef/find_bef1.html">Bef 찾기</a>
+                <!--2차 메뉴-->
+                <ul class="submenu">
+                  <li>
+                    <a href="../find_bef/find_bef1.html">Bef와 보드게임</a>
+                  </li>
+                  <li><a href="#">선호도 등록</a></li>
+                  <li><a href="#">Bef MBTI 검사</a></li>
+                </ul>
+              </li>
+              <!--1차 메뉴-->
+              <li>
+                <a href="../boardgame_cafe/boardgame_cafe1.html" class="self">
+                  보드게임 카페
+                </a>
+                <!--2차 메뉴-->
+                <ul class="submenu">
+                  <li>
+                    <a
+                      href="../boardgame_cafe/boardgame_cafe1.html"
+                      class="self"
+                    >
+                      가까운 카페
+                    </a>
+                  </li>
+                  <li><a href="#">시설 좋은 카페</a></li>
+                </ul>
+              </li>
+              <!--1차 메뉴-->
+              <li><a href="../promotion/promotion1.html">프로모션</a></li>
+              <!--1차 메뉴-->
+              <li>
+                <a href="../contact/contact1.html">고객센터</a>
+                <!--2차 메뉴-->
+                <ul class="submenu">
+                  <li><a href="../contact/contact1.html">FAQ</a></li>
+                  <li><a href="#">공지사항</a></li>
+                  <li><a href="#">유저 신고</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <!--아이콘 영역-->
+          <div class="icons">
+            <button type="button">
+              <img src="../../img/common/header/search.svg" alt="검색" />
+              <img
+                src="../../img/common/header/search_hover.svg"
+                alt="검색(호버)"
+              />
+            </button>
+            <a href="../login/login.html">
+              <img src="../../img/common/header/login.svg" alt="로그인" />
+              <img
+                src="../../img/common/header/login_hover.svg"
+                alt="로그인(호버)"
+              />
+            </a>
+            <!--메뉴-->
+            <button>
+              <img src="../../img/common/header/all_menu.svg" alt="전체 메뉴" />
+              <img
+                src="../../img/common/header/all_menu_hover.svg"
+                alt="전체 메뉴(호버)"
+              />
+            </button>
+          </div>
+        </div>
+      </header>
+      <main>
+        <!--서브 비주얼-->
+        <section class="sub_visual">
+          <div class="visual_text">
+            <h2>가까운 보드게임 카페 찾기</h2>
+            <p>
+              내 위치에서 가까운 보드게임 카페를 모아보고 싶은 여러분을 위한
+              페이지
+            </p>
+          </div>
+        </section>
+        <!--첫번째 섹션-->
+        <section class="sec1">
+          <div class="con">
+            <h3>가까운 보드게임 카페 찾기</h3>
+            <!--지도 영역-->
+            <div class="map_wrap">
+              <div id="map"></div>
+              <div id="menu_wrap" class="bg_white">
+                <div class="option">
+                  <div>
+                    <form onsubmit="searchPlaces(); return false;">
+                      키워드 :
+                      <input
+                        type="text"
+                        value="보드게임 카페"
+                        id="keyword"
+                        size="15"
+                      />
+                      <button type="submit">검색하기</button>
+                    </form>
+                  </div>
+                </div>
+                <hr />
+                <ul id="placesList"></ul>
+                <div id="pagination"></div>
+              </div>
+            </div>
+            <!--리뷰 영역-->
+            <div class="review_area">
+              <!--제목-->
+              <div class="top">
+                <div class="left">
+                  <div>
+                    <img
+                      src="../../img/sub/boardgame_cafe/boardgame_cafe1/sec1/map_pin.svg"
+                      alt="핀"
+                    />
+                  </div>
+                  <h4>보드게임 카페 더홀릭 홍대점</h4>
+                </div>
+                <div class="right">
+                  <div class="average">
+                    <div>
+                      <img
+                        src="../../img/sub/boardgame_cafe/boardgame_cafe1/sec1/average_star.svg"
+                        alt="별"
+                      />
+                    </div>
+                    <span>4.1</span>
+                  </div>
+                  <a href="#">리뷰 22개</a>
+                </div>
+              </div>
+              <!--리뷰-->
+              <div class="bottom">
+                <div class="review">
+                  <!--프로필-->
+                  <div class="profile">
+                    <img
+                      src="../../img/sub/boardgame_cafe/boardgame_cafe1/sec1/profile_img.png"
+                      alt="프로필 이미지"
+                    />
+                  </div>
+                  <!--리뷰 내용-->
+                  <div class="content">
+                    <div class="top_line">
+                      <span>스플렌더 할아버지</span>
+                      <div class="personal">
+                        <div>
+                          <img
+                            src="../../img/sub/boardgame_cafe/boardgame_cafe1/sec1/personal_star.svg"
+                            alt="별"
+                          />
+                        </div>
+                        <span>4.5/5</span>
+                      </div>
+                    </div>
+                    <span>
+                      여기 시설 진짜 좋아요 대박임<br />
+                      없는 보드게임이 없는 듯!!! 보드게임 러버들의 성지임
+                    </span>
+                  </div>
+                </div>
+                <div class="review">
+                  <div class="profile">
+                    <img
+                      src="../../img/sub/boardgame_cafe/boardgame_cafe1/sec1/profile_img.png"
+                      alt="프로필 이미지"
+                    />
+                  </div>
+                  <div class="content">
+                    <div class="top_line">
+                      <span>스플렌더 할아버지</span>
+                      <div class="personal">
+                        <div>
+                          <img
+                            src="../../img/sub/boardgame_cafe/boardgame_cafe1/sec1/personal_star.svg"
+                            alt="별"
+                          />
+                        </div>
+                        <span>4.5/5</span>
+                      </div>
+                    </div>
+                    <span>
+                      여기 시설 진짜 좋아요 대박임<br />
+                      없는 보드게임이 없는 듯!!! 보드게임 러버들의 성지임
+                    </span>
+                  </div>
+                </div>
+                <div class="review">
+                  <div class="profile">
+                    <img
+                      src="../../img/sub/boardgame_cafe/boardgame_cafe1/sec1/profile_img.png"
+                      alt="프로필 이미지"
+                    />
+                  </div>
+                  <div class="content">
+                    <div class="top_line">
+                      <span>스플렌더 할아버지</span>
+                      <div class="personal">
+                        <div>
+                          <img
+                            src="../../img/sub/boardgame_cafe/boardgame_cafe1/sec1/personal_star.svg"
+                            alt="별"
+                          />
+                        </div>
+                        <span>4.5/5</span>
+                      </div>
+                    </div>
+                    <span>
+                      여기 시설 진짜 좋아요 대박임<br />
+                      없는 보드게임이 없는 듯!!! 보드게임 러버들의 성지임
+                    </span>
+                  </div>
+                </div>
+                <div class="review">
+                  <div class="profile">
+                    <img
+                      src="../../img/sub/boardgame_cafe/boardgame_cafe1/sec1/profile_img.png"
+                      alt="프로필 이미지"
+                    />
+                  </div>
+                  <div class="content">
+                    <div class="top_line">
+                      <span>스플렌더 할아버지</span>
+                      <div class="personal">
+                        <div>
+                          <img
+                            src="../../img/sub/boardgame_cafe/boardgame_cafe1/sec1/personal_star.svg"
+                            alt="별"
+                          />
+                        </div>
+                        <span>4.5/5</span>
+                      </div>
+                    </div>
+                    <span>
+                      여기 시설 진짜 좋아요 대박임<br />
+                      없는 보드게임이 없는 듯!!! 보드게임 러버들의 성지임
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <div class="con">
+          <div class="top">
+            <div class="left">
+              <a href="/">
+                <img src="../../img/common/footer/logo.svg" alt="로고" />
+              </a>
+            </div>
+            <!--sns-->
+            <div class="right">
+              <a href="#">
+                <img
+                  src="../../img/common/footer/kakaotalk.svg"
+                  alt="카카오톡"
+                />
+              </a>
+              <a href="#">
+                <img
+                  src="../../img/common/footer/instagram.svg"
+                  alt="인스타그램"
+                />
+              </a>
+              <a href="#">
+                <img src="../../img/common/footer/x.svg" alt="x" />
+              </a>
+              <a href="#">
+                <img src="../../img/common/footer/youtube.svg" alt="유튜브" />
+              </a>
+            </div>
+          </div>
+          <div class="bottom">
+            <div class="info">
+              <span>대표자: 배예진</span>
+              <a href="tel:02-123-1234">
+                <div>
+                  <img src="../../img/common/footer/tel.svg" alt="전화기" />
+                </div>
+                <span>02-123-1234</span>
+              </a>
+              <a href="mailto:boardgamefriend@naver.com">
+                <div>
+                  <img src="../../img/common/footer/email.svg" alt="이메일" />
+                </div>
+                <span>boardgamefriend@naver.com</span>
+              </a>
+              <a href="#">사업자등록번호: 123-12-12345</a>
+            </div>
+            <div class="terms">
+              <a href="#">개인정보처리방침</a>
+              <a href="#">이용약관</a>
+              <a href="#">위치처리정보방침</a>
+              <a href="#">청소년보호정책</a>
+              <a href="#">공지사항</a>
+              <a href="#">고객센터</a>
+            </div>
+            <span class="copy">
+              Copyright &copy; Board gamefriend. All rights reserved.
+            </span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

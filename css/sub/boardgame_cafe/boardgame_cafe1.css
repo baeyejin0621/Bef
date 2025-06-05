@@ -1,0 +1,225 @@
+@import url(../../reset.css);
+@import url(../../common.css);
+
+/*메인*/
+/*섹션 공통 설정*/
+section {
+  width: 100%;
+  height: fit-content;
+  margin-top: 220px;
+}
+
+h3 {
+  font-size: var(--xxlg-size-font);
+  font-weight: var(--bold-weight-font);
+}
+
+/*서브 비주얼*/
+.sub_visual {
+  width: 100%;
+  height: 540px;
+  position: relative;
+  overflow: hidden;
+  background: var(--black-color10)
+    url(../../../img/sub/boardgame_cafe/boardgame_cafe1/sub_visual/visual_img.png)
+    no-repeat;
+  background-size: 732.99px;
+  background-position: 75% -55%;
+}
+
+.visual_text {
+  width: 1200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+.sub_visual h2 {
+  color: var(--main-color1);
+  font-size: var(--xxxlg-size-font);
+  font-weight: var(--extrabold-weight-font);
+}
+
+.sub_visual p {
+  font-size: var(--md-size-font);
+  font-weight: var(--regular-weight-font);
+  opacity: 75%;
+  margin-top: 7px;
+}
+
+/*첫번째 섹션*/
+.sec1 {
+  margin-bottom: 120px;
+}
+
+.sec1 .con {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+/*지도 영역*/
+
+/*리뷰 영역*/
+.sec1 .review_area {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/*제목*/
+.sec1 .top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sec1 .top .left {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.sec1 .top .left > div {
+  width: 24px;
+  height: 24px;
+}
+
+.sec1 .top .left > div > img {
+  width: 100%;
+}
+
+.sec1 .top .right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sec1 .top .average {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+
+.sec1 .top .average > div {
+  width: 14px;
+  height: 14px;
+}
+
+.sec1 .top .average > div > img {
+  width: 100%;
+}
+
+.sec1 .top .average > span {
+  font-size: var(--sm-size-font);
+  color: var(--black-color3);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sec1 .top .average > span::after {
+  content: "line";
+  font-size: 0;
+  display: block;
+  width: 1px;
+  height: 10px;
+  background-color: var(--black-color5);
+}
+
+.sec1 .top .right > a {
+  font-size: var(--sm-size-font);
+  color: var(--black-color3);
+}
+
+/*리뷰*/
+.sec1 .bottom {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+
+.sec1 .review {
+  flex: 1;
+  display: flex;
+  gap: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--black-color7);
+  padding: 20px;
+  transition: border 0.3s;
+}
+
+/*프로필*/
+.sec1 .profile {
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  border-radius: 100%;
+}
+
+.sec1 .profile > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*리뷰 내용*/
+.sec1 .content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sec1 .content .top_line {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sec1 .content .top_line > span {
+  font-size: var(--sm-size-font);
+  color: var(--black-color2);
+}
+
+.sec1 .content .personal {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.sec1 .content .personal > div {
+  width: 10px;
+  height: 10px;
+}
+
+.sec1 .content .personal > div > img {
+  width: 100%;
+  filter: brightness(0.8);
+}
+
+.sec1 .content .personal > span {
+  font-size: var(--xsm-size-font);
+  font-weight: var(--regular-weight-font);
+  color: var(--black-color4);
+}
+
+.sec1 .content > span {
+  font-size: var(--sm-size-font);
+  font-weight: var(--regular-weight-font);
+  color: var(--black-color3);
+  display: -webkit-box;
+  width: 217px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/*리뷰에 호버하면*/
+.sec1 .review:hover {
+  border: 1px solid var(--sub-color1);
+}

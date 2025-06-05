@@ -1,0 +1,211 @@
+@import url(../../reset.css);
+@import url(../../common.css);
+
+/*메인*/
+/*섹션 공통 설정*/
+section {
+  width: 100%;
+  height: fit-content;
+  margin-top: 220px;
+}
+
+h3 {
+  font-size: var(--xxlg-size-font);
+  font-weight: var(--bold-weight-font);
+  margin-bottom: 64px;
+}
+
+/*서브 비주얼*/
+.sub_visual {
+  width: 100%;
+  height: 540px;
+  position: relative;
+  overflow: hidden;
+  background: var(--black-color10)
+    url(../../../img/sub/promotion/promotion1/sub_visual/visual_img.png)
+    no-repeat;
+  background-size: 750px;
+  background-position: 77% -40%;
+}
+
+.visual_text {
+  width: 1200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sub_visual h2 {
+  color: var(--main-color1);
+  font-size: var(--xxxlg-size-font);
+  font-weight: var(--extrabold-weight-font);
+}
+
+.sub_visual p {
+  font-size: var(--md-size-font);
+  font-weight: var(--regular-weight-font);
+  opacity: 75%;
+  margin-top: 7px;
+}
+
+/*첫번째 섹션*/
+:is(.sec1, .sec2) .con_wrap {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  row-gap: 80px;
+}
+
+:is(.sec1, .sec2) .content {
+  width: calc(25% - 15px);
+  height: fit-content;
+}
+
+.sec1 a {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/*썸네일*/
+.sec1 .thumb {
+  width: 100%;
+  height: 285px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.sec1 .thumb > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+/*제목*/
+.sec1 .content h4 {
+  font-size: var(--lg-size-font1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/*가격*/
+.sec1 .info {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+/*할인률*/
+.sec1 .info > span {
+  color: var(--main-color1);
+  font-weight: var(--bold-weight-font);
+  font-size: var(--xlg-size-font1);
+}
+
+/*할인된 가격*/
+.sec1 .price {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.sec1 .price > span {
+  font-weight: var(--semibold-weight-font);
+  font-size: var(--lg-size-font3);
+}
+
+/*정가*/
+.sec1 .price .original {
+  font-size: var(--md-size-font);
+  font-weight: var(--medium-weight-font);
+  color: var(--black-color16);
+  text-decoration: line-through;
+}
+
+/*컨텐츠에 호버하면 사진 확대*/
+.sec1 a:hover img {
+  transform: scale(1.05);
+}
+
+/*두번째 섹션*/
+.sec2 {
+  margin-bottom: 120px;
+}
+
+.sec2 a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/*썸네일*/
+.sec2 .thumb {
+  position: relative;
+  width: 100%;
+  height: 285px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--black-color10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sec2 .thumb > img {
+  width: 100%;
+  transition: 0.3s;
+}
+
+/*밑에 깔릴 로고*/
+.sec2 .thumb > img:last-child {
+  width: 15%;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+/*더홀릭 로고*/
+.sec2 .thumb > img.cafe2 {
+  width: 25%;
+}
+
+/*첫방문 할인 썸네일*/
+.sec2 .thumb > img.logo {
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*더홀릭 로고*/
+.sec2 .thumb > img.cafe2.logo {
+  width: 70%;
+}
+
+/*제목*/
+.sec2 .content h4 {
+  text-align: center;
+  font-size: var(--lg-size-font1);
+  word-break: keep-all;
+}
+
+/*컨텐츠에 호버하면 사진 커지기*/
+.sec2 .content:hover img {
+  transform: scale(1.05);
+}
+
+.sec2 .content:hover img:last-child {
+  transform: scale(1);
+}
+
+.sec2 .content:hover img.logo {
+  transform: translate(-50%, -50%) scale(1.05);
+}

@@ -1,0 +1,526 @@
+@charset "utf-8";
+
+/*모바일 ~ 태블릿*/
+@media screen and (min-width: 320px) and (max-width: 1334px) {
+  /*메인*/
+  /*섹션 공통 속성*/
+  section {
+    margin-top: clamp(100px, 31vw, 220px);
+  }
+
+  /*섹션 제목*/
+  section h2 {
+    font-size: clamp(var(--md-size-font), 4.9vw, var(--lg-size-font3));
+  }
+
+  /*see_all 버튼*/
+  .see_all {
+    display: none;
+  }
+
+  /*메인 비주얼*/
+  .main_visual {
+    height: clamp(514px, 160vw, 844px);
+  }
+
+  .main_visual .main_img {
+    width: clamp(637.98px, 200vw, 1573.02px);
+  }
+
+  /*메인 텍스트 이미지*/
+  .main_visual .main_text {
+    width: clamp(206px, 64vw, 576px);
+    height: clamp(102px, 31vw, 309px);
+  }
+
+  /*첫번째 섹션*/
+  .sec1 {
+    display: none;
+  }
+
+  /*두번째 섹션*/
+  .sec2 .con {
+    gap: clamp(32px, 10vw, 64px);
+  }
+
+  .sec2_title {
+    gap: 0px;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  /*화살표 버튼*/
+  .arrow_btn {
+    display: block;
+    width: 18px;
+    height: 18px;
+  }
+
+  .arrow_btn > img {
+    width: 100%;
+  }
+
+  /*카드 슬라이드*/
+  .sec2_swiper .swiper-wrapper {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sec2_swiper .swiper-slide {
+    width: clamp(246px, 75vw, 350px);
+    padding: clamp(28px, 8.7vw, 40px) clamp(20px, 6vw, 40px);
+  }
+
+  /*카드 윗부분*/
+  .sec2_swiper .swiper-slide :is(h4, p) {
+    font-size: clamp(var(--xsm-size-font), 3.7vw, var(--sm-size-font));
+  }
+
+  .sec2_swiper .swiper-slide span {
+    font-size: clamp(var(--xxsm-size-font), 3vw, var(--xsm-size-font));
+  }
+
+  .sec2_swiper .swiper-slide h3 {
+    font-size: clamp(var(--sm-size-font), 4.3vw, var(--lg-size-font));
+  }
+
+  /*카드 컨텐츠*/
+  .sec2_swiper .swiper-slide .bottom > div:nth-child(1) > div {
+    width: clamp(11px, 3.4vw, 13px);
+    height: clamp(11px, 3.4vw, 13px);
+  }
+
+  .sec2_swiper .swiper-slide .bottom > div:nth-child(2) > div {
+    width: clamp(12px, 3.7vw, 14px);
+    height: clamp(12px, 3.7vw, 14px);
+  }
+
+  .sec2_swiper .swiper-slide .bottom > div:nth-child(3) > div {
+    width: clamp(9px, 2.8vw, 11px);
+    height: clamp(9px, 2.8vw, 13px);
+  }
+
+  /*양옆 화살표 없애기*/
+  :is(.swiper-button-prev, .swiper-button-next) {
+    display: none;
+  }
+
+  /*세번째 섹션*/
+  .sec3 {
+    height: clamp(108px, 33vw, 255px);
+    justify-content: center;
+    padding: 0;
+  }
+
+  .sec3 > div:not(.sec3_content) {
+    display: none;
+  }
+
+  .sec3_content {
+    gap: clamp(10px, 3vw, 32px);
+  }
+
+  .sec3 h3 {
+    font-size: clamp(var(--xsm-size-font), 3.7vw, var(--lg-size-font1));
+  }
+
+  .sec3 a {
+    font-size: clamp(var(--xxsm-size-font2), 2.5vw, var(--sm-size-font));
+    padding: clamp(6px, 1.8vw, 12px) clamp(14px, 4.3vw, 32px);
+  }
+
+  /*네번째 섹션*/
+  .sec4 h2 {
+    margin-bottom: clamp(32px, 10vw, 64px);
+  }
+
+  .sec4 .cards {
+    flex-direction: column;
+    padding: 0 clamp(15px, 4.6vw, 30px);
+    gap: clamp(20px, 6.2vw, 40px);
+  }
+
+  .sec4 .card {
+    font-size: clamp(var(--sm-size-font), 4.3vw, var(--xlg-size-font));
+  }
+
+  .sec4 p {
+    font-size: clamp(var(--xxsm-size-font), 3.1vw, var(--lg-size-font));
+  }
+
+  .sec4 p + div {
+    width: clamp(128px, 39vw, 344px);
+    height: clamp(138.2px, 43vw, 377px);
+  }
+
+  /*다섯번째 섹션*/
+  .sec5 > .con {
+    flex-direction: column;
+    justify-content: center;
+    gap: clamp(20px, 6.2vw, 40px);
+  }
+
+  .sec5 .left {
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+  }
+
+  .sec5 .top {
+    justify-content: center;
+  }
+
+  .sec5 .left .top > div {
+    width: clamp(11px, 3.4vw, 16px);
+    height: clamp(11px, 3.4vw, 16px);
+  }
+
+  .sec5 .left .top span {
+    font-size: clamp(var(--xxsm-size-font), 3vw, var(--sm-size-font));
+  }
+
+  .sec5 a {
+    font-size: clamp(var(--xxsm-size-font), 3vw, var(--sm-size-font));
+    padding: clamp(6px, 1.8vw, 10px) clamp(16px, 4.8vw, 20px);
+  }
+
+  /*영상 영역*/
+  .sec5_swiper {
+    flex-direction: column;
+    gap: clamp(20px, 6.2vw, 40px);
+    width: 100%;
+    height: fit-content;
+    position: relative;
+  }
+
+  .sec5 .swiper-wrapper {
+    width: 100%;
+    height: fit-content;
+  }
+
+  .sec5 .swiper-slide {
+    width: 100%;
+    height: clamp(150px, 51vw, 667.7px);
+    border-radius: clamp(4px, 1.2vw, 12px);
+  }
+
+  /*버튼*/
+  .sec5 .swiper-btn {
+    display: flex;
+    gap: clamp(40px, 12.4vw, 120px);
+  }
+
+  .sec5 .swiper-button-prev {
+    position: static;
+    transform: translateY(0);
+  }
+
+  .sec5 :is(.swiper-button-prev, .swiper-button-next) {
+    width: clamp(24px, 7.4vw, 38px);
+    height: clamp(24px, 7.4vw, 38px);
+  }
+
+  .sec5 :is(.swiper-button-prev, .swiper-button-next) > img {
+    width: clamp(6px, 1.8vw, 12px);
+  }
+
+  /*여섯번째 & 일곱번째 & 여덟번째 섹션*/
+  .boardgame_title {
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: clamp(32px, 10vw, 64px);
+  }
+
+  .con_wrapper {
+    flex-wrap: wrap;
+    gap: clamp(12px, 3.7vw, 16px);
+    row-gap: 32px;
+  }
+
+  .boardgame {
+    width: calc(50% - clamp(12px, 3.7vw, 16px) / 2);
+    height: fit-content;
+  }
+
+  .boardgame .thumb {
+    height: calc(43vw - clamp(12px, 3.7vw, 16px) / 2);
+    border-radius: clamp(8px, 2.5vw, 12px);
+    margin-bottom: clamp(8px, 2.5vw, 12px);
+  }
+
+  .boardgame .thumb + div {
+    gap: clamp(4px, 1.2vw, 8px);
+    padding-left: clamp(4px, 1.2vw, 6px);
+  }
+
+  .boardgame h3 {
+    font-size: clamp(var(--xsm-size-font), 3.7vw, var(--lg-size-font));
+  }
+
+  /*리뷰 공간*/
+  .boardgame .review {
+    gap: clamp(1px, 0.3vw, 2px);
+  }
+
+  .boardgame .review > div {
+    width: clamp(40px, 12vw, 70px);
+    height: clamp(8px, 2.5vw, 15px);
+  }
+
+  /*별점*/
+  .boardgame span {
+    font-size: clamp(var(--xxsm-size-font2), 2.5vw, var(--xsm-size-font));
+  }
+
+  /*리뷰*/
+  .boardgame > a > div > span {
+    width: 100%;
+    font-size: clamp(var(--xxsm-size-font1), 2.8vw, var(--xsm-size-font));
+  }
+
+  /*아홉번째 섹션*/
+  .sec9 {
+    height: clamp(108px, 33vw, 255px);
+    justify-content: center;
+    padding: 0;
+  }
+
+  .sec9 > div:not(.sec9_content) {
+    display: none;
+  }
+
+  .sec9_content {
+    gap: clamp(10px, 3vw, 32px);
+  }
+
+  .sec9 h3 {
+    font-size: clamp(var(--xsm-size-font), 3.7vw, var(--lg-size-font1));
+  }
+
+  .sec9 a {
+    font-size: clamp(var(--xxsm-size-font2), 2.5vw, var(--sm-size-font));
+    padding: clamp(6px, 1.8vw, 12px) clamp(14px, 4.3vw, 32px);
+  }
+}
+
+/*태블릿*/
+@media screen and (min-width: 768px) and (max-width: 1334px) {
+  /*섹션 제목 공통 설정*/
+  section h2 {
+    font-size: clamp(var(--lg-size-font3), 3.1vw, var(--xlg-size-font));
+  }
+
+  /*두번째 섹션*/
+  .sec2_title {
+    justify-content: space-between;
+  }
+
+  .arrow_btn {
+    display: none;
+  }
+
+  .see_all {
+    display: block;
+    font-size: clamp(var(--sm-size-font), 1.8vw, var(--md-size-font));
+  }
+
+  /*카드 슬라이드*/
+  .sec2_swiper .swiper-wrapper {
+    flex-direction: row;
+  }
+
+  /*2단으로 만들기*/
+  .sec2_swiper .swiper-slide:last-child {
+    display: none;
+  }
+
+  .sec2_swiper .swiper-slide {
+    width: calc(50% - 10px);
+  }
+
+  /*세번째 & 아홉번째 섹션*/
+  :is(.sec3, .sec9) h3 {
+    font-size: clamp(var(--lg-size-font1), 2.6vw, var(--lg-size-font2));
+  }
+
+  :is(.sec3, .sec9) a {
+    font-size: clamp(var(--sm-size-font), 1.8vw, var(--md-size-font));
+  }
+
+  /*네번째 섹션*/
+  .sec4 .card {
+    width: clamp(440px, 57vw, 555px);
+    font-size: clamp(var(--lg-size-font1), 2.6vw, var(--xlg-size-font));
+  }
+
+  .sec4 p {
+    font-size: clamp(var(--sm-size-font), 1.8vw, var(--lg-size-font));
+  }
+
+  /*다섯번째 섹션*/
+  .sec5 h2 {
+    margin-bottom: clamp(30px, 3.9vw, 48px);
+  }
+
+  /*여섯번째 & 일곱번째 & 여덟번째 섹션*/
+  .boardgame_title {
+    justify-content: space-between;
+  }
+
+  .con_wrapper {
+    flex-wrap: nowrap;
+    gap: clamp(12px, 1.1vw, 20px);
+  }
+
+  .boardgame {
+    width: calc(25% - clamp(12px, 1.1vw, 20px) * 3 / 4);
+  }
+
+  .boardgame .thumb {
+    height: clamp(165.38px, 21.5vw, 285px);
+    border-radius: clamp(8px, 1vw, 12px);
+    margin-bottom: clamp(8px, 1vw, 12px);
+  }
+
+  .boardgame h3 {
+    font-size: clamp(var(--sm-size-font), 1.8vw, var(--lg-size-font));
+  }
+
+  .boardgame .thumb + div {
+    gap: clamp(4px, 0.5vw, 8px);
+  }
+
+  /*별점*/
+  .boardgame .review > div {
+    width: clamp(50px, 6.5vw, 70px);
+    height: clamp(10px, 1.3vw, 15px);
+  }
+
+  .boardgame span {
+    font-size: clamp(var(--xxsm-size-font1), 1.1vw, var(--xsm-size-font));
+  }
+
+  /*리뷰*/
+  .boardgame > a > div > span {
+    width: 100%;
+    font-size: clamp(var(--xxsm-size-font), 1.3vw, var(--xsm-size-font));
+  }
+}
+
+/*노트북*/
+@media screen and (min-width: 1024px) and (max-width: 1334px) {
+  /*섹션 제목 설정*/
+  section h2 {
+    font-size: clamp(var(--xlg-size-font), 2.5vw, var(--xxlg-size-font));
+  }
+
+  .see_all {
+    font-size: clamp(var(--md-size-font), 1.5vw, var(--lg-size-font));
+  }
+
+  /*첫번째 섹션*/
+  .sec1 {
+    display: block;
+  }
+
+  .sec1_menu {
+    font-size: clamp(var(--sm-size-font), 1.3vw, var(--md-size-font));
+  }
+
+  /*두번째 섹션*/
+  /*3단으로 만들기*/
+  .sec2_swiper .swiper-slide:last-child {
+    display: block;
+  }
+
+  /*카드*/
+  .sec2_swiper .swiper-slide {
+    padding: clamp(30px, 2.9vw, 40px);
+  }
+
+  /*카드 윗부분*/
+  .sec2_swiper .swiper-slide :is(h4, p) {
+    font-size: clamp(var(--xsm-size-font), 1.1vw, var(--sm-size-font));
+  }
+
+  .sec2_swiper .swiper-slide span {
+    font-size: clamp(var(--xxsm-size-font), 0.9vw, var(--xsm-size-font));
+  }
+
+  .sec2_swiper .swiper-slide h3 {
+    font-size: clamp(var(--sm-size-font), 1.3vw, var(--lg-size-font));
+  }
+
+  /*카드 컨텐츠*/
+  .sec2_swiper .swiper-slide .bottom > div:nth-child(1) > div {
+    width: clamp(11px, 3.4vw, 13px);
+    height: clamp(11px, 3.4vw, 13px);
+  }
+
+  .sec2_swiper .swiper-slide .bottom > div:nth-child(2) > div {
+    width: clamp(12px, 3.7vw, 14px);
+    height: clamp(12px, 3.7vw, 14px);
+  }
+
+  .sec2_swiper .swiper-slide .bottom > div:nth-child(3) > div {
+    width: clamp(9px, 2.8vw, 11px);
+    height: clamp(9px, 2.8vw, 13px);
+  }
+
+  /*세번째 & 아홉번째 섹션*/
+  :is(.sec3, .sec9) h3 {
+    font-size: clamp(var(--lg-size-font2), 2.1vw, var(--xlg-size-font));
+  }
+
+  :is(.sec3, .sec9) a {
+    font-size: clamp(var(--sm-size-font), 1.3vw, var(--lg-size-font));
+  }
+
+  /*네번째 섹션*/
+  .sec4 .cards {
+    flex-direction: row;
+    gap: clamp(20px, 1.9vw, 40px);
+  }
+
+  .sec4 .card {
+    font-size: clamp(var(--lg-size-font1), 1.9vw, var(--xlg-size-font));
+  }
+
+  .sec4 p {
+    font-size: clamp(var(--sm-size-font), 1.3vw, var(--lg-size-font));
+  }
+
+  .sec4 p + div {
+    width: clamp(240px, 23vw, 344px);
+    height: clamp(260px, 25vw, 377px);
+  }
+}
+
+/*컨텐츠 라인*/
+@media screen and (min-width: 1334px) {
+  /*세번째 & 아홉번째 섹션*/
+  :is(.sec3, .sec9) {
+    padding: 101px clamp(60px, 4.4vw, 150px);
+  }
+
+  .sec3 img {
+    width: clamp(280px, 20vw, 445px);
+  }
+
+  .sec3 div:first-child img {
+    transform: translateY(clamp(5px, 0.3vw, 20px));
+  }
+
+  .sec3 div:last-child img {
+    transform: translateY(clamp(40px, 2.9vw, 80px));
+  }
+
+  .sec9 img {
+    width: clamp(280px, 20vw, 470px);
+  }
+
+  .sec9 div:first-child img {
+    transform: translateY(clamp(10px, 0.7vw, 55px));
+  }
+}

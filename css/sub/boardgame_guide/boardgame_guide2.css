@@ -1,0 +1,213 @@
+@import url(../../reset.css);
+@import url(../../common.css);
+
+/*메인*/
+/*섹션 공통 설정*/
+section {
+  width: 100%;
+  height: fit-content;
+  margin-top: 220px;
+}
+
+/*서브 비주얼*/
+.sub_visual {
+  width: 1005;
+  height: 540px;
+  position: relative;
+  overflow: hidden;
+  background: var(--black-color10)
+    url(../../../img/sub/boardgame_guide/boardgame_guide2/sub_visual/visual_img.png)
+    no-repeat;
+  background-size: 788.56px;
+  background-position: 75% -20%;
+}
+
+.visual_text {
+  width: 1200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sub_visual h2 {
+  color: var(--main-color1);
+  font-size: var(--xxxlg-size-font);
+  font-weight: var(--extrabold-weight-font);
+}
+
+.sub_visual p {
+  font-size: var(--md-size-font);
+  font-weight: var(--regular-weight-font);
+  opacity: 75%;
+  margin-top: 7px;
+}
+
+/*첫번째 섹션*/
+.sec1 h3 {
+  font-size: var(--xxlg-size-font);
+  font-weight: var(--bold-weight-font);
+  margin-bottom: 120px;
+}
+
+.sec1 .content_wrap {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+.sec1 .inner_con {
+  width: 100%;
+  display: flex;
+  gap: 48px;
+}
+
+.sec1 .inner_con > span {
+  font-size: var(--xxxlg-size-font1);
+  font-weight: var(--black-weight-font);
+  color: var(--sub-color1);
+  transform: translateY(-20px);
+}
+
+.sec1 .content {
+  display: flex;
+  gap: 80px;
+}
+
+.sec1 .thumb {
+  width: 407px;
+  height: 407px;
+  border-radius: 32px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sec1 .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+/*이미지에 호버하면*/
+.sec1 .thumb:hover img {
+  transform: scale(1.05);
+}
+
+.sec1 .left {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  font-weight: var(--regular-weight-font);
+  font-size: var(--lg-size-font1);
+  color: var(--black-color2);
+}
+
+.sec1 .info {
+  display: flex;
+}
+
+.sec1 .info:nth-child(1) {
+  gap: 112px;
+}
+
+.sec1 .info:nth-child(2) {
+  gap: 85px;
+}
+
+.sec1 .info:nth-child(3) {
+  gap: 55px;
+}
+
+.sec1 .info:nth-child(4) {
+  gap: 90px;
+}
+
+.sec1 .subject {
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+  border-bottom: 4px solid var(--black-color1);
+  font-weight: var(--semibold-weight-font);
+}
+
+/*icon_wrap*/
+.sec1 .icon_wrap {
+  display: flex;
+  gap: 68px;
+  font-size: var(--md-size-font);
+  font-weight: var(--regular-weight-font);
+}
+
+.sec1 .icon_wrap > .con_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 11px;
+}
+
+/*구분선*/
+.sec1 .line {
+  width: 1200px;
+  height: 1px;
+  background-color: var(--black-color14);
+}
+
+/*두번째 섹션*/
+.sec2 {
+  width: 100%;
+  height: 255px;
+  background-color: var(--main-color4);
+  overflow: hidden;
+  display: flex;
+  padding: 100px;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.sec2 :is(.left, .right) {
+  width: 515px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sec2 :is(.left, .right) > img {
+  width: 100%;
+}
+
+/*가운데 영역*/
+.sec2 .content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+.sec2 .content h3 {
+  font-size: var(--xlg-size-font);
+  font-weight: var(--bold-weight-font);
+}
+
+.sec2 .content a {
+  width: fit-content;
+  height: fit-content;
+  padding: 12px 32px;
+  border-radius: 100px;
+  background-color: var(--main-color3);
+  font-size: var(--lg-size-font);
+  font-weight: var(--semibold-weight-font);
+  transition: background-color 0.3s;
+}
+
+/*버튼에 호버하면*/
+.sec2 .content a:hover {
+  background-color: var(--main-color2);
+}

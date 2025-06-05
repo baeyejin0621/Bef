@@ -1,0 +1,185 @@
+@import url(../../reset.css);
+@import url(../../common.css);
+
+/*메인*/
+/*섹션 공통 설정*/
+section {
+  width: 100%;
+  height: fit-content;
+  margin-top: 220px;
+}
+
+/*서브 비주얼*/
+.sub_visual {
+  width: 1005;
+  height: 540px;
+  position: relative;
+  overflow: hidden;
+  background: var(--black-color10)
+    url(../../../img/sub/boardgame_guide/boardgame_guide3/sub_visual/visual_img.png)
+    no-repeat;
+  background-size: 1100px;
+  background-position: 87% 0;
+}
+
+.visual_text {
+  width: 1200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sub_visual h2 {
+  color: var(--main-color1);
+  font-size: var(--xxxlg-size-font);
+  font-weight: var(--extrabold-weight-font);
+}
+
+.sub_visual p {
+  font-size: var(--md-size-font);
+  font-weight: var(--regular-weight-font);
+  opacity: 75%;
+  margin-top: 7px;
+}
+
+/*섹션 디자인*/
+section h3 {
+  font-size: var(--xxlg-size-font);
+  font-weight: var(--bold-weight-font);
+  margin-bottom: 20px;
+}
+
+section .content_wrap {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 160px;
+}
+
+section .content {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  gap: 56px;
+}
+
+/*왼쪽 영역*/
+section .left {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+section h4 {
+  width: fit-content;
+  font-size: var(--lg-size-font3);
+  padding-bottom: 10px;
+  box-sizing: border-box;
+  border-bottom: 4px solid var(--black-color1);
+}
+
+section .thumb {
+  display: block;
+  width: 361px;
+  height: 361px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+section .thumb > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+/*썸네일에 호버하면*/
+section .thumb:hover > img {
+  transform: scale(1.05);
+}
+
+/*아이콘 영역*/
+section .thumb + .info {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+section .info .info_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 11px;
+  font-size: var(--lg-size-font);
+  font-weight: var(--regular-weight-font);
+}
+
+/*오른쪽 영역*/
+section .right {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+section .youtube {
+  width: 783px;
+  height: 442px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+section iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.line {
+  width: 1200px;
+  height: 1px;
+  background-color: var(--black-color14);
+}
+
+/*더보기 버튼*/
+.btn_area {
+  margin: 160px 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn_area button {
+  padding: 8px 28px;
+  border-radius: 50px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-weight: var(--regular-weight-font);
+  color: var(--black-color2);
+  transition: background-color 0.3s;
+}
+
+.btn_area button > div {
+  width: 15px;
+  height: 15px;
+  transform: translateY(-0.6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn_area button > div > img {
+  filter: brightness(0.8);
+}
+
+/*버튼에 호버하면*/
+.btn_area button:hover {
+  background-color: var(--black-color10);
+}

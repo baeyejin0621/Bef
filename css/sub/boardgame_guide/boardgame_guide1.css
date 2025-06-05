@@ -1,0 +1,295 @@
+@import url(../../reset.css);
+@import url(../../common.css);
+
+/*메인*/
+/*섹션 공통 설정*/
+section {
+  width: 100%;
+  height: fit-content;
+  margin-top: 220px;
+}
+
+/*서브 비주얼*/
+.sub_visual {
+  width: 100%;
+  height: 540px;
+  position: relative;
+  overflow: hidden;
+  background: var(--black-color10)
+    url(../../../img/sub/boardgame_guide/boardgame_guide1/sub_visual/visual_img.png)
+    no-repeat;
+  background-size: 801px;
+  background-position: 75% -30%;
+}
+
+.visual_text {
+  width: 1200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sub_visual h2 {
+  color: var(--main-color1);
+  font-size: var(--xxxlg-size-font);
+  font-weight: var(--extrabold-weight-font);
+}
+
+.sub_visual p {
+  font-size: var(--md-size-font);
+  font-weight: var(--regular-weight-font);
+  opacity: 75%;
+  margin-top: 7px;
+}
+
+/*첫번째 섹션*/
+.sec1 .top_text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.sec1 h3 {
+  font-size: var(--xxlg-size-font);
+  font-weight: var(--bold-weight-font);
+}
+
+.sec1 p {
+  font-size: var(--sm-size-font);
+  font-weight: var(--regular-weight-font);
+  color: var(--black-color4);
+}
+
+/*키워드 선택 박스*/
+.keyword_box {
+  width: 100%;
+  height: fit-content;
+  padding: 4px 16px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  border: 1px solid var(--black-color14);
+}
+
+.keyword_box .row {
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  padding: 20px 0;
+  box-sizing: border-box;
+  text-align: center;
+  border-bottom: 1px solid var(--black-color14);
+}
+
+.keyword_box .row:nth-child(4) {
+  border: none;
+}
+
+.keyword_box .subject {
+  width: 176px;
+  font-size: var(--lg-size-font);
+  color: var(--black-color2);
+}
+
+.keyword_box .keywords {
+  display: flex;
+  gap: 24px;
+  padding: 0 20px;
+  font-weight: var(--regular-weight-font);
+  border-left: 1px solid var(--black-color14);
+}
+
+.keyword_box .keywords button {
+  width: fit-content;
+  height: fit-content;
+  padding: 8px 20px;
+  border-radius: 100px;
+  transition: background-color 0.3s;
+}
+
+/*키워드에 호버하면*/
+.keyword_box .keywords > button:hover {
+  font-weight: var(--semibold-weight-font);
+  background-color: var(--black-color10);
+}
+
+/*브라우저 너비가 작아지면 나타날 박스*/
+.sec1 .select_box {
+  display: none;
+  width: 100%;
+  height: fit-content;
+  gap: 4px;
+  align-items: center;
+}
+
+.sec1 .select_box select {
+  font-size: var(--xxsm-size-font);
+  display: flex;
+  padding-right: 12px;
+  background: url(../../../img/sub/boardgame_guide/boardgame_guide1/sec1/down_arrow.svg)
+    no-repeat;
+  background-position: 100% 50%;
+  background-size: 12px 12px;
+  cursor: pointer;
+}
+
+/*가운데 선*/
+.sec1 .select_box span {
+  font-size: var(--xxsm-size-font2);
+  color: var(--black-color7);
+}
+
+/*보드게임 섹션*/
+section:not(.sub_visual, .sec1, .sec2, .btn_area) {
+  margin-top: 100px;
+}
+
+.sec2 .top {
+  margin-bottom: 20px;
+}
+
+.sec2 .top h3 {
+  font-size: var(--xxlg-size-font);
+  font-weight: var(--bold-weight-font);
+  margin-bottom: 8px;
+}
+
+.sec2 .top p {
+  font-size: var(--sm-size-font);
+  font-weight: var(--regular-weight-font);
+  color: var(--black-color4);
+}
+
+.inner_con {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.con_wrapper {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  gap: 20px;
+}
+
+.boardgame {
+  flex: 1;
+}
+
+.boardgame > a {
+  display: block;
+  width: 100%;
+  height: fit-content;
+}
+
+.boardgame .thumb {
+  width: 100%;
+  height: 285px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boardgame .thumb img {
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.boardgame .thumb + div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 6px;
+}
+
+.boardgame h3 {
+  font-size: var(--lg-size-font);
+  font-weight: var(--semibold-weight-font);
+}
+
+.boardgame .review {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: var(--xsm-size-font);
+  color: var(--black-color3);
+  position: relative;
+}
+
+.boardgame .review > div {
+  width: 70px;
+  height: 15px;
+}
+
+.boardgame .review > div > img {
+  width: 100%;
+}
+
+.boardgame span {
+  font-size: var(--xsm-size-font);
+  color: var(--black-color4);
+}
+
+.boardgame > a > div > span {
+  display: block;
+  width: 285px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*마우스 호버했을 때*/
+.boardgame:hover .thumb > img {
+  transform: scale(1.05);
+}
+
+/*더보기 보드게임 섹션 숨기기*/
+section:not(.sub_visual, .sec1, .sec2, .btn_area) {
+  display: none;
+}
+
+/*더보기 버튼*/
+.btn_area {
+  margin: 100px 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn_area button {
+  padding: 8px 28px;
+  border-radius: 50px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-weight: var(--regular-weight-font);
+  color: var(--black-color2);
+  transition: background-color 0.3s;
+}
+
+.btn_area button > div {
+  width: 15px;
+  height: 15px;
+  transform: translateY(-0.6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn_area button > div > img {
+  width: 100%;
+  filter: brightness(0.8);
+}
+
+/*버튼에 호버하면*/
+.btn_area button:hover {
+  background-color: var(--black-color10);
+}

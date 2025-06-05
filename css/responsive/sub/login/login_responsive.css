@@ -1,0 +1,72 @@
+@charset "urf-8";
+
+@media screen and (min-width: 320px) and (max-width: 526px) {
+  /*공통 영역*/
+  .container {
+    width: 90%;
+    height: 100vh;
+  }
+
+  /*메인*/
+  section {
+    gap: clamp(52px, 20vw, 68px);
+  }
+  /*폼 양식*/
+  .form_box {
+    gap: clamp(12px, 3vw, 16px);
+  }
+  /*아이디, 비밀번호 입력*/
+  form {
+    gap: clamp(4px, 1.2vw, 8px);
+  }
+
+  form input {
+    font-size: clamp(var(--xsm-size-font), 3.5vw, var(--md-size-font));
+  }
+
+  /*로그인 버튼*/
+  form input[type="submit"] {
+    font-size: clamp(var(--sm-size-font), 4vw, var(--md-size-font));
+    margin-top: clamp(12px, 3vw, 20px);
+  }
+
+  /*로그인 버튼 아래*/
+  .bottom_line {
+    font-size: clamp(var(--xxsm-size-font1), 3vw, var(--sm-size-font));
+  }
+
+  /*로그인 유지 버튼*/
+  .remain {
+    gap: clamp(4px, 1vw, 6px);
+  }
+
+  /*로그인 유지 체크 박스*/
+  .remain label {
+    width: clamp(13px, 3vw, 15px);
+    height: clamp(13px, 3vw, 15px);
+    border-radius: clamp(3px, 0.8vw, 4px);
+  }
+
+  /*아이디, 비밀번호 찾기*/
+  .find {
+    gap: clamp(10px, 2.3vw, 12px);
+  }
+
+  .find > a:first-child::after {
+    margin-left: clamp(10px, 2.3vw, 12px);
+  }
+
+  /*간편 로그인*/
+  .sns > a {
+    width: clamp(42px, 12vw, 50px);
+  }
+
+  /*회원가입*/
+  .signup > span {
+    font-size: clamp(var(--xxsm-size-font1), 3vw, var(--sm-size-font));
+  }
+
+  .signup > a {
+    font-size: clamp(var(--sm-size-font), 4vw, var(--md-size-font));
+  }
+}

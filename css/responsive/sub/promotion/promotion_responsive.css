@@ -1,0 +1,165 @@
+@charset "utf-8";
+
+@media screen and (min-width: 320px) {
+  /*섹션 공통 속성*/
+  section {
+    margin-top: clamp(100px, 31vw, 220px);
+  }
+
+  /*섹션 제목 설정*/
+  h3 {
+    font-size: clamp(var(--md-size-font), 4.9vw, var(--xxlg-size-font));
+    margin-bottom: clamp(32px, 9.4vw, 64px);
+  }
+
+  /*서브 비주얼*/
+  .sub_visual {
+    height: clamp(346px, 95vw, 540px);
+    background-size: clamp(310px, 70vw, 500px);
+    background-position: 50% clamp(150px, 38vw, 230px);
+  }
+
+  /*서브 비주얼 텍스트*/
+  .sub_visual .visual_text {
+    width: fit-content;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 40%;
+  }
+
+  .sub_visual h2 {
+    font-size: clamp(var(--lg-size-font), 3vw, var(--xxxlg-size-font));
+  }
+
+  .sub_visual p {
+    display: none;
+  }
+
+  /*첫번째 섹션*/
+  :is(.sec1, .sec2) .con_wrap {
+    gap: clamp(12px, 3.4vw, 20px);
+    row-gap: clamp(32px, 9vw, 80px);
+  }
+
+  :is(.sec1, .sec2) .content {
+    width: calc(50% - clamp(12px, 3.4vw, 20px) / 2);
+  }
+
+  :is(.sec1, .sec2) a {
+    gap: clamp(4px, 1vw, 12px);
+  }
+
+  :is(.sec1, .sec2) .thumb {
+    height: calc(43vw - clamp(6px, 1.85vw, 10px));
+    border-radius: clamp(8px, 2.5vw, 12px);
+  }
+
+  /*제목*/
+  .sec1 .content h4 {
+    font-size: clamp(var(--xsm-size-font1), 3.2vw, var(--lg-size-font1));
+  }
+
+  /*가격*/
+  .sec1 .info {
+    gap: clamp(2px, 0.3vw, 5px);
+  }
+
+  /*할인률*/
+  .sec1 .info > span {
+    font-size: clamp(var(--sm-size-font), 4vw, var(--xlg-size-font1));
+  }
+
+  /*할인된 가격*/
+  .sec1 .price > span {
+    font-size: clamp(var(--xsm-size-font), 3.5vw, var(--lg-size-font3));
+  }
+
+  /*정가 숨기기*/
+  .sec1 .price .original {
+    display: none;
+  }
+
+  /*두번째 섹션*/
+  .sec2 {
+    margin-bottom: clamp(64px, 19vw, 120px);
+  }
+
+  .sec2 .content h4 {
+    font-size: clamp(var(--xsm-size-font1), 3.1vw, var(--lg-size-font1));
+  }
+}
+
+@media screen and (min-width: 768px) {
+  :is(.sec1, .sec2) .con_wrap {
+    gap: clamp(12px, 1.1vw, 20px);
+    row-gap: clamp(32px, 4vw, 80px);
+  }
+
+  :is(.sec1, .sec2) .content {
+    width: calc(25% - clamp(12px, 1.1vw, 20px) * 3 / 4);
+  }
+
+  :is(.sec1, .sec2) .thumb {
+    height: clamp(165.38px, 21.5vw, 285px);
+    border-radius: clamp(8px, 1vw, 12px);
+  }
+
+  /*제목*/
+  .sec1 .content h4 {
+    width: 100%;
+    font-size: clamp(var(--md-size-font), 1.8vw, var(--lg-size-font1));
+  }
+
+  /*할인률*/
+  .sec1 .info > span {
+    font-size: clamp(var(--lg-size-font1), 2.2vw, var(--xlg-size-font1));
+  }
+
+  /*할인된 가격*/
+  .sec1 .price > span {
+    font-size: clamp(var(--md-size-font), 1.9vw, var(--lg-size-font3));
+  }
+
+  /*두번째 섹션*/
+  .sec2 .content h4 {
+    font-size: clamp(var(--sm-size-font), 1.7vw, var(--lg-size-font1));
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  /*서브 비주얼*/
+  .sub_visual {
+    background-size: clamp(500px, 48vw, 750px);
+    background-position: 93% 127px;
+  }
+
+  .sub_visual .visual_text {
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .sub_visual p {
+    display: block;
+    font-size: clamp(var(--sm-size-font), 1.3vw, var(--md-size-font));
+  }
+
+  /*첫번째 섹션*/
+  .sec1 .price {
+    gap: clamp(2px, 0.1vw, 6px);
+  }
+
+  /*정가 보이기*/
+  .sec1 .price .original {
+    display: block;
+    font-size: clamp(var(--sm-size-font), 1.2vw, var(--lg-size-font3));
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  /*서브 비주얼*/
+  .sub_visual .visual_text {
+    width: 1200px;
+  }
+}

@@ -1,0 +1,710 @@
+@import url(../reset.css);
+@import url(../common.css);
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable-dynamic-subset.css");
+
+/*메인*/
+/*섹션 공통 속성*/
+section {
+  width: 100%;
+  height: fit-content;
+  margin-top: 220px;
+}
+
+section h2 {
+  font-size: var(--xxlg-size-font);
+  font-weight: var(--bold-weight-font);
+}
+
+/*메인 비주얼*/
+.main_visual {
+  width: 100%;
+  height: 844px;
+  background-color: var(--black-color10);
+  overflow: hidden;
+  position: relative;
+}
+
+.main_visual .main_img {
+  width: 1573.02px;
+  position: absolute;
+  left: 48%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+}
+
+.main_visual .main_img img {
+  width: 100%;
+}
+
+.main_visual .main_text {
+  width: 576px;
+  height: 309px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main_visual .main_text img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*첫번째 섹션*/
+.sec1 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 220px auto;
+}
+
+.sec1_menu {
+  width: fit-content;
+  height: fit-content;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+}
+
+.sec1_menu a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.sec1_menu a > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 116px;
+  height: 116px;
+  border-radius: 36px;
+  background-color: var(--black-color10);
+  transition: border-radius 0.3s;
+  position: relative;
+}
+
+.sec1_menu a div img {
+  transition: opacity 0.3s;
+}
+
+.sec1_menu a div img:last-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+/*마우스 호버했을 때*/
+/*공통 속성*/
+.sec1_menu li:hover a > div {
+  border-radius: 100%;
+}
+
+.sec1_menu li:hover a > span {
+  font-weight: var(--bold-weight-font);
+}
+
+.sec1_menu li:hover a div img:last-child {
+  opacity: 100%;
+}
+
+/*각 메뉴 속성*/
+.sec1_menu li:nth-child(1):hover div {
+  background-color: var(--sec1-menu1);
+}
+
+.sec1_menu li:nth-child(2):hover div {
+  background-color: var(--sec1-menu2);
+}
+
+.sec1_menu li:nth-child(3):hover div {
+  background-color: var(--sec1-menu3);
+}
+
+.sec1_menu li:nth-child(4):hover div {
+  background-color: var(--sec1-menu4);
+}
+
+.sec1_menu li:nth-child(5):hover div {
+  background-color: var(--sec1-menu5);
+}
+
+.sec1_menu li:nth-child(6):hover div {
+  background-color: var(--sec1-menu6);
+}
+
+/*두번째 섹션*/
+.sec2 > .con {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+/*섹션 제목*/
+.sec2_title {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.see_all {
+  font-size: var(--lg-size-font);
+  font-weight: var(--medium-weight-font);
+  color: var(--black-color3);
+}
+
+.see_all:hover {
+  text-decoration: underline;
+}
+
+/*화살표 버튼 숨기기*/
+.arrow_btn {
+  display: none;
+}
+
+/*카드 슬라이드*/
+.sec2_swiper {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/*슬라이드 버튼*/
+.sec2_swiper :is(.swiper-button-prev, .swiper-button-next) {
+  width: 21px;
+  height: 46px;
+}
+
+.sec2_swiper :is(.swiper-button-prev, .swiper-button-next) img:last-child {
+  display: none;
+}
+
+/*슬라이드 버튼에 호버했을 때*/
+.sec2_swiper
+  :is(.swiper-button-prev, .swiper-button-next):hover
+  img:first-child {
+  display: none;
+}
+
+.sec2_swiper
+  :is(.swiper-button-prev, .swiper-button-next):hover
+  img:last-child {
+  display: block;
+}
+
+/*카드*/
+.sec2_swiper .swiper-wrapper {
+  width: calc(100% - 82px);
+  height: fit-content;
+  display: flex;
+  gap: 20px;
+}
+
+.sec2_swiper .swiper-slide {
+  flex: 1;
+  height: fit-content;
+  border: 1px solid var(--black-color7);
+  border-radius: 12px;
+  background-color: var(--white-color1);
+  overflow: hidden;
+  padding: 40px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+.sec2_swiper .swiper-slide a {
+  display: flex;
+  flex-direction: column;
+}
+
+/*카드 윗부분*/
+.sec2_swiper .swiper-slide .top {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 13px;
+}
+
+.sec2_swiper .swiper-slide .profile {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.sec2_swiper .swiper-slide .profile img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.sec2_swiper .swiper-slide h4 {
+  font-size: var(--sm-size-font);
+  color: var(--black-color2);
+}
+
+.sec2_swiper .swiper-slide span {
+  font-size: var(--xsm-size-font);
+  font-weight: var(--regular-weight-font);
+  color: var(--black-color4);
+  margin-left: auto;
+}
+
+/*카드 컨텐츠*/
+.sec2_swiper .swiper-slide h3 {
+  font-size: var(--lg-size-font);
+  font-weight: var(--semibold-weight-font);
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 28px;
+}
+
+.sec2_swiper .swiper-slide p {
+  font-size: var(--sm-size-font);
+  font-weight: var(--regular-weight-font);
+  color: var(--black-color2);
+  margin-bottom: 8px;
+}
+
+.sec2_swiper .swiper-slide p:last-of-type {
+  margin-bottom: 40px;
+}
+
+/*아이콘 영역*/
+.sec2_swiper .swiper-slide .bottom {
+  display: flex;
+  align-self: flex-end;
+  gap: 11px;
+}
+
+.sec2_swiper .swiper-slide .bottom > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.sec2_swiper .swiper-slide .bottom > div:nth-child(1) > div {
+  width: 13px;
+  height: 13px;
+}
+
+.sec2_swiper .swiper-slide .bottom > div:nth-child(2) > div {
+  width: 14px;
+  height: 14px;
+}
+
+.sec2_swiper .swiper-slide .bottom > div:nth-child(3) > div {
+  width: 11px;
+  height: 11px;
+  padding-top: 1px;
+}
+
+.sec2_swiper .swiper-slide .bottom > div > div > img {
+  width: 100%;
+}
+
+.sec2_swiper .swiper-slide .bottom .like img:last-child {
+  display: none;
+}
+
+/*카드에 호버했을 때*/
+.sec2_swiper .swiper-slide:hover {
+  border: 1px solid var(--sub-color1);
+  transform: translateY(-10px);
+}
+
+/*세번째 섹션*/
+.sec3 {
+  height: 255px;
+  background-color: var(--main-color4);
+  display: flex;
+  align-items: center;
+  padding: 101px 150px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.sec3 img {
+  width: 445px;
+}
+
+.sec3 div:first-child img {
+  transform: translateY(20px);
+}
+
+.sec3 div:last-child img {
+  transform: translateY(80px);
+}
+
+.sec3_content {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  gap: 32px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sec3 h3 {
+  font-size: var(--xlg-size-font);
+  font-weight: var(--bold-weight-font);
+}
+
+.sec3 a {
+  display: block;
+  padding: 12px 32px;
+  border-radius: 50px;
+  background-color: var(--main-color3);
+  font-size: var(--lg-size-font);
+  font-weight: var(--semibold-weight-font);
+  transition: background-color 0.3s;
+}
+
+/*버튼에 호버했을 때*/
+.sec3 a:hover {
+  background-color: var(--main-color2);
+}
+
+/*네번째 섹션*/
+.sec4 h2 {
+  margin-bottom: 64px;
+}
+
+.sec4 .cards {
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  gap: 40px;
+}
+
+.sec4 .card {
+  height: fit-content;
+  flex: 1;
+  padding: 36px;
+  box-sizing: border-box;
+  border: 1px solid var(--black-color7);
+  border-radius: 12px;
+  background-color: var(--black-color12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--xlg-size-font);
+  font-weight: var(--bold-weight-font);
+  transition: border, transform 0.3s;
+}
+
+.sec4 p {
+  font-size: var(--lg-size-font);
+  font-weight: var(--medium-weight-font);
+  color: var(--black-color3);
+  text-align: center;
+}
+
+.sec4 p + div {
+  width: 344px;
+  height: 377px;
+  position: relative;
+  margin-top: 10px;
+}
+
+.sec4 img {
+  width: 100%;
+  transition: opacity 0.3s;
+}
+
+.sec4 img:last-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+/*카드에 호버했을 때*/
+.sec4 .card:hover {
+  border: 1px solid var(--main-color1);
+  background-color: var(--white-color1);
+  transform: translateY(-10px);
+}
+
+.sec4 .card:hover img:last-child {
+  opacity: 100%;
+}
+
+/*다섯번째 섹션*/
+.sec5 {
+  background-color: var(--black-color12);
+  padding: 40px 0;
+  box-sizing: border-box;
+}
+
+.sec5 > .con {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sec5 .left .top {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  margin-bottom: 7px;
+}
+
+.sec5 .left .top > div {
+  width: 16px;
+  height: 16px;
+}
+
+.sec5 .left .top > div > img {
+  width: 100%;
+}
+
+.sec5 .left .top span {
+  font-size: var(--sm-size-font);
+  font-weight: var(--bold-weight-font);
+  text-transform: uppercase;
+}
+
+.sec5 h2 {
+  margin-bottom: 30px;
+}
+
+/*버튼*/
+.sec5 a {
+  padding: 10px 20px;
+  background-color: var(--black-color12);
+  border: 1px solid var(--black-color5);
+  border-radius: 50px;
+  font-size: var(--sm-size-font);
+  font-weight: var(--semibold-weight-font);
+  transition: 0.3s;
+}
+
+/*버튼에 호버했을 때*/
+.sec5 a:hover {
+  background-color: var(--black-color1);
+  border: 1px solid var(--black-color1);
+  color: var(--sub-color1);
+}
+
+/*유튜브 영역*/
+.sec5_swiper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+.sec5 .swiper-slide {
+  width: 675.45px;
+  height: 381.33px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.sec5 .swiper-slide iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*버튼*/
+.sec5 :is(.swiper-button-prev, .swiper-button-next) {
+  width: 38px;
+  height: 38px;
+  border-radius: 100%;
+  background-color: var(--white-color1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.1));
+}
+
+.sec5 .swiper-button-prev {
+  position: absolute;
+  left: -58px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sec5 .swiper-button-prev img {
+  transform: translateX(-1px);
+}
+
+.sec5 .swiper-button-next img {
+  transform: translateX(1px);
+}
+
+.sec5 .sec5_swiper img:last-child {
+  display: none;
+}
+
+/*버튼에 호버했을 때*/
+.sec5
+  .sec5_swiper
+  :is(.swiper-button-prev, .swiper-button-next):hover
+  img:first-child {
+  display: none;
+}
+
+.sec5
+  .sec5_swiper
+  :is(.swiper-button-prev, .swiper-button-next):hover
+  img:last-child {
+  display: block;
+}
+
+/*여섯번째 & 일곱번째 & 여덟번째 섹션*/
+.boardgame_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 64px;
+}
+
+.con_wrapper {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  gap: 20px;
+}
+
+.boardgame {
+  flex: 1;
+}
+
+.boardgame > a {
+  display: block;
+  width: 100%;
+  height: fit-content;
+}
+
+.boardgame .thumb {
+  width: 100%;
+  height: 285px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boardgame .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.boardgame .thumb + div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 6px;
+  box-sizing: border-box;
+}
+
+.boardgame h3 {
+  font-size: var(--lg-size-font);
+  font-weight: var(--semibold-weight-font);
+}
+
+.boardgame .review {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  position: relative;
+}
+
+.boardgame .review > div {
+  width: 70px;
+  height: 15px;
+}
+
+.boardgame .review > div > img {
+  width: 100%;
+}
+
+.boardgame span {
+  font-size: var(--xsm-size-font);
+  color: var(--black-color4);
+}
+
+.boardgame > a > div > span {
+  display: block;
+  width: 285px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*마우스 호버했을 때*/
+.boardgame:hover .thumb > img {
+  transform: scale(1.05);
+}
+
+/*아홉번째 섹션*/
+.sec9 {
+  height: 255px;
+  background-color: var(--sub-color4);
+  display: flex;
+  align-items: center;
+  padding: 101px 150px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.sec9 img {
+  width: 470px;
+}
+
+.sec9 div:first-child img {
+  transform: translateY(55px);
+}
+
+.sec9_content {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  gap: 32px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sec9 h3 {
+  font-size: var(--xlg-size-font);
+  font-weight: var(--bold-weight-font);
+}
+
+.sec9 a {
+  display: block;
+  padding: 12px 32px;
+  border-radius: 50px;
+  background-color: var(--sub-color3);
+  font-size: var(--lg-size-font);
+  font-weight: var(--semibold-weight-font);
+  transition: background-color 0.3s;
+}
+
+/*버튼에 호버했을 때*/
+.sec9 a:hover {
+  background-color: var(--sub-color2);
+}

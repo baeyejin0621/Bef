@@ -1,0 +1,234 @@
+@import url(../../reset.css);
+@import url(../../common.css);
+
+/*메인*/
+/*섹션 공통 속성*/
+section {
+  width: 100%;
+  height: fit-content;
+  margin-top: 320px;
+}
+
+:is(.sec1, .sec3, .sec4, .sec5) .con {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 160px;
+}
+
+h3 {
+  font-size: var(--lg-size-font3);
+  font-weight: var(--medium-weight-font);
+  text-align: center;
+}
+
+/*서브 비주얼*/
+.sub_visual {
+  width: 100%;
+  height: 540px;
+  position: relative;
+  overflow: hidden;
+  background: var(--black-color10)
+    url(../../../img/sub/service_guide/service_guide1/sub_visual/sub_img.png)
+    no-repeat;
+  background-size: 821px;
+  background-position: 87% 0;
+}
+
+.sub_visual .left_text {
+  width: 1200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sub_visual h2 {
+  color: var(--main-color1);
+  font-size: var(--xxxlg-size-font);
+  font-weight: var(--extrabold-weight-font);
+}
+
+.sub_visual p {
+  font-weight: var(--regular-weight-font);
+  opacity: 75%;
+  margin-top: 7px;
+}
+
+/*첫번째 섹션*/
+.sec1 .con {
+  gap: 60px;
+}
+
+.sec1 .top_text {
+  width: 490px;
+}
+
+.sec1 .top_text img {
+  width: 100%;
+}
+
+.sec1 h3 {
+  text-align: center;
+  line-height: 2;
+}
+
+/*두번째 섹션*/
+.sec2 {
+  height: 900px;
+  overflow: hidden;
+}
+
+.sec2 video {
+  width: 100%;
+}
+
+/*세번째 섹션*/
+.sec3 .con {
+  gap: 220px;
+}
+
+.sec3 .content_area {
+  width: 100%;
+  height: 470px;
+}
+
+/*카드들*/
+.sec3 .cards {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.sec3 .cards > div {
+  width: 320px;
+  height: 470px;
+  border: 3px solid var(--black-color7);
+  background-color: var(--white-color1);
+  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.1));
+  border-radius: 20px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+/*회색 카드 각각 위치 및 회전 각도 지정*/
+.sec3 .cards > div:nth-child(1) {
+  transform: translate(calc(-50% - 5px), calc(-50% + 10px)) rotate(-15deg);
+}
+
+.sec3 .cards > div:nth-child(2) {
+  transform: translate(calc(-50% + 15px), calc(-50% + 10px)) rotate(10deg);
+}
+
+.sec3 .cards > div:nth-child(3) {
+  transform: translate(calc(-50% - 7px), calc(-50% + 2px)) rotate(-5deg);
+}
+
+.sec3 .cards > div:nth-child(4) {
+  transform: translate(calc(-50%), calc(-50% + 20px)) rotate(5deg);
+}
+
+.sec3 .cards > div:nth-child(5) {
+  transform: translate(calc(-50% + 10px), calc(-50%)) rotate(20deg);
+}
+
+.sec3 .cards > div:nth-child(6) {
+  transform: translate(calc(-50% + 20px), calc(-50% - 7px)) rotate(-8deg);
+}
+
+.sec3 .cards > div:nth-child(7) {
+  transform: translate(calc(-50% + 15px), calc(-50% - 10px)) rotate(9deg);
+}
+
+/*공격&방어 카드 공통 속성*/
+.sec3 :is(.attack, .defend) {
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transform: translate(-50%, -50%);
+}
+
+.sec3 :is(.attack, .defend) h4 {
+  font-size: var(--xlg-size-font);
+  font-weight: var(--bold-weight-font);
+}
+
+.sec3 :is(.attack, .defend) p {
+  text-align: center;
+  color: var(--black-color3);
+}
+
+.sec3 :is(.attack, .defend) .img_area {
+  width: fit-content;
+  height: 230px;
+}
+
+.sec3 :is(.attack, .defend) img {
+  height: 100%;
+}
+
+/*공격 카드*/
+.sec3 .cards > .attack {
+  border: 3px solid var(--main-color1);
+}
+
+.sec3 .cards > .attack h4 {
+  color: var(--main-color1);
+}
+
+/*방어 카드*/
+.sec3 .cards > .defend {
+  border: 3px solid var(--sub-color1);
+}
+
+.sec3 .cards > .defend h4 {
+  color: var(--sub-color1);
+}
+
+/*네번째 섹션*/
+.sec4 {
+  margin-bottom: 120px;
+}
+
+.sec4 .content {
+  width: 100%;
+  height: fit-content;
+  padding: 32px 30px;
+  box-sizing: border-box;
+  background-color: var(--white-color1);
+  border: 1px solid var(--black-color7);
+  border-radius: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sec4 .content > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--lg-size-font2);
+  color: var(--black-color2);
+}
+
+.sec4 .content span {
+  font-size: 60px;
+  font-weight: var(--extrabold-weight-font);
+}
+
+.sec4 .left_con span {
+  color: var(--black-color1);
+}
+
+.sec4 .right_con span {
+  color: var(--main-color1);
+}
+
+.sec4 .right_con {
+  border-left: 1px solid var(--black-color7);
+}

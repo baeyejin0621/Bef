@@ -1,0 +1,212 @@
+@import url(../../reset.css);
+
+/*공통 영역*/
+.container {
+  width: 473px;
+  height: fit-content;
+  margin: 140px auto 0;
+}
+
+/*헤더*/
+header {
+  margin-bottom: 64px;
+}
+
+/*로고*/
+h1 {
+  width: 64px;
+  height: 49px;
+  margin: 0 auto;
+}
+
+h1 a {
+  width: 100%;
+}
+
+h1 img {
+  width: 100%;
+}
+
+/*메인*/
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 68px;
+}
+
+/*폼 양식*/
+.form_box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/*아이디, 비밀번호 입력*/
+form {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+form label {
+  width: 100%;
+  height: fit-content;
+}
+
+form input {
+  width: 100%;
+  height: fit-content;
+  padding: 12px 16px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid var(--black-color14);
+  font-size: var(--md-size-font);
+}
+
+form input::placeholder {
+  color: var(--black-color4);
+}
+
+/*로그인 버튼*/
+form input[type="submit"] {
+  font-weight: var(--semibold-weight-font);
+  background-color: var(--black-color7);
+  color: var(--white-color1);
+  margin-top: 20px;
+}
+
+/*로그인 버튼 아래*/
+.bottom_line {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-size: var(--sm-size-font);
+  color: var(--black-color16);
+}
+
+/*로그인 유지 버튼*/
+.remain {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.remain input {
+  display: none;
+}
+
+.remain label {
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background-color: var(--black-color7);
+  cursor: pointer;
+}
+
+.remain label > img {
+  display: none;
+  width: 60%;
+}
+
+/*체크박스 체크했을 때*/
+.remain input:checked + label {
+  background-color: var(--main-color1);
+}
+
+.remain input:checked + label > img {
+  display: block;
+}
+
+.remain input:checked ~ span {
+  color: var(--black-color2);
+}
+
+/*아이디, 비밀번호 찾기*/
+.find {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.find > a {
+  color: var(--black-color16);
+  display: flex;
+  align-items: center;
+}
+
+.find > a:first-child::after {
+  content: "line";
+  font-size: 0;
+  display: block;
+  width: 1px;
+  height: 10px;
+  background-color: var(--black-color5);
+  margin-left: 12px;
+}
+
+/*간편 로그인*/
+.sns {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+}
+
+.sns > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 100%;
+}
+
+.sns > a > img {
+  width: 100%;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+/*호버하면*/
+.sns > a:hover > img {
+  filter: brightness(0.92);
+}
+
+/*회원가입*/
+.signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.signup > span {
+  font-size: var(--sm-size-font);
+  color: var(--black-color16);
+}
+
+.signup > a {
+  display: block;
+  width: 100%;
+  height: fit-content;
+  padding: 12px 0;
+  border-radius: 4px;
+  border: 1px solid var(--black-color5);
+  text-align: center;
+  font-weight: var(--semibold-weight-font);
+  color: var(--black-color3);
+  transition: 0.3s;
+}
+
+/*버튼에 호버하면*/
+.signup > a:hover {
+  background-color: var(--sub-color1);
+  border: 1px solid var(--sub-color1);
+  color: var(--white-color1);
+}

@@ -1,0 +1,175 @@
+@charset "utf-8";
+
+@media screen and (min-width: 320px) {
+  /*섹션 공통 속성*/
+  section {
+    margin-top: clamp(100px, 31vw, 220px);
+  }
+
+  /*섹션 제목 설정*/
+  h3 {
+    font-size: clamp(var(--md-size-font), 4.9vw, var(--xxlg-size-font));
+  }
+
+  /*서브 비주얼*/
+  .sub_visual {
+    height: clamp(346px, 95vw, 540px);
+    background-size: clamp(300px, 70vw, 500px);
+    background-position: 50% clamp(170px, 50vw, 260px);
+  }
+
+  /*서브 비주얼 텍스트*/
+  .sub_visual .visual_text {
+    width: fit-content;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 40%;
+  }
+
+  .sub_visual h2 {
+    font-size: clamp(var(--lg-size-font), 3vw, var(--xxxlg-size-font));
+  }
+
+  .sub_visual p {
+    display: none;
+  }
+
+  /*첫번째 섹션*/
+  /*지도 영역*/
+
+  /*리뷰 영역*/
+  .sec1 .review_area {
+    gap: clamp(12px, 3.5vw, 24px);
+  }
+
+  /*제목*/
+  .sec1 .top {
+    gap: clamp(4px, 1vw, 8px);
+  }
+
+  .sec1 .top .left {
+    gap: clamp(1px, 0.2vw, 2px);
+    font-size: clamp(var(--xsm-size-font), 3.5vw, var(--md-size-font));
+  }
+
+  .sec1 .top .left > div {
+    width: clamp(16px, 4.7vw, 24px);
+    height: clamp(16px, 4.7vw, 24px);
+  }
+
+  /*리뷰 평균*/
+  .sec1 .top .right {
+    gap: clamp(6px, 1.5vw, 8px);
+  }
+
+  .sec1 .top .average > div {
+    width: clamp(10px, 3vw, 14px);
+    height: clamp(10px, 3vw, 14px);
+  }
+
+  .sec1 .top .average > span {
+    font-size: clamp(var(--xxsm-size-font), 3vw, var(--sm-size-font));
+    gap: clamp(6px, 1.5vw, 8px);
+  }
+
+  .sec1 .top .average > span::after {
+    height: clamp(8px, 2.2vw, 10px);
+  }
+
+  .sec1 .top .right > a {
+    font-size: clamp(var(--xxsm-size-font), 3vw, var(--sm-size-font));
+  }
+
+  /*리뷰*/
+  .sec1 .bottom {
+    gap: clamp(6px, 1.5vw, 16px);
+  }
+
+  .sec1 .review {
+    gap: clamp(4px, 1vw, 16px);
+    border-radius: clamp(4px, 1vw, 8px);
+    padding: clamp(8px, 2vw, 20px);
+  }
+
+  /*리뷰 2개만 남기기*/
+  .sec1 .review:is(:nth-child(3), :nth-child(4)) {
+    display: none;
+  }
+
+  /*프로필*/
+  .sec1 .profile {
+    width: clamp(13px, 4vw, 24px);
+    height: clamp(13px, 4vw, 24px);
+  }
+
+  /*리뷰 내용*/
+  .sec1 .content {
+    gap: clamp(4px, 1vw, 12px);
+  }
+
+  .sec1 .content .top_line {
+    gap: clamp(3px, 0.5vw, 4px);
+  }
+
+  .sec1 .content .top_line > span {
+    font-size: clamp(var(--xxsm-size-font1), 2.5vw, var(--sm-size-font));
+  }
+
+  .sec1 .content .personal > div {
+    width: clamp(7px, 2vw, 10px);
+    height: clamp(7px, 2vw, 10px);
+  }
+
+  .sec1 .content .personal > span {
+    font-size: clamp(var(--xxxsm-size-font), 2vw, var(--xsm-size-font));
+  }
+
+  .sec1 .content > span {
+    width: clamp(100px, 27vw, 217px);
+    font-size: clamp(var(--xxsm-size-font2), 2.2vw, var(--sm-size-font));
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  /*서브 비주얼*/
+  .sub_visual {
+    background-size: clamp(400px, 38vw, 720.26px);
+    background-position: 90% 140px;
+  }
+
+  .sub_visual .visual_text {
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .sub_visual p {
+    display: block;
+    font-size: clamp(var(--sm-size-font), 1.3vw, var(--md-size-font));
+  }
+
+  /*첫번째 섹션*/
+  /*리뷰 영역*/
+  .sec1 .bottom {
+    gap: clamp(8px, 0.5vw, 16px);
+  }
+
+  .sec1 .review:is(:nth-child(3)) {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1334px) {
+  /*첫번째 섹션*/
+  .sec1 .review:is(:nth-child(4)) {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  /*서브 비주얼*/
+  .sub_visual .visual_text {
+    width: 1200px;
+  }
+}

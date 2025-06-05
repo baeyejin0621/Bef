@@ -1,0 +1,584 @@
+@import url(../../reset.css);
+@import url(../../common.css);
+
+/*메인*/
+/*섹션 공통 설정*/
+section {
+  width: 100%;
+  height: fit-content;
+  margin-top: 220px;
+}
+
+h3 {
+  font-size: var(--xxlg-size-font);
+  font-weight: var(--bold-weight-font);
+}
+
+/*서브 비주얼*/
+.sub_visual {
+  width: 100%;
+  height: 540px;
+  position: relative;
+  overflow: hidden;
+  background: var(--black-color10)
+    url(../../../img/sub/find_bef/find_bef1/sub_visual/visual_img.png) no-repeat;
+  background-size: 720.26px;
+  background-position: 90% -70%;
+}
+
+.visual_text {
+  width: 1200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sub_visual h2 {
+  color: var(--main-color1);
+  font-size: var(--xxxlg-size-font);
+  font-weight: var(--extrabold-weight-font);
+}
+
+.sub_visual p {
+  font-size: var(--md-size-font);
+  font-weight: var(--regular-weight-font);
+  opacity: 75%;
+  margin-top: 7px;
+}
+
+/*첫번째 섹션*/
+.sec1 .con {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/*위치 선택*/
+.sec1 .select_bar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sec1 .top {
+  display: flex;
+  gap: 20px;
+}
+
+.sec1 select {
+  width: 386px;
+  font-size: var(--lg-size-font);
+  font-weight: var(--regular-weight-font);
+  background: url(../../../img/sub/find_bef/find_bef1/sec1/arrow_down.svg)
+    no-repeat;
+  background-position: 95% 50%;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 1px solid var(--black-color4);
+  cursor: pointer;
+}
+
+.sec1 .bottom {
+  width: 100%;
+  height: fit-content;
+  overflow: hidden;
+  display: flex;
+  gap: 20px;
+}
+
+.sec1 .selected {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  border-radius: 8px;
+  gap: 12px;
+  background-color: var(--black-color10);
+}
+
+.sec1 .selected > span {
+  color: var(--black-color2);
+}
+
+.sec1 .selected > button {
+  width: 16px;
+  height: 16px;
+}
+
+.sec1 .selected > button > img {
+  width: 100%;
+}
+
+/*내 위치 근처 모임*/
+.sec1 .post_area {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sec1 .post_area > h4 {
+  color: var(--black-color3);
+  font-size: var(--lg-size-font);
+}
+
+/*슬라이드*/
+.sec1 .swiper {
+  position: relative;
+}
+
+.sec1 .swiper-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+/*카드*/
+.sec1 .swiper-slide {
+  width: 590px;
+}
+
+.sec1 .swiper-slide > a {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  gap: 24px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  border: 1px solid var(--black-color7);
+  transition: 0.3s;
+}
+
+/*카드 윗부분*/
+.sec1 .swiper-slide .top {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sec1 .swiper-slide .profile_line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sec1 .swiper-slide .profile {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/*프로필 이미지*/
+.sec1 .swiper-slide .profile > div {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sec1 .swiper-slide .profile > div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*닉네임*/
+.sec1 .swiper-slide .profile > span {
+  color: var(--black-color2);
+}
+
+/*게시글 등록 시간*/
+.sec1 .swiper-slide .profile_line > span {
+  font-size: var(--xsm-size-font);
+  color: var(--black-color4);
+}
+
+/*글 제목*/
+.sec1 .swiper-slide .top h4 {
+  font-size: var(--lg-size-font1);
+  font-weight: var(--semibold-weight-font);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/*글 내용*/
+.sec1 .swiper-slide .middle {
+  font-weight: var(--regular-weight-font);
+  color: var(--black-color15);
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+/*위치만 강조*/
+.sec1 .swiper-slide .middle > span:nth-child(1) {
+  font-weight: var(--semibold-weight-font);
+  color: var(--black-color2);
+}
+
+/*보드게임 종류 많으면 말줄임표*/
+.sec1 .swiper-slide .middle > span:nth-child(3) {
+  display: block;
+  width: 386px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*info*/
+.sec1 .swiper-slide .bottom {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.sec1 .swiper-slide .info {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--black-color4);
+  font-size: var(--sm-size-font);
+  font-weight: var(--regular-weight-font);
+}
+
+.sec1 .swiper-slide .info > div {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sec1 .swiper-slide .info > div > img {
+  width: 100%;
+}
+
+/*하트 숨기기*/
+.sec1 .swiper-slide .bottom .info:nth-of-type(2) img:last-child {
+  display: none;
+}
+
+/*슬라이드 화살표*/
+.sec1 .swiper-wrapper ~ div {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.sec1 .swiper-wrapper ~ div > img {
+  width: 100%;
+}
+
+.sec1 .swiper-button-prev {
+  left: -52px;
+}
+
+.sec1 .swiper-button-next {
+  right: -52px;
+}
+
+/*카드에 호버했을 때*/
+.sec1 .swiper-slide:hover > a {
+  border: 1px solid var(--sub-color1);
+}
+
+/*화살표에 호버했을 때*/
+.sec1 .swiper-wrapper ~ div:hover {
+  filter: brightness(0.7);
+}
+
+/*내 위치가 등록되지 않았을 때*/
+.none {
+  width: 100%;
+  height: 50px;
+  font-weight: var(--regular-weight-font);
+  color: var(--black-color3);
+  text-align: center;
+  line-height: 50px;
+  border: 2px dashed var(--black-color7);
+  border-radius: 8px;
+}
+
+/*두번째 섹션*/
+.sec2 {
+  margin-bottom: 160px;
+}
+
+.sec2 h3 {
+  margin-bottom: 48px;
+}
+
+.sec2 .con_wrap {
+  width: 100%;
+  height: fit-content;
+}
+
+/*게시글 영역*/
+.sec2 .post {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/*게시글*/
+.sec2 .post > div {
+  width: calc(50% - 10px);
+  height: fit-content;
+  padding: 20px;
+  border: 1px solid var(--black-color7);
+  box-sizing: border-box;
+  border-radius: 12px;
+  display: flex;
+  gap: 20px;
+}
+
+/*사진 영역*/
+.sec2 .post .right {
+  width: 142px;
+  height: 142px;
+  background-color: var(--black-color14);
+  border-radius: 8px;
+  display: none;
+}
+
+/*글자 영역*/
+.sec2 .post .left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sec2 .post .top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sec2 .post .top h4 {
+  font-size: var(--lg-size-font);
+  font-weight: var(--semibold-weight-font);
+}
+
+.sec2 .post .top span {
+  font-size: var(--xsm-size-font);
+  font-weight: var(--regular-weight-font);
+  color: var(--black-color4);
+  white-space: nowrap;
+}
+
+/*내용*/
+.sec2 .post .content {
+  display: flex;
+  flex-direction: column;
+  color: var(--black-color16);
+}
+
+.sec2 .post input:focus {
+  background-color: #f5f5f5;
+}
+
+/*제목*/
+.sec2 .post .top > input {
+  width: 70%;
+  font-size: var(--lg-size-font);
+  font-weight: var(--semibold-weight-font);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.sec2 .post .top > input::placeholder {
+  font-size: var(--lg-size-font);
+  font-weight: var(--semibold-weight-font);
+  color: var(--black-color16);
+}
+
+/*날짜 & 시간*/
+.sec2 .post .time_line {
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.sec2 .post .time_line input {
+  width: 100px;
+  font-size: var(--sm-size-font);
+  font-weight: var(--regular-weight-font);
+  color: var(--black-color16);
+  background: url(../../../img/sub/find_bef/find_bef1/sec2/arrow_down.svg)
+    no-repeat;
+  background-position: 99% 50%;
+}
+
+.sec2 .post .time_line > span {
+  font-size: var(--xxsm-size-font);
+  color: var(--black-color4);
+}
+
+.sec2 .post .time_line input::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.sec2 .post .hour {
+  display: flex;
+  gap: 10px;
+}
+
+.sec2 .post .hour > span {
+  color: var(--black-color3);
+}
+
+/*보드게임 선택*/
+.sec2 .post select {
+  color: var(--black-color16);
+  width: 115px;
+  padding-right: 10px;
+  background: url(../../../img/sub/find_bef/find_bef1/sec2/arrow_down.svg)
+    no-repeat;
+  background-position: 95% 50%;
+  padding-left: 8px;
+  margin-bottom: 1px;
+}
+
+/*인원수*/
+.sec2 .post .content > input {
+  width: 70%;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.sec2 .post .content > input::placeholder {
+  color: var(--black-color16);
+}
+
+/*버튼 영역*/
+.sec2 .left .btn_area {
+  display: flex;
+  justify-content: flex-end;
+  gap: 7px;
+}
+
+.sec2 .left .btn_area > button {
+  padding: 8px 28px;
+  font-size: var(--sm-size-font);
+  font-weight: var(--regular-weight-font);
+  background-color: var(--black-color14);
+  border-radius: 8px;
+  color: var(--black-color3);
+  transition: 0.3s;
+}
+
+/*버튼에 호버하면*/
+.sec2 .left .btn_area > button:hover {
+  background-color: var(--black-color4);
+  color: var(--white-color1);
+}
+
+/*수정, 삭제 버튼 숨겨놓기*/
+.sec2 .left .btn_area > button:not(:last-child) {
+  display: none;
+}
+
+/*모임 추가 버튼*/
+.sec2 .plus {
+  width: calc(50% - 10px);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: center;
+  border: 2px dashed var(--black-color7);
+  border-radius: 8px;
+  font-size: var(--md-size-font);
+  font-weight: var(--regular-weight-font);
+  color: var(--black-color3);
+}
+
+.sec2 .plus > div {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sec2 .plus > div > img {
+  width: 100%;
+}
+
+/*레이어창*/
+.pop_up_bg {
+  position: fixed;
+  top: 0;
+  height: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2px);
+  display: none;
+}
+
+.pop_up_bg > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 28px 20px 16px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  border: 1px solid var(--black-color10);
+  background-color: var(--white-color1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.pop_up_bg > div h3 {
+  font-size: var(--md-size-font);
+  font-weight: var(--medium-weight-font);
+  white-space: nowrap;
+  margin: 0;
+}
+
+.pop_up_bg > div .btn_area {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  gap: 16px;
+}
+
+.pop_up_bg > div button {
+  width: fit-content;
+  height: fit-content;
+  padding: 10px 60px;
+  color: var(--white-color1);
+  background-color: var(--main-color1);
+  border: 1px solid var(--main-color1);
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+/*pop-up1*/
+.pop_up1 button {
+  flex: 1;
+}
+
+.pop_up1 .no {
+  border: 1px solid var(--main-color1);
+  color: var(--main-color1);
+  background-color: var(--white-color1);
+  box-sizing: border-box;
+}

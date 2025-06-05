@@ -1,0 +1,246 @@
+@charset "utf-8";
+
+:root {
+  /*색상*/
+  --main-color1: #ea5c5c;
+  --main-color2: #f38686;
+  --main-color3: #fab3b3;
+  --main-color4: #fff6f6;
+  --sub-color1: #49ceb7;
+  --sub-color2: #50d4bd;
+  --sub-color3: #98e6d9;
+  --sub-color4: #f6fbfa;
+  --star-color: #ffe476;
+  --main-gray: #e1dbdb;
+  --sec1-menu1: #f2fcf5;
+  --sec1-menu2: #fefdf1;
+  --sec1-menu3: #fef7f1;
+  --sec1-menu4: #faf4fe;
+  --sec1-menu5: #f1f6fd;
+  --sec1-menu6: #fff5f7;
+  --black-color1: #222;
+  --black-color2: #555;
+  --black-color3: #777;
+  --black-color4: #aaa;
+  --black-color5: #bbb;
+  --black-color6: #ccc;
+  --black-color7: #ddd;
+  --black-color8: #d3d3d3;
+  --black-color9: #f3f3f3;
+  --black-color10: #f5f5f5;
+  --black-color11: #fafafa;
+  --black-color12: #fbfbfb;
+  --black-color13: #fdfdfd;
+  --black-color14: #eee;
+  --black-color15: #666;
+  --black-color16: #999;
+  --white-color1: #fff;
+  /*글자 크기*/
+  --xxxlg-size-font1: 80px;
+  --xxxlg-size-font: 40px;
+  --xxlg-size-font: 30px;
+  --xlg-size-font1: 28px;
+  --xlg-size-font: 26px;
+  --lg-size-font3: 24px;
+  --lg-size-font2: 22px;
+  --lg-size-font1: 20px;
+  --lg-size-font: 18px;
+  --md-size-font: 16px;
+  --sm-size-font: 14px;
+  --xsm-size-font: 12px;
+  --xsm-size-font1: 11px;
+  --xxsm-size-font: 10px;
+  --xxsm-size-font1: 9px;
+  --xxsm-size-font2: 8px;
+  --xxxsm-size-font: 7px;
+  /*글자 두께*/
+  --black-weight-font: 900;
+  --extrabold-weight-font: 800;
+  --bold-weight-font: 700;
+  --semibold-weight-font: 600;
+  --medium-weight-font: 500;
+  --regular-weight-font: 400;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black-color1);
+}
+
+img {
+  border: none;
+  display: block;
+}
+
+input,
+textarea {
+  padding: 0;
+  border: none;
+  outline: none;
+  color: var(--black-color1);
+  font-family: "Pretendard Variable", "Pretendard", -apple-system,
+    BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Malgun Gothic",
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+button {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  color: var(--black-color1);
+  font-family: "Pretendard Variable", "Pretendard", -apple-system,
+    BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Malgun Gothic",
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-size: var(--md-size-font);
+  cursor: pointer;
+}
+
+select {
+  outline: none;
+  color: var(--black-color1);
+  font-family: "Pretendard Variable", "Pretendard", -apple-system,
+    BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Malgun Gothic",
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  appearance: none;
+  border: none;
+}
+
+/*기본 글자 설정*/
+body {
+  font-family: "Pretendard Variable", "Pretendard", -apple-system,
+    BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Malgun Gothic",
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-size: var(--md-size-font);
+  font-weight: var(--medium-weight-font);
+  line-height: 1.2;
+}
