@@ -218,7 +218,6 @@ section h2 {
   border-radius: 12px;
   background-color: var(--white-color1);
   overflow: hidden;
-  padding: 40px;
   box-sizing: border-box;
   transition: 0.3s;
 }
@@ -226,6 +225,7 @@ section h2 {
 .sec2_swiper .swiper-slide a {
   display: flex;
   flex-direction: column;
+  padding: 40px;
 }
 
 /*카드 윗부분*/

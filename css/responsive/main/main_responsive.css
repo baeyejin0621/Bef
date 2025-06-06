@@ -69,6 +69,9 @@
 
   .sec2_swiper .swiper-slide {
     width: clamp(246px, 75vw, 350px);
+  }
+
+  .sec2_swiper .swiper-slide a {
     padding: clamp(28px, 8.7vw, 40px) clamp(20px, 6vw, 40px);
   }
 
@@ -435,7 +438,7 @@
   }
 
   /*카드*/
-  .sec2_swiper .swiper-slide {
+  .sec2_swiper .swiper-slide > a {
     padding: clamp(30px, 2.9vw, 40px);
   }
 
