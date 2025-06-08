@@ -22,6 +22,7 @@ header .con_wrap {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
+  position: relative;
 }
 
 /*로고*/
@@ -45,6 +46,10 @@ h1 img {
   width: fit-content;
   height: 100%;
   font-size: var(--md-size-font);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #gnb > ul {
@@ -67,6 +72,7 @@ h1 img {
   display: block;
   width: 100%;
   height: 100%;
+  white-space: nowrap;
 }
 
 /*2차 메뉴*/
@@ -152,10 +158,13 @@ header .icons button:first-of-type {
   padding: 2px 0 0;
   display: flex;
   border-bottom: 2px solid transparent;
+  box-sizing: border-box;
+  position: relative;
 }
 
 header .icons button:first-of-type > input {
-  width: 140px;
+  width: 8vw;
+  font-size: var(--md-size-font);
   display: none;
 }
 
@@ -424,6 +433,11 @@ footer .copy {
   }
 
   /*검색*/
+  header .icons button:first-of-type > input::placeholder {
+    font-size: clamp(var(--sm-size-font), 3vw, var(--md-size-font));
+  }
+
+  /*검색 아이콘*/
   header .icons button:first-of-type > img {
     width: clamp(20px, 6vw, 28px);
     height: clamp(20px, 6vw, 28px);
@@ -563,7 +577,9 @@ footer .copy {
   #gnb {
     width: min(707px, 70%);
     display: block;
-    position: static;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 
   #gnb > ul {
