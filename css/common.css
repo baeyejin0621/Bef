@@ -438,12 +438,12 @@ footer .copy {
 
   /*검색*/
   header .icons button:first-of-type div {
-    width: clamp(100px, 33vw, 300px);
+    width: clamp(200px, 33vw, 300px);
     padding: clamp(4px, 1vw, 10px) clamp(12px, 3vw, 20px);
     position: absolute;
-    left: 50%;
+    right: 0;
     bottom: 0;
-    transform: translate(-50%, 100%);
+    transform: translateY(100%);
     z-index: -1;
     border-radius: 100px;
     border: 1px solid var(--black-color14);
@@ -451,11 +451,11 @@ footer .copy {
   }
 
   header .icons button:first-of-type input {
-    font-size: clamp(var(--sm-size-font), 3vw, var(--md-size-font));
+    font-size: clamp(var(--xsm-size-font1), 2vw, var(--md-size-font));
   }
 
   header .icons button:first-of-type input::placeholder {
-    font-size: clamp(var(--sm-size-font), 3vw, var(--md-size-font));
+    font-size: clamp(var(--xsm-size-font1), 2vw, var(--md-size-font));
   }
 
   /*검색 아이콘*/

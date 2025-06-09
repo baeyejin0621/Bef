@@ -3,16 +3,9 @@
 //메인 페이지 - 두번째 섹션 슬라이드
 let sec2Swiper = new Swiper(".sec2_swiper", {
   spaceBetween: 20,
+  slidesPerGroup: 1,
+  centeredSlide: true,
   loop: true,
-  effect: "cards",
-  centerMode: true,
-  grabCursor: true,
-  cardsEffect: {
-    // prev: {
-    //   opacity: 0,
-    // },
-    slideShadows: false,
-  },
 
   //화살표
   navigation: {
@@ -30,12 +23,12 @@ let sec2Swiper = new Swiper(".sec2_swiper", {
 
   //반응형
   breakpoints: {
-    320: {},
+    320: {
+      slidesPerView: 1,
+    },
 
     768: {
-      effect: false,
       slidesPerView: 2,
-      slidesPerGroup: 1,
     },
 
     1024: {
@@ -68,28 +61,5 @@ let sec5Swiper = new Swiper(".sec5_swiper", {
   },
 
   //반응형
-  breakpoints: {
-    320: {
-      effect: "cards",
-      grabCursor: true,
-
-      //화살표
-      navigation: {
-        enabled: false,
-      },
-    },
-
-    768: {
-      effect: false,
-    },
-
-    1024: {
-      //화살표
-      navigation: {
-        enabled: true,
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    },
-  },
+  breakpoints: {},
 });

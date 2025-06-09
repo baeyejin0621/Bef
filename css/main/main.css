@@ -176,7 +176,6 @@ section h2 {
 .sec2_swiper {
   width: 100%;
   height: fit-content;
-  align-items: center;
 }
 
 /*슬라이드 버튼*/
@@ -217,9 +216,6 @@ section h2 {
 .sec2_swiper .swiper-wrapper {
   width: calc(100% - 82px);
   height: fit-content;
-  display: flex;
-  align-items: flex-end;
-  margin: auto 0;
 }
 
 .sec2_swiper .swiper-slide {
@@ -404,7 +400,7 @@ section h2 {
 .sec4 .card {
   height: fit-content;
   flex: 1;
-  padding: 36px;
+  padding: 60px;
   box-sizing: border-box;
   border: 1px solid var(--black-color7);
   border-radius: 12px;
@@ -466,6 +462,7 @@ section h2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .sec5 .left .top {
@@ -514,10 +511,17 @@ section h2 {
 
 /*유튜브 영역*/
 .sec5_swiper {
+  width: fit-content;
+  height: fit-content;
   display: flex;
   align-items: center;
   gap: 20px;
-  position: relative;
+  margin: 0;
+}
+
+.sec5_swiper .swiper-wrapper {
+  width: fit-content;
+  height: fit-content;
 }
 
 .sec5 .swiper-slide {
@@ -545,11 +549,14 @@ section h2 {
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.1));
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+}
+
+.sec5 :is(.swiper-button-prev, .swiper-button-next)::after {
+  display: none;
 }
 
 .sec5 .swiper-button-prev {
-  left: -58px;
+  left: 440px;
 }
 
 .sec5 .swiper-button-prev img {
@@ -557,29 +564,23 @@ section h2 {
 }
 
 .sec5 .swiper-button-next {
-  right: -58px;
+  right: -40px;
 }
 
 .sec5 .swiper-button-next img {
   transform: translateX(1px);
 }
 
-.sec5 .sec5_swiper img:last-child {
+.sec5 :is(.swiper-button-prev, .swiper-button-next) img:last-child {
   display: none;
 }
 
 /*버튼에 호버했을 때*/
-.sec5
-  .sec5_swiper
-  :is(.swiper-button-prev, .swiper-button-next):hover
-  img:first-child {
+.sec5 :is(.swiper-button-prev, .swiper-button-next):hover img:first-child {
   display: none;
 }
 
-.sec5
-  .sec5_swiper
-  :is(.swiper-button-prev, .swiper-button-next):hover
-  img:last-child {
+.sec5 :is(.swiper-button-prev, .swiper-button-next):hover img:last-child {
   display: block;
 }
 

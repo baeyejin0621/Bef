@@ -66,15 +66,15 @@
   }
 
   .sec2_swiper {
-    width: clamp(246px, 75vw, 350px);
+    width: 100%;
   }
 
   .sec2_swiper .swiper-wrapper {
-    width: clamp(246px, 75vw, 350px);
+    width: 100%;
   }
 
   .sec2_swiper .swiper-slide {
-    width: clamp(246px, 75vw, 350px);
+    width: clamp(260px, 62vw, 350px);
   }
 
   .sec2_swiper .swiper-slide a {
@@ -151,11 +151,12 @@
   }
 
   .sec4 .card {
-    font-size: clamp(var(--sm-size-font), 4.3vw, var(--xlg-size-font));
+    padding: clamp(32px, 10vw, 60px) clamp(32px, 10vw, 80px);
+    font-size: clamp(var(--sm-size-font), 4.3vw, var(--lg-size-font));
   }
 
   .sec4 p {
-    font-size: clamp(var(--xxsm-size-font), 3.1vw, var(--lg-size-font));
+    font-size: clamp(var(--xxsm-size-font), 3.1vw, var(--sm-size-font));
   }
 
   .sec4 p + div {
@@ -168,7 +169,7 @@
     flex-direction: column;
     justify-content: center;
     gap: clamp(20px, 6.2vw, 40px);
-    padding-bottom: clamp(40px, 10vw, 100px);
+    margin-bottom: clamp(20px, 8vw, 80px);
   }
 
   .sec5 .left {
@@ -216,17 +217,18 @@
 
   /*버튼*/
   .sec5 :is(.swiper-button-prev, .swiper-button-next) {
-    top: calc(100% + clamp(20px, 6.2vw, 40px));
+    top: calc(100% + 10px);
+    transform: translateY(100%);
     width: clamp(24px, 7.4vw, 38px);
     height: clamp(24px, 7.4vw, 38px);
   }
 
   .sec5 .swiper-button-prev {
-    left: calc(50% - clamp(40px, 10vw, 300px));
+    left: calc(50% - clamp(40px, 12vw, 300px));
   }
 
   .sec5 .swiper-button-next {
-    right: calc(50% - clamp(40px, 10vw, 300px));
+    right: calc(50% - clamp(40px, 12vw, 300px));
   }
 
   .sec5 :is(.swiper-button-prev, .swiper-button-next) > img {
@@ -349,7 +351,7 @@
 
   /*네번째 섹션*/
   .sec4 .card {
-    width: clamp(440px, 57vw, 555px);
+    flex: 1;
     font-size: clamp(var(--lg-size-font1), 2.6vw, var(--xlg-size-font));
   }
 
@@ -499,8 +501,8 @@
 /*컨텐츠 라인*/
 @media screen and (min-width: 1334px) {
   /*다섯번째 섹션*/
-  .sec5 .sec5_swiper {
-    margin-right: 20px;
+  .sec5 .swiper-slide {
+    width: 675.45px !important;
   }
 
   /*세번째 & 아홉번째 섹션*/
