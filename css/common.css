@@ -85,7 +85,7 @@ h1 img {
   display: none;
   border-radius: 0 0 12px 12px;
   position: fixed;
-  top: 60px;
+  top: 58px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
@@ -159,13 +159,17 @@ header .icons button:first-of-type {
   display: flex;
   border-bottom: 2px solid transparent;
   box-sizing: border-box;
-  position: relative;
 }
 
-header .icons button:first-of-type > input {
+header .icons button:first-of-type div {
   width: 8vw;
-  font-size: var(--md-size-font);
   display: none;
+}
+
+header .icons button:first-of-type input {
+  width: 100%;
+  margin: 4px 0;
+  font-size: var(--md-size-font);
 }
 
 header .icons button:first-of-type img {
@@ -433,7 +437,24 @@ footer .copy {
   }
 
   /*검색*/
-  header .icons button:first-of-type > input::placeholder {
+  header .icons button:first-of-type div {
+    width: clamp(100px, 33vw, 300px);
+    padding: clamp(4px, 1vw, 10px) clamp(12px, 3vw, 20px);
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 100%);
+    z-index: -1;
+    border-radius: 100px;
+    border: 1px solid var(--black-color14);
+    background-color: var(--white-color1);
+  }
+
+  header .icons button:first-of-type input {
+    font-size: clamp(var(--sm-size-font), 3vw, var(--md-size-font));
+  }
+
+  header .icons button:first-of-type input::placeholder {
     font-size: clamp(var(--sm-size-font), 3vw, var(--md-size-font));
   }
 

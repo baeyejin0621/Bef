@@ -11,6 +11,12 @@
       sizes="16x16"
       href="./img/favicon/favicon-16x16.png"
     />
+    <!--swiper 슬라이드-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!--CSS-->
     <link rel="stylesheet" href="./css/main/main.css" />
     <!--반응형-->
@@ -104,7 +110,9 @@
           <!--아이콘 영역-->
           <div class="icons">
             <button type="button" id="search">
-              <input type="text" placeholder="검색어를 입력해주세요." />
+              <div>
+                <input type="text" placeholder="검색어를 입력해주세요." />
+              </div>
               <img src="../img/common/header/search.svg" alt="검색" />
               <img
                 src="../img/common/header/search_hover.svg"
@@ -245,13 +253,13 @@
               </a>
             </div>
             <!--카드 슬라이드-->
-            <div class="sec2_swiper">
-              <div class="swiper-button-prev">
-                <img src="./img/main/sec2/left.svg" alt="left" />
-                <img src="./img/main/sec2/left_hover.svg" alt="left(호버)" />
-              </div>
+            <div class="swiper-button-prev">
+              <img src="./img/main/sec2/left.svg" alt="left" />
+              <img src="./img/main/sec2/left_hover.svg" alt="left(호버)" />
+            </div>
+            <div class="swiper sec2_swiper">
               <div class="swiper-wrapper">
-                <div class="swiper-slide">
+                <div class="swiper-slide" style="transition: 0.3s" !important>
                   <a href="#">
                     <!--카드 윗부분-->
                     <div class="top">
@@ -383,11 +391,269 @@
                     </div>
                   </a>
                 </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <div class="top">
+                      <div class="profile">
+                        <img
+                          src="./img/main/sec2/profilt_img.png"
+                          alt="프로필 이미지"
+                        />
+                      </div>
+                      <h4>보드게임에 미친자</h4>
+                      <span>3분 전</span>
+                    </div>
+                    <h3>하루종일 보드게임만 할 수 있는 분 구합니다.</h3>
+                    <p>장소: 레드버튼 보드게임 카페 땡땡점</p>
+                    <p>시간: 0월 0일 0시 ~ 0시</p>
+                    <p>보드게임: 루미큐브, 다빈치 코드, 그 외</p>
+                    <p>인원 0/10</p>
+                    <div class="bottom">
+                      <div class="watch">
+                        <div>
+                          <img src="./img/main/sec2/eye.svg" alt="눈" />
+                        </div>
+                        <span>36</span>
+                      </div>
+                      <div class="like">
+                        <div>
+                          <img src="./img/main/sec2/heart.svg" alt="하트" />
+                          <img
+                            src="./img/main/sec2/heart_clicked.svg"
+                            alt="하트"
+                          />
+                        </div>
+                        <span>5</span>
+                      </div>
+                      <div class="comment">
+                        <div>
+                          <img src="./img/main/sec2/comment.svg" alt="댓글" />
+                        </div>
+                        <span>16</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <div class="top">
+                      <div class="profile">
+                        <img
+                          src="./img/main/sec2/profilt_img.png"
+                          alt="프로필 이미지"
+                        />
+                      </div>
+                      <h4>보드게임에 미친자</h4>
+                      <span>3분 전</span>
+                    </div>
+                    <h3>하루종일 보드게임만 할 수 있는 분 구합니다.</h3>
+                    <p>장소: 레드버튼 보드게임 카페 땡땡점</p>
+                    <p>시간: 0월 0일 0시 ~ 0시</p>
+                    <p>보드게임: 루미큐브, 다빈치 코드, 그 외</p>
+                    <p>인원 0/10</p>
+                    <div class="bottom">
+                      <div class="watch">
+                        <div>
+                          <img src="./img/main/sec2/eye.svg" alt="눈" />
+                        </div>
+                        <span>36</span>
+                      </div>
+                      <div class="like">
+                        <div>
+                          <img src="./img/main/sec2/heart.svg" alt="하트" />
+                          <img
+                            src="./img/main/sec2/heart_clicked.svg"
+                            alt="하트"
+                          />
+                        </div>
+                        <span>5</span>
+                      </div>
+                      <div class="comment">
+                        <div>
+                          <img src="./img/main/sec2/comment.svg" alt="댓글" />
+                        </div>
+                        <span>16</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <div class="top">
+                      <div class="profile">
+                        <img
+                          src="./img/main/sec2/profilt_img.png"
+                          alt="프로필 이미지"
+                        />
+                      </div>
+                      <h4>보드게임에 미친자</h4>
+                      <span>3분 전</span>
+                    </div>
+                    <h3>하루종일 보드게임만 할 수 있는 분 구합니다.</h3>
+                    <p>장소: 레드버튼 보드게임 카페 땡땡점</p>
+                    <p>시간: 0월 0일 0시 ~ 0시</p>
+                    <p>보드게임: 루미큐브, 다빈치 코드, 그 외</p>
+                    <p>인원 0/10</p>
+                    <div class="bottom">
+                      <div class="watch">
+                        <div>
+                          <img src="./img/main/sec2/eye.svg" alt="눈" />
+                        </div>
+                        <span>36</span>
+                      </div>
+                      <div class="like">
+                        <div>
+                          <img src="./img/main/sec2/heart.svg" alt="하트" />
+                          <img
+                            src="./img/main/sec2/heart_clicked.svg"
+                            alt="하트"
+                          />
+                        </div>
+                        <span>5</span>
+                      </div>
+                      <div class="comment">
+                        <div>
+                          <img src="./img/main/sec2/comment.svg" alt="댓글" />
+                        </div>
+                        <span>16</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <div class="top">
+                      <div class="profile">
+                        <img
+                          src="./img/main/sec2/profilt_img.png"
+                          alt="프로필 이미지"
+                        />
+                      </div>
+                      <h4>보드게임에 미친자</h4>
+                      <span>3분 전</span>
+                    </div>
+                    <h3>하루종일 보드게임만 할 수 있는 분 구합니다.</h3>
+                    <p>장소: 레드버튼 보드게임 카페 땡땡점</p>
+                    <p>시간: 0월 0일 0시 ~ 0시</p>
+                    <p>보드게임: 루미큐브, 다빈치 코드, 그 외</p>
+                    <p>인원 0/10</p>
+                    <div class="bottom">
+                      <div class="watch">
+                        <div>
+                          <img src="./img/main/sec2/eye.svg" alt="눈" />
+                        </div>
+                        <span>36</span>
+                      </div>
+                      <div class="like">
+                        <div>
+                          <img src="./img/main/sec2/heart.svg" alt="하트" />
+                          <img
+                            src="./img/main/sec2/heart_clicked.svg"
+                            alt="하트"
+                          />
+                        </div>
+                        <span>5</span>
+                      </div>
+                      <div class="comment">
+                        <div>
+                          <img src="./img/main/sec2/comment.svg" alt="댓글" />
+                        </div>
+                        <span>16</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <div class="top">
+                      <div class="profile">
+                        <img
+                          src="./img/main/sec2/profilt_img.png"
+                          alt="프로필 이미지"
+                        />
+                      </div>
+                      <h4>보드게임에 미친자</h4>
+                      <span>3분 전</span>
+                    </div>
+                    <h3>하루종일 보드게임만 할 수 있는 분 구합니다.</h3>
+                    <p>장소: 레드버튼 보드게임 카페 땡땡점</p>
+                    <p>시간: 0월 0일 0시 ~ 0시</p>
+                    <p>보드게임: 루미큐브, 다빈치 코드, 그 외</p>
+                    <p>인원 0/10</p>
+                    <div class="bottom">
+                      <div class="watch">
+                        <div>
+                          <img src="./img/main/sec2/eye.svg" alt="눈" />
+                        </div>
+                        <span>36</span>
+                      </div>
+                      <div class="like">
+                        <div>
+                          <img src="./img/main/sec2/heart.svg" alt="하트" />
+                          <img
+                            src="./img/main/sec2/heart_clicked.svg"
+                            alt="하트"
+                          />
+                        </div>
+                        <span>5</span>
+                      </div>
+                      <div class="comment">
+                        <div>
+                          <img src="./img/main/sec2/comment.svg" alt="댓글" />
+                        </div>
+                        <span>16</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <div class="top">
+                      <div class="profile">
+                        <img
+                          src="./img/main/sec2/profilt_img.png"
+                          alt="프로필 이미지"
+                        />
+                      </div>
+                      <h4>보드게임에 미친자</h4>
+                      <span>3분 전</span>
+                    </div>
+                    <h3>하루종일 보드게임만 할 수 있는 분 구합니다.</h3>
+                    <p>장소: 레드버튼 보드게임 카페 땡땡점</p>
+                    <p>시간: 0월 0일 0시 ~ 0시</p>
+                    <p>보드게임: 루미큐브, 다빈치 코드, 그 외</p>
+                    <p>인원 0/10</p>
+                    <div class="bottom">
+                      <div class="watch">
+                        <div>
+                          <img src="./img/main/sec2/eye.svg" alt="눈" />
+                        </div>
+                        <span>36</span>
+                      </div>
+                      <div class="like">
+                        <div>
+                          <img src="./img/main/sec2/heart.svg" alt="하트" />
+                          <img
+                            src="./img/main/sec2/heart_clicked.svg"
+                            alt="하트"
+                          />
+                        </div>
+                        <span>5</span>
+                      </div>
+                      <div class="comment">
+                        <div>
+                          <img src="./img/main/sec2/comment.svg" alt="댓글" />
+                        </div>
+                        <span>16</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
               </div>
-              <div class="swiper-button-next">
-                <img src="./img/main/sec2/right.svg" alt="right" />
-                <img src="./img/main/sec2/right_hover.svg" alt="right(호버)" />
-              </div>
+            </div>
+            <div class="swiper-button-next">
+              <img src="./img/main/sec2/right.svg" alt="right" />
+              <img src="./img/main/sec2/right_hover.svg" alt="right(호버)" />
             </div>
           </div>
         </section>
@@ -462,7 +728,7 @@
               </h2>
               <a href="#">영상에 나온 보드게임 구경하기</a>
             </div>
-            <div class="sec5_swiper">
+            <div class="swiper sec5_swiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <iframe
@@ -475,15 +741,13 @@
                   ></iframe>
                 </div>
               </div>
-              <div class="swiper-btn">
-                <div class="swiper-button-prev">
-                  <img src="./img/main/sec5/left.svg" alt="prev" />
-                  <img src="./img/main/sec5/left_hover.svg" alt="prev(호버)" />
-                </div>
-                <div class="swiper-button-next">
-                  <img src="./img/main/sec5/right.svg" alt="next" />
-                  <img src="./img/main/sec5/right_hover.svg" alt="next(호버)" />
-                </div>
+              <div class="swiper-button-prev">
+                <img src="./img/main/sec5/left.svg" alt="prev" />
+                <img src="./img/main/sec5/left_hover.svg" alt="prev(호버)" />
+              </div>
+              <div class="swiper-button-next">
+                <img src="./img/main/sec5/right.svg" alt="next" />
+                <img src="./img/main/sec5/right_hover.svg" alt="next(호버)" />
               </div>
             </div>
           </div>
@@ -883,6 +1147,9 @@
       </footer>
     </div>
     <!--자바스크립트-->
+    <!--클릭하면 나타나기-->
     <script src="./js/click_display.js"></script>
+    <!--슬라이드-->
+    <script src="./js/slide.js"></script>
   </body>
 </html>

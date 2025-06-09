@@ -145,6 +145,7 @@ section h2 {
   display: flex;
   flex-direction: column;
   gap: 64px;
+  position: relative;
 }
 
 /*섹션 제목*/
@@ -175,31 +176,40 @@ section h2 {
 .sec2_swiper {
   width: 100%;
   height: fit-content;
-  display: flex;
   align-items: center;
-  gap: 20px;
 }
 
 /*슬라이드 버튼*/
-.sec2_swiper :is(.swiper-button-prev, .swiper-button-next) {
+.sec2 :is(.swiper-button-prev, .swiper-button-next) {
   width: 21px;
   height: 46px;
+  transform: translateY(-50%);
 }
 
-.sec2_swiper :is(.swiper-button-prev, .swiper-button-next) img:last-child {
+.sec2 .swiper-button-prev {
+  left: -38px;
+  top: calc(100% - calc(clamp(275.36px, 15vw, 310.17px) / 2));
+}
+
+.sec2 .swiper-button-next {
+  right: -38px;
+  top: calc(100% - calc(clamp(275.36px, 15vw, 310.17px) / 2));
+}
+
+.sec2 :is(.swiper-button-prev, .swiper-button-next)::after {
+  display: none;
+}
+
+.sec2 :is(.swiper-button-prev, .swiper-button-next) img:last-child {
   display: none;
 }
 
 /*슬라이드 버튼에 호버했을 때*/
-.sec2_swiper
-  :is(.swiper-button-prev, .swiper-button-next):hover
-  img:first-child {
+.sec2 :is(.swiper-button-prev, .swiper-button-next):hover img:first-child {
   display: none;
 }
 
-.sec2_swiper
-  :is(.swiper-button-prev, .swiper-button-next):hover
-  img:last-child {
+.sec2 :is(.swiper-button-prev, .swiper-button-next):hover img:last-child {
   display: block;
 }
 
@@ -208,11 +218,12 @@ section h2 {
   width: calc(100% - 82px);
   height: fit-content;
   display: flex;
-  gap: 20px;
+  align-items: flex-end;
+  margin: auto 0;
 }
 
 .sec2_swiper .swiper-slide {
-  flex: 1;
+  width: 350px;
   height: fit-content;
   border: 1px solid var(--black-color7);
   border-radius: 12px;
@@ -323,7 +334,6 @@ section h2 {
 /*카드에 호버했을 때*/
 .sec2_swiper .swiper-slide:hover {
   border: 1px solid var(--sub-color1);
-  transform: translateY(-10px);
 }
 
 /*세번째 섹션*/
@@ -533,17 +543,21 @@ section h2 {
   align-items: center;
   justify-content: center;
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.1));
-}
-
-.sec5 .swiper-button-prev {
   position: absolute;
-  left: -58px;
   top: 50%;
   transform: translateY(-50%);
 }
 
+.sec5 .swiper-button-prev {
+  left: -58px;
+}
+
 .sec5 .swiper-button-prev img {
   transform: translateX(-1px);
+}
+
+.sec5 .swiper-button-next {
+  right: -58px;
 }
 
 .sec5 .swiper-button-next img {

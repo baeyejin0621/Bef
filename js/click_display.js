@@ -5,15 +5,16 @@ const search = document.querySelector("#search");
 
 search.addEventListener("click", function () {
   if (getComputedStyle(this.children[0]).display == "none") {
-    this.style.borderBottom = "2px solid var(--black-color6)";
+    this.children[0].children[0].style.borderBottom =
+      "1px solid var(--black-color6)";
     this.children[0].style.display = "block";
+    this.children[0].children[0].value = "";
     this.children[1].style.display = "none";
     this.children[2].style.display = "block";
   } else if (getComputedStyle(this.children[0]).display == "block") {
-    this.style.borderBottom = "2px solid transparent";
-    this.children[0].style.display = "none";
-    this.children[1].style.display = "block";
-    this.children[2].style.display = "none";
+    this.children[0].style.display = "";
+    this.children[1].style.display = "";
+    this.children[2].style.display = "";
   }
 });
 
