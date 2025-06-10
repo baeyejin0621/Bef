@@ -537,7 +537,7 @@ section h2 {
   object-fit: cover;
 }
 
-/*버튼*/
+/*양옆 화살표 버튼*/
 .sec5 :is(.swiper-button-prev, .swiper-button-next) {
   width: 38px;
   height: 38px;

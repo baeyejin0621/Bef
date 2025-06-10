@@ -380,10 +380,11 @@ footer .copy {
 
   /*gnb*/
   #gnb {
-    position: absolute;
-    left: 0;
-    top: 60px;
-    width: 100%;
+    position: fixed;
+    left: -1px;
+    top: 80px;
+    transform: translate(0);
+    width: 101%;
     display: none;
   }
 
@@ -427,8 +428,8 @@ footer .copy {
     transform: translateX(0);
   }
 
-  .submenu > li {
-    border-bottom: 1px solid var(--black-color);
+  .submenu {
+    border-top: 1px solid var(--black-color9);
   }
 
   /*아이콘 영역*/
@@ -472,7 +473,6 @@ footer .copy {
 
   /*전체 메뉴*/
   header .icons button:last-of-type {
-    display: block;
     width: clamp(22px, 6vw, 28px);
     height: clamp(22px, 6vw, 28px);
     display: flex;

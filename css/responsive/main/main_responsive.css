@@ -501,6 +501,15 @@
 /*컨텐츠 라인*/
 @media screen and (min-width: 1334px) {
   /*다섯번째 섹션*/
+  .sec5_swiper {
+    width: 675.45px !important;
+    margin-right: 20px;
+  }
+
+  .sec5 .swiper-wrapper {
+    width: 675.45px !important;
+  }
+
   .sec5 .swiper-slide {
     width: 675.45px !important;
   }

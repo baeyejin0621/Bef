@@ -51,6 +51,12 @@ let sec5Swiper = new Swiper(".sec5_swiper", {
   slidesPerView: 1,
   slidesPerGroup: 1,
 
+  //화살표
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
   // 웹접근성
   a11y: {
     enabled: true,
@@ -59,7 +65,21 @@ let sec5Swiper = new Swiper(".sec5_swiper", {
     slideLabelMessage:
       "총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.",
   },
+});
 
-  //반응형
-  breakpoints: {},
+//영상에 맞게 제목도 바뀌기
+let slides = document.querySelectorAll(".sec5_swiper .swiper-slide");
+const videoTitle = document.querySelector("#video_title");
+let slideBtn = document.querySelectorAll(".slide_btn");
+
+slides = Array.from(slides); //유사배열 배열로 전환
+
+slideBtn.forEach((element) => {
+  element.addEventListener("click", () => {
+    let currentSlide = slides.find(
+      (element) => element.className === "swiper-slide swiper-slide-active"
+    );
+
+    videoTitle.innerHTML = currentSlide.children[0].getAttribute("data-h2");
+  });
 });
