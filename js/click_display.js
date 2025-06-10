@@ -29,38 +29,50 @@ search.children[0].addEventListener("click", (event) => {
 //메뉴 아이콘
 const allMenu = document.querySelector("#all_menu");
 //gnb
-const gnb = document.querySelector("#gnb");
-
-allMenu.addEventListener("click", () => {
-  if (getComputedStyle(gnb).display == "none") {
-    allMenu.children[0].style.display = "none";
-    allMenu.children[1].style.display = "flex";
-    gnb.style.display = "block";
-  } else if (getComputedStyle(gnb).display == "block") {
-    allMenu.children[0].style.display = "";
-    allMenu.children[1].style.display = "";
-    gnb.style.display = "none";
-  }
-});
-
-/*1차 메뉴 누르면 그에 맞는 2차 메뉴 나오기*/
+const mobileGnb = document.querySelector("#mobile_gnb");
 //1차 메뉴
 let Depth1Menu = document.querySelectorAll(".depth1_menu");
 //2차 메뉴
-let Depth2Menu = document.querySelectorAll(".submenu");
+let Depth2Menu = document.querySelectorAll(".mobile_submenu");
 
-Depth1Menu.forEach((element, i) => {
-  element.addEventListener("click", (event) => {
-    event.preventDefault();
-    if (getComputedStyle(allMenu).display == "flex") {
+allMenu.addEventListener("click", () => {
+  if (getComputedStyle(mobileGnb).display == "none") {
+    allMenu.children[0].style.display = "none";
+    allMenu.children[1].style.display = "flex";
+    mobileGnb.style.display = "block";
+  } else if (getComputedStyle(mobileGnb).display == "block") {
+    allMenu.children[0].style.display = "";
+    allMenu.children[1].style.display = "";
+    mobileGnb.style.display = "none";
+  }
+
+  //1차 메뉴 누르면 그에 맞는 2차 메뉴 나오기
+  Depth1Menu.forEach((element, i, arr) => {
+    //클릭한 1차 메뉴 빼고 다른 1차 메뉴 닫기
+    element.addEventListener("click", () => {
+      arr.forEach((elem) => {
+        elem.children[0].style.display = "none";
+      });
+
+      //클릭한 1차 메뉴의 2차 메뉴 배경색 바꾸기
+      element.children[0].style.backgroundColor = "var(--black-color11)";
+
       if (getComputedStyle(Depth2Menu[i]).display == "none") {
-        Depth2Menu[i].style.display = "flex";
-      } else if (getComputedStyle(Depth2Menu[i]).display == "flex") {
+        Depth2Menu[i].style.display = "block";
+      } else if (getComputedStyle(Depth2Menu[i]).display == "block") {
         Depth2Menu[i].style.display = "none";
       }
-    }
+    });
   });
 });
+
+//innerWidth가 1023 넘어가면 mobileGnb 없애기
+mobileGnb.addEventListener("resize", () => {
+  if (innerWidth > 1023) {
+    this.style.display = "none";
+  }
+});
+//안 됨
 
 /*빈 하트 클릭하면 채워진 하트로 바뀌기*/
 const like = document.querySelectorAll(".like");
