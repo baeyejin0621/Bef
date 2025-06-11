@@ -254,7 +254,6 @@
   }
 
   .boardgame .thumb {
-    height: calc(43vw - clamp(12px, 3.7vw, 16px) / 2);
     border-radius: clamp(8px, 2.5vw, 12px);
     margin-bottom: clamp(8px, 2.5vw, 12px);
   }
@@ -379,7 +378,6 @@
   }
 
   .boardgame .thumb {
-    height: clamp(165.38px, 21.5vw, 285px);
     border-radius: clamp(8px, 1vw, 12px);
     margin-bottom: clamp(8px, 1vw, 12px);
   }

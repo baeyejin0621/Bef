@@ -146,12 +146,14 @@ h1 img {
 
 /*mobile_gnb*/
 #mobile_gnb {
+  height: calc(100vh - 80px);
+  background-color: var(--white-color1);
   position: fixed;
-  left: -1px;
+  left: 0;
   top: 80px;
-  transform: translate(0);
-  width: 101%;
+  width: 100%;
   display: none;
+  overflow-y: scroll;
 }
 
 #mobile_gnb > ul {
@@ -266,8 +268,9 @@ header .icons button:last-of-type {
   display: none;
 }
 
-header .icons button:last-of-type > img {
-  width: 100%;
+header .icons button:last-of-type > i {
+  font-size: var(--md-size-font);
+  color: var(--black-color5);
 }
 
 /*마우스 호버했을 때*/
@@ -277,6 +280,10 @@ header .icons > :is(a:hover, button:hover) img:first-of-type {
 
 header .icons > :is(a:hover, button:hover) img:last-of-type {
   display: block;
+}
+
+header .icons > button:hover > i {
+  color: var(--main-color1);
 }
 
 /*컨텐츠 영역*/
@@ -440,6 +447,8 @@ footer .copy {
     border-radius: 0;
     filter: none;
     top: 0px;
+    left: 0;
+    transform: translate(0);
     border-bottom: 1px solid var(--black-color14);
     padding: 20px 0 0;
   }
@@ -499,15 +508,14 @@ footer .copy {
 
   /*전체 메뉴*/
   header .icons button:last-of-type {
-    width: clamp(22px, 6vw, 28px);
-    height: clamp(22px, 6vw, 28px);
+    width: fit-content;
+    height: fit-content;
     display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
-  header .icons button:last-of-type > img:first-child {
-    display: block;
+  header .icons button:last-of-type > i {
+    font-size: clamp(var(--lg-size-font2), 6vw, var(--xxlg-size-font));
+    line-height: 1;
   }
 
   header .icons > :is(a:hover, button:hover) img:first-of-type {
@@ -612,7 +620,9 @@ footer .copy {
     height: 60px;
     border-radius: 100px;
     filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.03));
+    left: 50%;
     top: 20px;
+    transform: translateX(-50%);
     padding: 0;
   }
 

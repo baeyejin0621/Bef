@@ -11,6 +11,14 @@
       sizes="16x16"
       href="../../img/favicon/favicon-16x16.png"
     />
+    <!--GSAP - ScrollTrigger-->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <!--xeicon-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/xeicon/2/xeicon.min.css"
+    />
     <!--CSS-->
     <link
       rel="stylesheet"
@@ -123,13 +131,18 @@
           </nav>
           <!--아이콘 영역-->
           <div class="icons">
-            <button type="button">
+            <!--검색-->
+            <button type="button" id="search">
+              <div id="input_parent">
+                <input type="text" placeholder="검색어를 입력해주세요." />
+              </div>
               <img src="../../img/common/header/search.svg" alt="검색" />
               <img
                 src="../../img/common/header/search_hover.svg"
                 alt="검색(호버)"
               />
             </button>
+            <!--로그인-->
             <a href="../login/login.html">
               <img src="../../img/common/header/login.svg" alt="로그인" />
               <img
@@ -138,13 +151,98 @@
               />
             </a>
             <!--메뉴-->
-            <button>
-              <img src="../../img/common/header/all_menu.svg" alt="전체 메뉴" />
-              <img
-                src="../../img/common/header/all_menu_hover.svg"
-                alt="전체 메뉴(호버)"
-              />
+            <button id="all_menu">
+              <i class="xi-bars"></i>
             </button>
+            <!--모바일 메뉴-->
+            <nav id="mobile_gnb">
+              <ul>
+                <!--1차 메뉴-->
+                <li class="depth1_menu self">
+                  서비스 소개
+                  <!--2차 메뉴-->
+                  <ul class="mobile_submenu">
+                    <li>
+                      <a
+                        href="../../sub/service_guide/service_guide1.html"
+                        class="self"
+                      >
+                        서비스 소개
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!--1차 메뉴-->
+                <li class="depth1_menu">
+                  보드게임
+                  <!--2차 메뉴-->
+                  <ul class="mobile_submenu">
+                    <li>
+                      <a href="../../sub/boardgame_guide/boardgame_guide1.html">
+                        보드게임 가이드
+                      </a>
+                    </li>
+                    <li>
+                      <a href="../../sub/boardgame_guide/boardgame_guide2.html">
+                        이달의 보드게임
+                      </a>
+                    </li>
+                    <li>
+                      <a href="../../sub/boardgame_guide/boardgame_guide3.html">
+                        신작 보드게임
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!--1차 메뉴-->
+                <li class="depth1_menu">
+                  Bef 찾기
+                  <!--2차 메뉴-->
+                  <ul class="mobile_submenu">
+                    <li>
+                      <a href="../../sub/find_bef/find_bef1.htm"
+                        >Bef와 보드게임</a
+                      >
+                    </li>
+                    <li><a href="#">선호도 등록</a></li>
+                    <li><a href="#">Bef MBTI 검사</a></li>
+                  </ul>
+                </li>
+                <!--1차 메뉴-->
+                <li class="depth1_menu">
+                  보드게임 카페
+                  <!--2차 메뉴-->
+                  <ul class="mobile_submenu">
+                    <li>
+                      <a href="../../sub/boardgame_cafe/boardgame_cafe1.html">
+                        가까운 카페
+                      </a>
+                    </li>
+                    <li><a href="#">시설 좋은 카페</a></li>
+                  </ul>
+                </li>
+                <!--1차 메뉴-->
+                <li class="depth1_menu">
+                  프로모션
+                  <!--2차 메뉴-->
+                  <ul class="mobile_submenu">
+                    <li>
+                      <a href="../../sub/promotion/promotion1.html">프로모션</a>
+                    </li>
+                  </ul>
+                </li>
+                <!--1차 메뉴-->
+                <li class="depth1_menu">
+                  고객센터
+                  <!--2차 메뉴-->
+                  <ul class="mobile_submenu">
+                    <li><a href="../../sub/contact/contact1.html">FAQ</a></li>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">유저 신고</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
       </header>
@@ -203,7 +301,7 @@
                 <div></div>
                 <!--공격&방어 카드들-->
                 <!--첫번째 세트-->
-                <div class="attack">
+                <div class="attack attack1">
                   <h4>공격 카드</h4>
                   <div class="img_area">
                     <img
@@ -213,7 +311,7 @@
                   </div>
                   <p>보드게임을 같이 즐길 친구가 없어요</p>
                 </div>
-                <div class="defend">
+                <div class="defend defend1">
                   <h4>방어 카드</h4>
                   <div class="img_area">
                     <img
@@ -224,7 +322,7 @@
                   <p>Bef 찾기 메뉴에서 Bef들과 만날 수 있어요</p>
                 </div>
                 <!--두번째 세트-->
-                <div class="attack">
+                <div class="attack attack2">
                   <h4>공격 카드</h4>
                   <div class="img_area">
                     <img
@@ -237,7 +335,7 @@
                     한 번에 모아보고 싶어요
                   </p>
                 </div>
-                <div class="defend">
+                <div class="defend defend2">
                   <h4>방어 카드</h4>
                   <div class="img_area">
                     <img
@@ -251,7 +349,7 @@
                   </p>
                 </div>
                 <!--세번째 세트-->
-                <div class="attack">
+                <div class="attack attack3">
                   <h4>공격 카드</h4>
                   <div class="img_area">
                     <img
@@ -261,7 +359,7 @@
                   </div>
                   <p>보드게임을 살 때 할인을 받고 싶어요</p>
                 </div>
-                <div class="defend">
+                <div class="defend defend3">
                   <h4>방어 카드</h4>
                   <div class="img_area">
                     <img
@@ -275,7 +373,7 @@
                   </p>
                 </div>
                 <!--네번째 세트-->
-                <div class="attack">
+                <div class="attack attack4">
                   <h4>공격 카드</h4>
                   <div class="img_area">
                     <img
@@ -285,7 +383,7 @@
                   </div>
                   <p>저에게 맞는 보드게임을 찾고 싶어요</p>
                 </div>
-                <div class="defend">
+                <div class="defend defend4">
                   <h4>방어 카드</h4>
                   <div class="img_area">
                     <img
@@ -382,5 +480,10 @@
         </div>
       </footer>
     </div>
+    <!--자바스크립트-->
+    <!--GSAP-->
+    <script src="../../js/gsap/service_guide/service_guide1/gsap.js"></script>
+    <!--클릭하면 나타나기-->
+    <script src="../../js/click_display.js"></script>
   </body>
 </html>

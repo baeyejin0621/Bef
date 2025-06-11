@@ -150,6 +150,7 @@ h3 {
   align-items: center;
   justify-content: space-between;
   transform: translate(-50%, -50%);
+  opacity: 0;
 }
 
 .sec3 :is(.attack, .defend) h4 {
