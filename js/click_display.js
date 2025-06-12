@@ -28,7 +28,7 @@ inputParent.addEventListener("click", (event) => {
   }
 });
 
-/*웹 너비 좁아졌을 때 나타나는 메뉴 아이콘 누르면 1차 메뉴 나타나기*/
+/*헤더에서 웹 너비 좁아졌을 때 나타나는 메뉴 아이콘 누르면 1차 메뉴 나타나기*/
 //메뉴 버튼
 const allMenu = document.querySelector("#all_menu");
 //gnb
@@ -80,7 +80,7 @@ allMenu.addEventListener("click", () => {
   });
 });
 
-/*빈 하트 클릭하면 채워진 하트로 바뀌기*/
+/*게시글에서 빈 하트 클릭하면 채워진 하트로 바뀌기*/
 //하트 아이콘이랑 하트 수의 부모 div
 const like = document.querySelectorAll(".like");
 //빈 하트
@@ -106,4 +106,60 @@ like.forEach((element, i) => {
 
     event.preventDefault();
   });
+});
+
+/*보드게임 가이드 - 키워드 클릭하면 스타일 바뀌기*/
+//키워드
+const keyword = document.querySelectorAll(".keywords button");
+
+keyword.forEach((element) => {
+  element.addEventListener("click", () => {
+    if (getComputedStyle(element).color == "rgb(34, 34, 34)") {
+      element.style.backgroundColor = "var(--sub-color1)";
+      element.style.fontWeight = "var(--semibold-weight-font)";
+      element.style.color = "var(--white-color1)";
+    } else if (getComputedStyle(element).color == "rgb(255, 255, 255)") {
+      element.style.backgroundColor = "";
+      element.style.fontWeight = "";
+      element.style.color = "";
+    }
+  });
+});
+
+/*같은 줄에 키워드 클릭하면 다른 키워드 선택 취소*/
+//키워드 박스
+const keywordBox = document.querySelectorAll(".keywords");
+
+keywordBox.forEach((element, i) => {
+  element.addEventListener("click", (event) => {
+    let keywordBoxChildren = Array.from(keywordBox[i].children);
+    keywordBoxChildren.forEach((element) => {
+      if (element != event.target) {
+        element.style.backgroundColor = "";
+        element.style.fontWeight = "";
+        element.style.color = "";
+      }
+    });
+  });
+});
+
+/*더보기 버튼 클릭하면 숨겨진 section 나오기*/
+//더보기 버튼
+const moreBtn = document.querySelector("#more");
+//숨겨진 section
+let allSec = document.querySelectorAll("section");
+allSec = Array.from(allSec);
+
+moreBtn.addEventListener("click", () => {
+  let showSec = allSec.find((element) => {
+    return getComputedStyle(element).display == "none";
+  });
+
+  //showSec이 allSec의 마지막 요소면 allBtn 숨기기
+  if (showSec != allSec[allSec.length - 2]) {
+    showSec.style.display = "block";
+  } else {
+    showSec.style.display = "block";
+    moreBtn.style.display = "none";
+  }
 });

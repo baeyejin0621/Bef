@@ -11,6 +11,11 @@
       sizes="16x16"
       href="../../img/favicon/favicon-16x16.png"
     />
+    <!--xeicon-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/xeicon/2/xeicon.min.css"
+    />
     <!--CSS-->
     <link
       rel="stylesheet"
@@ -125,13 +130,18 @@
           </nav>
           <!--아이콘 영역-->
           <div class="icons">
-            <button type="button">
+            <!--검색-->
+            <button type="button" id="search">
+              <div id="input_parent">
+                <input type="text" placeholder="검색어를 입력해주세요." />
+              </div>
               <img src="../../img/common/header/search.svg" alt="검색" />
               <img
                 src="../../img/common/header/search_hover.svg"
                 alt="검색(호버)"
               />
             </button>
+            <!--로그인-->
             <a href="../login/login.html">
               <img src="../../img/common/header/login.svg" alt="로그인" />
               <img
@@ -140,13 +150,98 @@
               />
             </a>
             <!--메뉴-->
-            <button>
-              <img src="../../img/common/header/all_menu.svg" alt="전체 메뉴" />
-              <img
-                src="../../img/common/header/all_menu_hover.svg"
-                alt="전체 메뉴(호버)"
-              />
+            <button id="all_menu">
+              <i class="xi-bars"></i>
             </button>
+            <!--모바일 메뉴-->
+            <nav id="mobile_gnb">
+              <ul>
+                <!--1차 메뉴-->
+                <li class="depth1_menu">
+                  서비스 소개
+                  <!--2차 메뉴-->
+                  <ul class="mobile_submenu">
+                    <li>
+                      <a href="../../sub/service_guide/service_guide1.html">
+                        서비스 소개
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!--1차 메뉴-->
+                <li class="depth1_menu self">
+                  보드게임
+                  <!--2차 메뉴-->
+                  <ul class="mobile_submenu">
+                    <li>
+                      <a
+                        href="../../sub/boardgame_guide/boardgame_guide1.html"
+                        class="self"
+                      >
+                        보드게임 가이드
+                      </a>
+                    </li>
+                    <li>
+                      <a href="../../sub/boardgame_guide/boardgame_guide2.html">
+                        이달의 보드게임
+                      </a>
+                    </li>
+                    <li>
+                      <a href="../../sub/boardgame_guide/boardgame_guide3.html">
+                        신작 보드게임
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!--1차 메뉴-->
+                <li class="depth1_menu">
+                  Bef 찾기
+                  <!--2차 메뉴-->
+                  <ul class="mobile_submenu">
+                    <li>
+                      <a href="../../sub/find_bef/find_bef1.htm"
+                        >Bef와 보드게임</a
+                      >
+                    </li>
+                    <li><a href="#">선호도 등록</a></li>
+                    <li><a href="#">Bef MBTI 검사</a></li>
+                  </ul>
+                </li>
+                <!--1차 메뉴-->
+                <li class="depth1_menu">
+                  보드게임 카페
+                  <!--2차 메뉴-->
+                  <ul class="mobile_submenu">
+                    <li>
+                      <a href="../../sub/boardgame_cafe/boardgame_cafe1.html">
+                        가까운 카페
+                      </a>
+                    </li>
+                    <li><a href="#">시설 좋은 카페</a></li>
+                  </ul>
+                </li>
+                <!--1차 메뉴-->
+                <li class="depth1_menu">
+                  프로모션
+                  <!--2차 메뉴-->
+                  <ul class="mobile_submenu">
+                    <li>
+                      <a href="../../sub/promotion/promotion1.html">프로모션</a>
+                    </li>
+                  </ul>
+                </li>
+                <!--1차 메뉴-->
+                <li class="depth1_menu">
+                  고객센터
+                  <!--2차 메뉴-->
+                  <ul class="mobile_submenu">
+                    <li><a href="../../sub/contact/contact1.html">FAQ</a></li>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">유저 신고</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
       </header>
@@ -268,7 +363,7 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame1-1.jpg"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame1.jpg"
                         alt="테라포밍 마스"
                       />
                     </div>
@@ -276,7 +371,10 @@
                       <h3>테라포밍 마스</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
@@ -291,7 +389,7 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame1-2.jpg"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame2.jpg"
                         alt="라쿠카라차"
                       />
                     </div>
@@ -299,7 +397,10 @@
                       <h3>라쿠카라차</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
@@ -314,7 +415,7 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame1-3.jpg"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame3.jpg"
                         alt="루핑루이"
                       />
                     </div>
@@ -322,7 +423,10 @@
                       <h3>루핑루이</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
@@ -337,7 +441,7 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame1-4.jpg"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame4.jpg"
                         alt="스플렌더"
                       />
                     </div>
@@ -345,7 +449,10 @@
                       <h3>스플렌더</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
@@ -362,15 +469,18 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame1-1.jpg"
-                        alt="테라포밍 마스"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame5.jpg"
+                        alt="카탄 3D"
                       />
                     </div>
                     <div>
-                      <h3>테라포밍 마스</h3>
+                      <h3>카탄 3D</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
@@ -385,15 +495,18 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame1-2.jpg"
-                        alt="라쿠카라차"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame6.png"
+                        alt="젝스 님트 30주년 기념판"
                       />
                     </div>
                     <div>
-                      <h3>라쿠카라차</h3>
+                      <h3>젝스 님트 30주년 기념판</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
@@ -408,15 +521,18 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame1-3.jpg"
-                        alt="루핑루이"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame7.jpg"
+                        alt="딕싯 디즈니 100주년 기념판"
                       />
                     </div>
                     <div>
-                      <h3>루핑루이</h3>
+                      <h3>딕싯 디즈니 100주년 기념판</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
@@ -431,15 +547,18 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame1-4.jpg"
-                        alt="스플렌더"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame8.jpg"
+                        alt="위즈스톤 컴플리트 에디션"
                       />
                     </div>
                     <div>
-                      <h3>스플렌더</h3>
+                      <h3>위즈스톤 컴플리트 에디션</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
@@ -456,15 +575,18 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame1-1.jpg"
-                        alt="테라포밍 마스"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame9.jpg"
+                        alt="텀블링 몽키"
                       />
                     </div>
                     <div>
-                      <h3>테라포밍 마스</h3>
+                      <h3>텀블링 몽키</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
@@ -479,15 +601,18 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame1-2.jpg"
-                        alt="라쿠카라차"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame10.jpg"
+                        alt="펭귄 얼음 깨기"
                       />
                     </div>
                     <div>
-                      <h3>라쿠카라차</h3>
+                      <h3>펭귄 얼음 깨기</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
@@ -502,15 +627,18 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame1-3.jpg"
-                        alt="루핑루이"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame11.jpg"
+                        alt="아슬아슬 이글루"
                       />
                     </div>
                     <div>
-                      <h3>루핑루이</h3>
+                      <h3>아슬아슬 이글루</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
@@ -525,15 +653,124 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame1-4.jpg"
-                        alt="스플렌더"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame12.jpg"
+                        alt="심술쟁이 고양이"
                       />
                     </div>
                     <div>
-                      <h3>스플렌더</h3>
+                      <h3>심술쟁이 고양이</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/stars.svg"
+                            alt="별"
+                          />
+                        </div>
+                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
+                      </div>
+                      <span>
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
+                      </span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="con_wrapper">
+                <div class="boardgame">
+                  <a href="#">
+                    <div class="thumb">
+                      <img
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame13.jpg"
+                        alt="언락7"
+                      />
+                    </div>
+                    <div>
+                      <h3>언락7</h3>
+                      <div class="review">
+                        <div>
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/stars.svg"
+                            alt="별"
+                          />
+                        </div>
+                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
+                      </div>
+                      <span>
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
+                      </span>
+                    </div>
+                  </a>
+                </div>
+                <div class="boardgame">
+                  <a href="#">
+                    <div class="thumb">
+                      <img
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame14.jpg"
+                        alt="여섯 불꽃"
+                      />
+                    </div>
+                    <div>
+                      <h3>여섯 불꽃</h3>
+                      <div class="review">
+                        <div>
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/stars.svg"
+                            alt="별"
+                          />
+                        </div>
+                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
+                      </div>
+                      <span>
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
+                      </span>
+                    </div>
+                  </a>
+                </div>
+                <div class="boardgame">
+                  <a href="#">
+                    <div class="thumb">
+                      <img
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame15.jpg"
+                        alt="로스트 시티"
+                      />
+                    </div>
+                    <div>
+                      <h3>로스트 시티</h3>
+                      <div class="review">
+                        <div>
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/stars.svg"
+                            alt="별"
+                          />
+                        </div>
+                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
+                      </div>
+                      <span>
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
+                      </span>
+                    </div>
+                  </a>
+                </div>
+                <div class="boardgame">
+                  <a href="#">
+                    <div class="thumb">
+                      <img
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame16.jpg"
+                        alt="우노"
+                      />
+                    </div>
+                    <div>
+                      <h3>우노</h3>
+                      <div class="review">
+                        <div>
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
@@ -557,21 +794,24 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame2-1.jpg"
-                        alt="카탄 3D"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/boardgame17.jpg"
+                        alt="달무티"
                       />
                     </div>
                     <div>
-                      <h3>카탄 3D</h3>
+                      <h3>달무티</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
                       <span>
-                        원래부터도 좋아하는 보드게임이었는데 스페셜 에디션이
-                        나와서 바로 샀어요! 너무너무 만족스럽습니다!!!
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
                       </span>
                     </div>
                   </a>
@@ -580,21 +820,24 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame2-2.png"
-                        alt="젝스 님트 30주년 기념판"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/boardgame18.jpg"
+                        alt="조가비 해변"
                       />
                     </div>
                     <div>
-                      <h3>젝스 님트 30주년 기념판</h3>
+                      <h3>조가비 해변</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
                       <span>
-                        원래부터도 좋아하는 보드게임이었는데 스페셜 에디션이
-                        나와서 바로 샀어요! 너무너무 만족스럽습니다!!!
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
                       </span>
                     </div>
                   </a>
@@ -603,21 +846,24 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame2-3.jpg"
-                        alt="딕싯 디즈니 100주년 기념판"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/boardgame19.jpg"
+                        alt="냥벽한 공간"
                       />
                     </div>
                     <div>
-                      <h3>딕싯 디즈니 100주년 기념판</h3>
+                      <h3>냥벽한 공간</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
                       <span>
-                        원래부터도 좋아하는 보드게임이었는데 스페셜 에디션이
-                        나와서 바로 샀어요! 너무너무 만족스럽습니다!!!
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
                       </span>
                     </div>
                   </a>
@@ -626,115 +872,24 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame2-4.jpg"
-                        alt="위즈스톤 컴플리트 에디션"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/boardgame20.jpg"
+                        alt="다빈치 코드"
                       />
                     </div>
                     <div>
-                      <h3>위즈스톤 컴플리트 에디션</h3>
+                      <h3>다빈치 코드</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
                       <span>
-                        원래부터도 좋아하는 보드게임이었는데 스페셜 에디션이
-                        나와서 바로 샀어요! 너무너무 만족스럽습니다!!!
-                      </span>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="con_wrapper">
-                <div class="boardgame">
-                  <a href="#">
-                    <div class="thumb">
-                      <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame2-1.jpg"
-                        alt="카탄 3D"
-                      />
-                    </div>
-                    <div>
-                      <h3>카탄 3D</h3>
-                      <div class="review">
-                        <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
-                        </div>
-                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
-                      </div>
-                      <span>
-                        원래부터도 좋아하는 보드게임이었는데 스페셜 에디션이
-                        나와서 바로 샀어요! 너무너무 만족스럽습니다!!!
-                      </span>
-                    </div>
-                  </a>
-                </div>
-                <div class="boardgame">
-                  <a href="#">
-                    <div class="thumb">
-                      <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame2-2.png"
-                        alt="젝스 님트 30주년 기념판"
-                      />
-                    </div>
-                    <div>
-                      <h3>젝스 님트 30주년 기념판</h3>
-                      <div class="review">
-                        <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
-                        </div>
-                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
-                      </div>
-                      <span>
-                        원래부터도 좋아하는 보드게임이었는데 스페셜 에디션이
-                        나와서 바로 샀어요! 너무너무 만족스럽습니다!!!
-                      </span>
-                    </div>
-                  </a>
-                </div>
-                <div class="boardgame">
-                  <a href="#">
-                    <div class="thumb">
-                      <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame2-3.jpg"
-                        alt="딕싯 디즈니 100주년 기념판"
-                      />
-                    </div>
-                    <div>
-                      <h3>딕싯 디즈니 100주년 기념판</h3>
-                      <div class="review">
-                        <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
-                        </div>
-                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
-                      </div>
-                      <span>
-                        원래부터도 좋아하는 보드게임이었는데 스페셜 에디션이
-                        나와서 바로 샀어요! 너무너무 만족스럽습니다!!!
-                      </span>
-                    </div>
-                  </a>
-                </div>
-                <div class="boardgame">
-                  <a href="#">
-                    <div class="thumb">
-                      <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame2-4.jpg"
-                        alt="위즈스톤 컴플리트 에디션"
-                      />
-                    </div>
-                    <div>
-                      <h3>위즈스톤 컴플리트 에디션</h3>
-                      <div class="review">
-                        <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
-                        </div>
-                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
-                      </div>
-                      <span>
-                        원래부터도 좋아하는 보드게임이었는데 스페셜 에디션이
-                        나와서 바로 샀어요! 너무너무 만족스럽습니다!!!
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
                       </span>
                     </div>
                   </a>
@@ -745,21 +900,24 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame2-1.jpg"
-                        alt="카탄 3D"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/boardgame21.jpg"
+                        alt="라스베가스"
                       />
                     </div>
                     <div>
-                      <h3>카탄 3D</h3>
+                      <h3>라스베가스</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
                       <span>
-                        원래부터도 좋아하는 보드게임이었는데 스페셜 에디션이
-                        나와서 바로 샀어요! 너무너무 만족스럽습니다!!!
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
                       </span>
                     </div>
                   </a>
@@ -768,21 +926,24 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame2-2.png"
-                        alt="젝스 님트 30주년 기념판"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/boardgame22.jpg"
+                        alt="할리갈리"
                       />
                     </div>
                     <div>
-                      <h3>젝스 님트 30주년 기념판</h3>
+                      <h3>할리갈리</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
                       <span>
-                        원래부터도 좋아하는 보드게임이었는데 스페셜 에디션이
-                        나와서 바로 샀어요! 너무너무 만족스럽습니다!!!
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
                       </span>
                     </div>
                   </a>
@@ -791,21 +952,24 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame2-3.jpg"
-                        alt="딕싯 디즈니 100주년 기념판"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/boardgame23.jpg"
+                        alt="우봉고"
                       />
                     </div>
                     <div>
-                      <h3>딕싯 디즈니 100주년 기념판</h3>
+                      <h3>우봉고</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
                       <span>
-                        원래부터도 좋아하는 보드게임이었는데 스페셜 에디션이
-                        나와서 바로 샀어요! 너무너무 만족스럽습니다!!!
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
                       </span>
                     </div>
                   </a>
@@ -814,21 +978,236 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame2-4.jpg"
-                        alt="위즈스톤 컴플리트 에디션"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/boardgame24.png"
+                        alt="모자가 아니잖아"
                       />
                     </div>
                     <div>
-                      <h3>위즈스톤 컴플리트 에디션</h3>
+                      <h3>모자가 아니잖아</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
                       <span>
-                        원래부터도 좋아하는 보드게임이었는데 스페셜 에디션이
-                        나와서 바로 샀어요! 너무너무 만족스럽습니다!!!
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
+                      </span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="con_wrapper">
+                <div class="boardgame">
+                  <a href="#">
+                    <div class="thumb">
+                      <img
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/boardgame25.jpg"
+                        alt="카르카손"
+                      />
+                    </div>
+                    <div>
+                      <h3>카르카손</h3>
+                      <div class="review">
+                        <div>
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/stars.svg"
+                            alt="별"
+                          />
+                        </div>
+                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
+                      </div>
+                      <span>
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
+                      </span>
+                    </div>
+                  </a>
+                </div>
+                <div class="boardgame">
+                  <a href="#">
+                    <div class="thumb">
+                      <img
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/boardgame26.jpg"
+                        alt="챠오챠오"
+                      />
+                    </div>
+                    <div>
+                      <h3>챠오챠오</h3>
+                      <div class="review">
+                        <div>
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/stars.svg"
+                            alt="별"
+                          />
+                        </div>
+                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
+                      </div>
+                      <span>
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
+                      </span>
+                    </div>
+                  </a>
+                </div>
+                <div class="boardgame">
+                  <a href="#">
+                    <div class="thumb">
+                      <img
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/boardgame27.jpg"
+                        alt="젝스 님트"
+                      />
+                    </div>
+                    <div>
+                      <h3>젝스 님트</h3>
+                      <div class="review">
+                        <div>
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/stars.svg"
+                            alt="별"
+                          />
+                        </div>
+                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
+                      </div>
+                      <span>
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
+                      </span>
+                    </div>
+                  </a>
+                </div>
+                <div class="boardgame">
+                  <a href="#">
+                    <div class="thumb">
+                      <img
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/boardgame28.jpg"
+                        alt="독수리 눈치싸움"
+                      />
+                    </div>
+                    <div>
+                      <h3>독수리 눈치싸움</h3>
+                      <div class="review">
+                        <div>
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/stars.svg"
+                            alt="별"
+                          />
+                        </div>
+                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
+                      </div>
+                      <span>
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
+                      </span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="con_wrapper">
+                <div class="boardgame">
+                  <a href="#">
+                    <div class="thumb">
+                      <img
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/boardgame29.jpg"
+                        alt="보난자"
+                      />
+                    </div>
+                    <div>
+                      <h3>보난자</h3>
+                      <div class="review">
+                        <div>
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/stars.svg"
+                            alt="별"
+                          />
+                        </div>
+                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
+                      </div>
+                      <span>
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
+                      </span>
+                    </div>
+                  </a>
+                </div>
+                <div class="boardgame">
+                  <a href="#">
+                    <div class="thumb">
+                      <img
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/boardgame30.jpg"
+                        alt="바퀴벌레 포커"
+                      />
+                    </div>
+                    <div>
+                      <h3>바퀴벌레 포커</h3>
+                      <div class="review">
+                        <div>
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/stars.svg"
+                            alt="별"
+                          />
+                        </div>
+                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
+                      </div>
+                      <span>
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
+                      </span>
+                    </div>
+                  </a>
+                </div>
+                <div class="boardgame">
+                  <a href="#">
+                    <div class="thumb">
+                      <img
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/boardgame31.jpg"
+                        alt="텔레스트레이션"
+                      />
+                    </div>
+                    <div>
+                      <h3>텔레스트레이션</h3>
+                      <div class="review">
+                        <div>
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/stars.svg"
+                            alt="별"
+                          />
+                        </div>
+                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
+                      </div>
+                      <span>
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
+                      </span>
+                    </div>
+                  </a>
+                </div>
+                <div class="boardgame">
+                  <a href="#">
+                    <div class="thumb">
+                      <img
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/boardgame32.jpg"
+                        alt="사보타지"
+                      />
+                    </div>
+                    <div>
+                      <h3>사보타지</h3>
+                      <div class="review">
+                        <div>
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec3/stars.svg"
+                            alt="별"
+                          />
+                        </div>
+                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
+                      </div>
+                      <span>
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
                       </span>
                     </div>
                   </a>
@@ -846,21 +1225,24 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame3-1.jpg"
-                        alt="텀블링 몽키"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/boardgame33.jpg"
+                        alt="5초 준다"
                       />
                     </div>
                     <div>
-                      <h3>텀블링 몽키</h3>
+                      <h3>5초 준다</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
                       <span>
-                        아이들하고 하기 정말 좋아요. 오랜만에 아이들하고 정말
-                        재미있게 놀았네요.ㅎㅎ
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
                       </span>
                     </div>
                   </a>
@@ -869,21 +1251,24 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame3-2.jpg"
-                        alt="펭귄 얼음 깨기"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/boardgame34.jpg"
+                        alt="딕싯"
                       />
                     </div>
                     <div>
-                      <h3>펭귄 얼음 깨기</h3>
+                      <h3>딕싯</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
                       <span>
-                        아이들하고 하기 정말 좋아요. 오랜만에 아이들하고 정말
-                        재미있게 놀았네요.ㅎㅎ
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
                       </span>
                     </div>
                   </a>
@@ -892,21 +1277,24 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame3-3.jpg"
-                        alt="아슬아슬 이글루"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/boardgame35.jpg"
+                        alt="요트 다이스"
                       />
                     </div>
                     <div>
-                      <h3>아슬아슬 이글루</h3>
+                      <h3>요트 다이스</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
                       <span>
-                        아이들하고 하기 정말 좋아요. 오랜만에 아이들하고 정말
-                        재미있게 놀았네요.ㅎㅎ
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
                       </span>
                     </div>
                   </a>
@@ -915,115 +1303,24 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame3-4.jpg"
-                        alt="심술쟁이 고양이"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/boardgame36.jpg"
+                        alt="카탄"
                       />
                     </div>
                     <div>
-                      <h3>심술쟁이 고양이</h3>
+                      <h3>카탄</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
                       <span>
-                        아이들하고 하기 정말 좋아요. 오랜만에 아이들하고 정말
-                        재미있게 놀았네요.ㅎㅎ
-                      </span>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="con_wrapper">
-                <div class="boardgame">
-                  <a href="#">
-                    <div class="thumb">
-                      <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame3-1.jpg"
-                        alt="텀블링 몽키"
-                      />
-                    </div>
-                    <div>
-                      <h3>텀블링 몽키</h3>
-                      <div class="review">
-                        <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
-                        </div>
-                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
-                      </div>
-                      <span>
-                        아이들하고 하기 정말 좋아요. 오랜만에 아이들하고 정말
-                        재미있게 놀았네요.ㅎㅎ
-                      </span>
-                    </div>
-                  </a>
-                </div>
-                <div class="boardgame">
-                  <a href="#">
-                    <div class="thumb">
-                      <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame3-2.jpg"
-                        alt="펭귄 얼음 깨기"
-                      />
-                    </div>
-                    <div>
-                      <h3>펭귄 얼음 깨기</h3>
-                      <div class="review">
-                        <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
-                        </div>
-                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
-                      </div>
-                      <span>
-                        아이들하고 하기 정말 좋아요. 오랜만에 아이들하고 정말
-                        재미있게 놀았네요.ㅎㅎ
-                      </span>
-                    </div>
-                  </a>
-                </div>
-                <div class="boardgame">
-                  <a href="#">
-                    <div class="thumb">
-                      <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame3-3.jpg"
-                        alt="아슬아슬 이글루"
-                      />
-                    </div>
-                    <div>
-                      <h3>아슬아슬 이글루</h3>
-                      <div class="review">
-                        <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
-                        </div>
-                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
-                      </div>
-                      <span>
-                        아이들하고 하기 정말 좋아요. 오랜만에 아이들하고 정말
-                        재미있게 놀았네요.ㅎㅎ
-                      </span>
-                    </div>
-                  </a>
-                </div>
-                <div class="boardgame">
-                  <a href="#">
-                    <div class="thumb">
-                      <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame3-4.jpg"
-                        alt="심술쟁이 고양이"
-                      />
-                    </div>
-                    <div>
-                      <h3>심술쟁이 고양이</h3>
-                      <div class="review">
-                        <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
-                        </div>
-                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
-                      </div>
-                      <span>
-                        아이들하고 하기 정말 좋아요. 오랜만에 아이들하고 정말
-                        재미있게 놀았네요.ㅎㅎ
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
                       </span>
                     </div>
                   </a>
@@ -1034,21 +1331,24 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame3-1.jpg"
-                        alt="텀블링 몽키"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/boardgame37.jpg"
+                        alt="노 땡스"
                       />
                     </div>
                     <div>
-                      <h3>텀블링 몽키</h3>
+                      <h3>노 땡스</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
                       <span>
-                        아이들하고 하기 정말 좋아요. 오랜만에 아이들하고 정말
-                        재미있게 놀았네요.ㅎㅎ
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
                       </span>
                     </div>
                   </a>
@@ -1057,21 +1357,24 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame3-2.jpg"
-                        alt="펭귄 얼음 깨기"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/boardgame38.jpg"
+                        alt="레지스탕스 아발론"
                       />
                     </div>
                     <div>
-                      <h3>펭귄 얼음 깨기</h3>
+                      <h3>레지스탕스 아발론</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
                       <span>
-                        아이들하고 하기 정말 좋아요. 오랜만에 아이들하고 정말
-                        재미있게 놀았네요.ㅎㅎ
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
                       </span>
                     </div>
                   </a>
@@ -1080,21 +1383,24 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame3-3.jpg"
-                        alt="아슬아슬 이글루"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/boardgame39.jpg"
+                        alt="뱅"
                       />
                     </div>
                     <div>
-                      <h3>아슬아슬 이글루</h3>
+                      <h3>뱅</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
                       <span>
-                        아이들하고 하기 정말 좋아요. 오랜만에 아이들하고 정말
-                        재미있게 놀았네요.ㅎㅎ
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
                       </span>
                     </div>
                   </a>
@@ -1103,21 +1409,236 @@
                   <a href="#">
                     <div class="thumb">
                       <img
-                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/boardgame3-4.jpg"
-                        alt="심술쟁이 고양이"
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/boardgame40.jpg"
+                        alt="딥 씨 크루"
                       />
                     </div>
                     <div>
-                      <h3>심술쟁이 고양이</h3>
+                      <h3>딥 씨 크루</h3>
                       <div class="review">
                         <div>
-                          <img src="../../img/main/sec6/stars.svg" alt="별" />
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/stars.svg"
+                            alt="별"
+                          />
                         </div>
                         <span>&#40; 4&period;1 &#47; 5 &#41;</span>
                       </div>
                       <span>
-                        아이들하고 하기 정말 좋아요. 오랜만에 아이들하고 정말
-                        재미있게 놀았네요.ㅎㅎ
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
+                      </span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="con_wrapper">
+                <div class="boardgame">
+                  <a href="#">
+                    <div class="thumb">
+                      <img
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/boardgame41.jpg"
+                        alt="용스팬"
+                      />
+                    </div>
+                    <div>
+                      <h3>용스팬</h3>
+                      <div class="review">
+                        <div>
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/stars.svg"
+                            alt="별"
+                          />
+                        </div>
+                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
+                      </div>
+                      <span>
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
+                      </span>
+                    </div>
+                  </a>
+                </div>
+                <div class="boardgame">
+                  <a href="#">
+                    <div class="thumb">
+                      <img
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/boardgame42.jpg"
+                        alt="푸에르토리코 1897"
+                      />
+                    </div>
+                    <div>
+                      <h3>푸에르토리코 1897</h3>
+                      <div class="review">
+                        <div>
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/stars.svg"
+                            alt="별"
+                          />
+                        </div>
+                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
+                      </div>
+                      <span>
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
+                      </span>
+                    </div>
+                  </a>
+                </div>
+                <div class="boardgame">
+                  <a href="#">
+                    <div class="thumb">
+                      <img
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/boardgame43.png"
+                        alt="아컴호러 카드 게임"
+                      />
+                    </div>
+                    <div>
+                      <h3>아컴호러 카드 게임</h3>
+                      <div class="review">
+                        <div>
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/stars.svg"
+                            alt="별"
+                          />
+                        </div>
+                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
+                      </div>
+                      <span>
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
+                      </span>
+                    </div>
+                  </a>
+                </div>
+                <div class="boardgame">
+                  <a href="#">
+                    <div class="thumb">
+                      <img
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/boardgame44.png"
+                        alt="버거 마스터"
+                      />
+                    </div>
+                    <div>
+                      <h3>버거 마스터</h3>
+                      <div class="review">
+                        <div>
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/stars.svg"
+                            alt="별"
+                          />
+                        </div>
+                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
+                      </div>
+                      <span>
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
+                      </span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="con_wrapper">
+                <div class="boardgame">
+                  <a href="#">
+                    <div class="thumb">
+                      <img
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/boardgame45.jpg"
+                        alt="비버는 건축 중"
+                      />
+                    </div>
+                    <div>
+                      <h3>비버는 건축 중</h3>
+                      <div class="review">
+                        <div>
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/stars.svg"
+                            alt="별"
+                          />
+                        </div>
+                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
+                      </div>
+                      <span>
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
+                      </span>
+                    </div>
+                  </a>
+                </div>
+                <div class="boardgame">
+                  <a href="#">
+                    <div class="thumb">
+                      <img
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/boardgame46.jpg"
+                        alt="커피 러시"
+                      />
+                    </div>
+                    <div>
+                      <h3>커피 러시</h3>
+                      <div class="review">
+                        <div>
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/stars.svg"
+                            alt="별"
+                          />
+                        </div>
+                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
+                      </div>
+                      <span>
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
+                      </span>
+                    </div>
+                  </a>
+                </div>
+                <div class="boardgame">
+                  <a href="#">
+                    <div class="thumb">
+                      <img
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/boardgame47.webp"
+                        alt="퍼니 버니"
+                      />
+                    </div>
+                    <div>
+                      <h3>퍼니 버니</h3>
+                      <div class="review">
+                        <div>
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/stars.svg"
+                            alt="별"
+                          />
+                        </div>
+                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
+                      </div>
+                      <span>
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
+                      </span>
+                    </div>
+                  </a>
+                </div>
+                <div class="boardgame">
+                  <a href="#">
+                    <div class="thumb">
+                      <img
+                        src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/boardgame48.webp"
+                        alt="크베들린부르크의 돌팔이 약장수 대결"
+                      />
+                    </div>
+                    <div>
+                      <h3>크베들린부르크의 돌팔이 약장수 대결</h3>
+                      <div class="review">
+                        <div>
+                          <img
+                            src="../../img/sub/boardgame_guide/boardgame_guide1/sec4/stars.svg"
+                            alt="별"
+                          />
+                        </div>
+                        <span>&#40; 4&period;1 &#47; 5 &#41;</span>
+                      </div>
+                      <span>
+                        처음에는 진짜 노잼이었는데 하면 할수록 너무 재밌어요.
+                        진짜 미칠 것 같아요.
                       </span>
                     </div>
                   </a>
@@ -1126,13 +1647,14 @@
             </div>
           </div>
         </section>
+
         <!--더보기 버튼-->
         <section class="btn_area">
-          <button type="button">
+          <button type="button" id="more">
             <span>더보기</span>
             <div>
               <img
-                src="../../img/sub/boardgame_guide/boardgame_guide1/sec2/btn_icon.svg"
+                src="../../img/sub/boardgame_guide/boardgame_guide1/btn_area/btn_icon.svg"
                 alt="더보기"
               />
             </div>
@@ -1201,5 +1723,10 @@
         </div>
       </footer>
     </div>
+    <!--자바스크립트-->
+    <!--클릭 이벤트-->
+    <script src="../../js/click_display.js"></script>
+    <!--보드게임-->
+    <script src="../../js/boardgame.js"></script>
   </body>
 </html>

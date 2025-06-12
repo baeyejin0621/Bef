@@ -6,6 +6,10 @@
     margin-top: clamp(100px, 31vw, 220px);
   }
 
+  section:not(.sub_visual, .sec1, .sec2, .btn_area) {
+    margin-top: clamp(64px, 19vw, 100px);
+  }
+
   /*섹션 제목 설정*/
   .sec1 h3,
   .sec2 .top h3 {
@@ -86,7 +90,7 @@
 
   /*보드게임 영역*/
   .inner_con {
-    gap: clamp(32px, 9vw, 64px);
+    gap: clamp(64px, 19vw, 100px);
   }
 
   .con_wrapper {
@@ -101,7 +105,6 @@
   }
 
   .boardgame .thumb {
-    height: calc(43vw - clamp(6px, 1.85vw, 10px));
     border-radius: clamp(8px, 2.5vw, 12px);
     margin-bottom: clamp(8px, 2.5vw, 12px);
   }
@@ -155,7 +158,7 @@
 @media screen and (min-width: 768px) {
   /*두번째 섹션*/
   .inner_con {
-    gap: 60px;
+    gap: 100px;
   }
 
   .con_wrapper {
@@ -168,7 +171,6 @@
   }
 
   .boardgame .thumb {
-    height: clamp(165.38px, 21.5vw, 285px);
     border-radius: clamp(8px, 1vw, 12px);
     margin-bottom: clamp(8px, 1vw, 12px);
   }

@@ -128,22 +128,25 @@ document.addEventListener("DOMContentLoaded", (event) => {
   const numberUp1 = document.querySelector("#number_up1");
   const numberUp2 = document.querySelector("#number_up2");
 
-  let numStart = 0;
+  let numStart = { num1: 0, num2: 0 };
 
   gsap.to(numStart, {
-    numStart: 1547,
+    num1: 1547,
+    num2: 12594,
     duration: 3,
-    ease: "linear",
-    onUpdate: numChange,
+    ease: "power3.out",
+    onUpdate: () => {
+      numberUp1.innerText = numStart.num1.toLocaleString(undefined, {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+      });
+      numberUp2.innerText = numStart.num2.toLocaleString(undefined, {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+      });
+    },
     scrollTrigger: {
-      trigger: "footer",
-      start: "0% 100%",
-      end: "0% 100%",
-      scrub: 1,
+      trigger: ".sec4",
     },
   });
-
-  function numChange() {
-    numberUp1.innerText = numStart.toFixed();
-  }
 });
