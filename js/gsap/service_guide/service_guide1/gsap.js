@@ -5,11 +5,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
   gsap.registerPlugin(ScrollTrigger); //스크롤 트리거
 
   //.sece3 pin 효과
-  let tl1 = gsap.timeline({
+  gsap.timeline({
     scrollTrigger: {
       trigger: ".sec3",
       start: "62% 50%",
-      end: "1100% 50%",
+      end: "2500% 50%",
       scrub: 1,
       pin: true,
     },
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       scrollTrigger: {
         trigger: ".sec3 .cards",
         start: "50% 60%",
-        end: "3000% 50%",
+        end: "3500% 50%",
         scrub: 1,
         duration: 20,
         ease: "linear",
