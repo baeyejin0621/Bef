@@ -3,6 +3,7 @@
 /*보드게임 썸네일 정사각형으로 유지하기*/
 //.boardgame
 let boardgame = document.querySelectorAll(".boardgame");
+boardgame = Array.from(boardgame);
 
 //.boardgame 썸네일
 let boardThumb = document.querySelectorAll(".boardgame .thumb");
@@ -18,6 +19,41 @@ boardThumb.forEach((element, i) => {
 
   window.addEventListener("click", () => {
     element.style.height = getComputedStyle(boardThumb[i]).width;
+  });
+});
+
+/*보드게임 가이드 - 키워드 클릭하면 스타일 바뀌기*/
+//키워드
+const keyword = document.querySelectorAll(".keywords button");
+
+keyword.forEach((element) => {
+  element.addEventListener("click", () => {
+    if (getComputedStyle(element).color == "rgb(34, 34, 34)") {
+      element.style.backgroundColor = "var(--sub-color1)";
+      element.style.fontWeight = "var(--semibold-weight-font)";
+      element.style.color = "var(--white-color1)";
+    } else if (getComputedStyle(element).color == "rgb(255, 255, 255)") {
+      element.style.backgroundColor = "";
+      element.style.fontWeight = "";
+      element.style.color = "";
+    }
+  });
+});
+
+/*같은 줄에 키워드 클릭하면 다른 키워드 선택 취소*/
+//키워드 박스
+const keywordBox = document.querySelectorAll(".keywords");
+
+keywordBox.forEach((element, i) => {
+  element.addEventListener("click", (event) => {
+    let keywordBoxChildren = Array.from(keywordBox[i].children);
+    keywordBoxChildren.forEach((element) => {
+      if (element != event.target) {
+        element.style.backgroundColor = "";
+        element.style.fontWeight = "";
+        element.style.color = "";
+      }
+    });
   });
 });
 
@@ -362,9 +398,65 @@ const boardgameArr = [
   },
 ];
 
-//boardgame h3
-const boardgameH3 = document.querySelectorAll(".boardgame h3");
+/*더보기 버튼 클릭하면 숨겨진 보드게임들 나오기*/
+//더보기 버튼
+const moreBtn = document.querySelector("#more");
 
+//5번째 줄부터 보드게임 숨기기
+let hiddenBoard = boardgame.filter((element) => {
+  return getComputedStyle(element).display == "none";
+});
+
+moreBtn.addEventListener("click", () => {
+  hiddenBoard.forEach((element, i, arr) => {
+    //4줄씩 숨겨진 보드게임 보이기
+    if (i < 16) {
+      element.style.display = "block";
+    }
+
+    //보여진 애들 빼고 아직 숨겨져있는 애들만 다시 배열에 담기
+    arr = boardgame.filter((element) => {
+      return getComputedStyle(element).display == "none";
+    });
+
+    hiddenBoard = arr;
+  });
+
+  //더이상 숨겨져 있는 보드게임이 없으면 더보기 버튼 숨기기
+
+  let hiddenBoardNum = boardgame.find((element) => {
+    return getComputedStyle(element).display == "none";
+  });
+
+  if (!hiddenBoardNum) {
+    moreBtn.style.display = "none";
+  }
+});
+
+//boardgame h3
+const boardgameH3 = Array.from(document.querySelectorAll(".boardgame h3"));
+
+//섹션들
+let section = document.querySelectorAll("section");
+
+section.forEach((element) => {
+  element.addEventListener("click", () => {
+    const shownBoard = boardgame.filter((elem) => {
+      let boardName = elem.innerText;
+
+      boardName.match(boardgameH3.innerText);
+      console.log(boardName);
+
+      return getComputedStyle(elem).display == "block";
+    });
+
+    let boardgame1 = boardgameH3.filter((element) => {
+      return element.innerText == shownBoard;
+    });
+  });
+});
+
+//키워드
 let play = document.querySelector("#play").children;
 play = Array.from(play);
 let people = document.querySelector("#people").children;
@@ -374,10 +466,74 @@ age = Array.from(age);
 let type = document.querySelector("#type").children;
 type = Array.from(type);
 
+//보드게임 숙련도
 play.forEach((element, i) => {
   element.addEventListener("click", () => {
     const boardgameArr1 = boardgameArr.filter((elem) => {
       return elem.play.includes(i);
+    });
+
+    boardgame.forEach((game) => {
+      game.style.display = "none";
+    });
+
+    boardgameArr1.forEach((ele) => {
+      boardgameH3.forEach((name, i) => {
+        if (ele.h3 == name.innerText) {
+          boardgame[i].style.display = "block";
+        }
+      });
+    });
+  });
+});
+
+//인원
+people.forEach((element, i) => {
+  element.addEventListener("click", () => {
+    const boardgameArr1 = boardgameArr.filter((elem) => {
+      return elem.people.includes(i);
+    });
+
+    boardgame.forEach((game) => {
+      game.style.display = "none";
+    });
+
+    boardgameArr1.forEach((ele) => {
+      boardgameH3.forEach((name, i) => {
+        if (ele.h3 == name.innerText) {
+          boardgame[i].style.display = "block";
+        }
+      });
+    });
+  });
+});
+
+//나이
+age.forEach((element, i) => {
+  element.addEventListener("click", () => {
+    const boardgameArr1 = boardgameArr.filter((elem) => {
+      return elem.age.includes(i);
+    });
+
+    boardgame.forEach((game) => {
+      game.style.display = "none";
+    });
+
+    boardgameArr1.forEach((ele) => {
+      boardgameH3.forEach((name, i) => {
+        if (ele.h3 == name.innerText) {
+          boardgame[i].style.display = "block";
+        }
+      });
+    });
+  });
+});
+
+//유형
+type.forEach((element, i) => {
+  element.addEventListener("click", () => {
+    const boardgameArr1 = boardgameArr.filter((elem) => {
+      return elem.type.includes(i);
     });
 
     boardgame.forEach((game) => {

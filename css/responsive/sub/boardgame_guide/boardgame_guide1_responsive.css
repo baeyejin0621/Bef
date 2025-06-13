@@ -90,7 +90,8 @@
 
   /*보드게임 영역*/
   .inner_con {
-    gap: clamp(64px, 19vw, 100px);
+    row-gap: clamp(64px, 19vw, 100px);
+    column-gap: clamp(12px, 3.3vw, 20px);
   }
 
   .con_wrapper {
@@ -158,16 +159,12 @@
 @media screen and (min-width: 768px) {
   /*두번째 섹션*/
   .inner_con {
-    gap: 100px;
-  }
-
-  .con_wrapper {
-    flex-wrap: nowrap;
-    gap: clamp(12px, 1.1vw, 20px);
+    row-gap: 100px;
+    column-gap: clamp(12px, 1.3vw, 20px);
   }
 
   .boardgame {
-    width: calc(25% - clamp(4px, 0.33vw, 6.6px));
+    width: calc(25% - calc(clamp(12px, 1.3vw, 20px) * 3 / 4));
   }
 
   .boardgame .thumb {

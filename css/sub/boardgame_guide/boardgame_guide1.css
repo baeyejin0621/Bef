@@ -163,19 +163,12 @@ section:not(.sub_visual, .sec1, .sec2, .btn_area) {
 
 .inner_con {
   display: flex;
-  flex-direction: column;
-  gap: 60px;
+  flex-wrap: wrap;
 }
 
-.con_wrapper {
-  width: 100%;
-  height: fit-content;
-  display: flex;
-  gap: 20px;
-}
-
-.boardgame {
-  flex: 1;
+/*보드게임 4줄만 보이게 하기*/
+.boardgame:nth-of-type(n + 17) {
+  display: none;
 }
 
 .boardgame > a {
@@ -211,6 +204,7 @@ section:not(.sub_visual, .sec1, .sec2, .btn_area) {
 .boardgame h3 {
   font-size: var(--lg-size-font);
   font-weight: var(--semibold-weight-font);
+  word-break: keep-all;
 }
 
 .boardgame .review {
@@ -247,11 +241,6 @@ section:not(.sub_visual, .sec1, .sec2, .btn_area) {
 /*마우스 호버했을 때*/
 .boardgame:hover .thumb > img {
   transform: scale(1.05);
-}
-
-/*더보기 보드게임 섹션 숨기기*/
-section:not(.sub_visual, .sec1, .sec2, .btn_area) {
-  display: none;
 }
 
 /*더보기 버튼*/

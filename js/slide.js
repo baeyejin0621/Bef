@@ -9,7 +9,8 @@ let sec2Swiper = new Swiper(".sec2_swiper", {
 
   //화살표
   navigation: {
-    enabled: false,
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
 
   // 웹접근성
@@ -33,13 +34,6 @@ let sec2Swiper = new Swiper(".sec2_swiper", {
 
     1024: {
       slidesPerView: 3,
-
-      //화살표
-      navigation: {
-        enabled: true,
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
     },
   },
 });
