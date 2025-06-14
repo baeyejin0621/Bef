@@ -94,7 +94,6 @@ keywordBox.forEach((element, i) => {
   });
 });
 
-/*키워드 설정하면 그 키워드에 맞는 보드게임 보이기*/
 //보드게임 객체를 담은 배열
 const boardgameArr = [
   {
@@ -447,154 +446,78 @@ boardgameH3.forEach((element) => {
 //키워드
 //보드게임 숙련도
 let play = Array.from(document.querySelector("#play").children);
-
-play.forEach((element, index) => {
-  //현재 안 숨겨진 보드게임 중에서 키워드에 맞는 보드게임 빼고 나머지 숨기기
-  element.addEventListener("click", () => {
-    //display: block인 boardgame의 h3 배열로 받기
-    const showName = boardName.filter((elem, i) => {
-      if (getComputedStyle(boardgame[i]).display == "block") {
-        return elem;
-      }
-    });
-
-    const showArr = boardgameArr.filter((elem) => {
-      return showName.includes(elem.h3);
-    });
-
-    const realShow = showArr.filter((elem) => {
-      return elem.play.includes(index);
-    });
-    console.log(realShow);
-
-    //보여줘야 하는 보드게임 이름
-    const realName = [];
-    realShow.forEach((elem) => {
-      realName.push(elem.h3);
-    });
-
-    //보여줘야 하는 보드게임 보이기
-    boardName.forEach((elem, i) => {
-      if (realName.includes(elem)) {
-        boardgame[i].style.display = "block";
-      } else if (!realName.includes(elem)) {
-        boardgame[i].style.display = "none";
-      }
-    });
-  });
-});
-
 //인원
 let people = Array.from(document.querySelector("#people").children);
-
-people.forEach((element, index) => {
-  //현재 안 숨겨진 보드게임 중에서 키워드에 맞는 보드게임 빼고 나머지 숨기기
-  element.addEventListener("click", () => {
-    //display: block인 boardgame의 h3 배열로 받기
-    const showName = boardName.filter((elem, i) => {
-      if (getComputedStyle(boardgame[i]).display == "block") {
-        return elem;
-      }
-    });
-
-    const showArr = boardgameArr.filter((elem) => {
-      return showName.includes(elem.h3);
-    });
-
-    const realShow = showArr.filter((elem) => {
-      return elem.people.includes(index);
-    });
-    console.log(realShow);
-
-    //보여줘야 하는 보드게임 이름
-    const realName = [];
-    realShow.forEach((elem) => {
-      realName.push(elem.h3);
-    });
-
-    //보여줘야 하는 보드게임 보이기
-    boardName.forEach((elem, i) => {
-      if (realName.includes(elem)) {
-        boardgame[i].style.display = "block";
-      } else if (!realName.includes(elem)) {
-        boardgame[i].style.display = "none";
-      }
-    });
-  });
-});
-
 //나이
 let age = Array.from(document.querySelector("#age").children);
-
-age.forEach((element, index) => {
-  //현재 안 숨겨진 보드게임 중에서 키워드에 맞는 보드게임 빼고 나머지 숨기기
-  element.addEventListener("click", () => {
-    //display: block인 boardgame의 h3 배열로 받기
-    const showName = boardName.filter((elem, i) => {
-      if (getComputedStyle(boardgame[i]).display == "block") {
-        return elem;
-      }
-    });
-
-    const showArr = boardgameArr.filter((elem) => {
-      return showName.includes(elem.h3);
-    });
-
-    const realShow = showArr.filter((elem) => {
-      return elem.age.includes(index);
-    });
-    console.log(realShow);
-
-    //보여줘야 하는 보드게임 이름
-    const realName = [];
-    realShow.forEach((elem) => {
-      realName.push(elem.h3);
-    });
-
-    //보여줘야 하는 보드게임 보이기
-    boardName.forEach((elem, i) => {
-      if (realName.includes(elem)) {
-        boardgame[i].style.display = "block";
-      } else if (!realName.includes(elem)) {
-        boardgame[i].style.display = "none";
-      }
-    });
-  });
-});
-
 //유형
 let type = Array.from(document.querySelector("#type").children);
 
-type.forEach((element, index) => {
-  //현재 안 숨겨진 보드게임 중에서 키워드에 맞는 보드게임 빼고 나머지 숨기기
+/*키워드 설정하면 그 키워드에 맞는 보드게임 보이기*/
+keyword.forEach((element) => {
   element.addEventListener("click", () => {
-    //display: block인 boardgame의 h3 배열로 받기
-    const showName = boardName.filter((elem, i) => {
-      if (getComputedStyle(boardgame[i]).display == "block") {
-        return elem;
-      }
+    //클릭된 키워드
+    let playKey = play.find((elem) => {
+      return getComputedStyle(elem).color == "rgb(255, 255, 255)";
     });
+    playKey = play.indexOf(playKey);
 
-    const showArr = boardgameArr.filter((elem) => {
-      return showName.includes(elem.h3);
+    let peopleKey = people.find((elem) => {
+      return getComputedStyle(elem).color == "rgb(255, 255, 255)";
     });
+    console.log(peopleKey);
+    peopleKey = people.indexOf(peopleKey);
+    console.log(peopleKey);
 
-    const realShow = showArr.filter((elem) => {
-      return elem.type.includes(index);
+    let ageKey = age.find((elem) => {
+      return getComputedStyle(elem).color == "rgb(255, 255, 255)";
     });
-    console.log(realShow);
+    ageKey = play.indexOf(ageKey);
 
-    //보여줘야 하는 보드게임 이름
-    const realName = [];
-    realShow.forEach((elem) => {
-      realName.push(elem.h3);
+    let typeKey = type.find((elem) => {
+      return getComputedStyle(elem).color == "rgb(255, 255, 255)";
     });
+    typeKey = play.indexOf(typeKey);
 
-    //보여줘야 하는 보드게임 보이기
-    boardName.forEach((elem, i) => {
-      if (realName.includes(elem)) {
+    //편하게 편집할 보드게임 객체들을 담은 배열
+    let showBoard = boardgameArr;
+
+    if (playKey > -1) {
+      showBoard = showBoard.filter((elem) => {
+        return elem.play.includes(playKey);
+      });
+    }
+    console.log(playKey);
+    console.log(showBoard);
+
+    if (peopleKey > -1) {
+      showBoard = showBoard.filter((elem) => {
+        return elem.people.includes(peopleKey);
+      });
+    }
+    console.log(peopleKey);
+    console.log(showBoard);
+
+    if (ageKey > -1) {
+      showBoard = showBoard.filter((elem) => {
+        return elem.age.includes(ageKey);
+      });
+    }
+    console.log(ageKey);
+    console.log(showBoard);
+
+    if (typeKey > -1) {
+      showBoard = showBoard.filter((elem) => {
+        return elem.type.includes(typeKey);
+      });
+    }
+    console.log(typeKey);
+    console.log(showBoard);
+
+    boardgameArr.forEach((elem, i) => {
+      if (showBoard.includes(elem)) {
         boardgame[i].style.display = "block";
-      } else if (!realName.includes(elem)) {
+      } else {
         boardgame[i].style.display = "none";
       }
     });
