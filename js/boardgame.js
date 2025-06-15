@@ -465,19 +465,17 @@ keyword.forEach((element) => {
     let peopleKey = people.find((elem) => {
       return getComputedStyle(elem).color == "rgb(255, 255, 255)";
     });
-    console.log(peopleKey);
     peopleKey = people.indexOf(peopleKey);
-    console.log(peopleKey);
 
     let ageKey = age.find((elem) => {
       return getComputedStyle(elem).color == "rgb(255, 255, 255)";
     });
-    ageKey = play.indexOf(ageKey);
+    ageKey = age.indexOf(ageKey);
 
     let typeKey = type.find((elem) => {
       return getComputedStyle(elem).color == "rgb(255, 255, 255)";
     });
-    typeKey = play.indexOf(typeKey);
+    typeKey = type.indexOf(typeKey);
 
     //편하게 편집할 보드게임 객체들을 담은 배열
     let showBoard = boardgameArr;
@@ -487,32 +485,24 @@ keyword.forEach((element) => {
         return elem.play.includes(playKey);
       });
     }
-    console.log(playKey);
-    console.log(showBoard);
 
     if (peopleKey > -1) {
       showBoard = showBoard.filter((elem) => {
         return elem.people.includes(peopleKey);
       });
     }
-    console.log(peopleKey);
-    console.log(showBoard);
 
     if (ageKey > -1) {
       showBoard = showBoard.filter((elem) => {
         return elem.age.includes(ageKey);
       });
     }
-    console.log(ageKey);
-    console.log(showBoard);
 
     if (typeKey > -1) {
       showBoard = showBoard.filter((elem) => {
         return elem.type.includes(typeKey);
       });
     }
-    console.log(typeKey);
-    console.log(showBoard);
 
     boardgameArr.forEach((elem, i) => {
       if (showBoard.includes(elem)) {
