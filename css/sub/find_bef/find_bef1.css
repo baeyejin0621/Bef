@@ -116,9 +116,14 @@ h3 {
 /*슬라이드*/
 .sec1 .swiper {
   position: relative;
+  width: 100%;
+  height: fit-content;
+  overflow: hidden;
 }
 
 .sec1 .swiper-wrapper {
+  width: 100%;
+  height: fit-content;
   display: flex;
   gap: 20px;
 }

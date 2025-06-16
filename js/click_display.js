@@ -201,3 +201,9 @@ selectBox.forEach((element) => {
     });
   });
 });
+
+/*find_Bef1 페이지 - 내 위치가 등록되면 내 위치 근처 모임 & 내 모임 등록 보이기*/
+//게시슬 슬라이드
+const befSlide = document.querySelector(".bef_slide");
+//내 위치가 등록되지 않았을 때
+const none = document.querySelectorAll(".none");
