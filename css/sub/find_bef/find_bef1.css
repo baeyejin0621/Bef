@@ -106,6 +106,7 @@ h3 {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  position: relative;
 }
 
 .sec1 .post_area > h4 {
@@ -114,18 +115,17 @@ h3 {
 }
 
 /*슬라이드*/
+.sec1 .slide_area {
+  display: none;
+}
 .sec1 .swiper {
-  position: relative;
   width: 100%;
   height: fit-content;
-  overflow: hidden;
 }
 
 .sec1 .swiper-wrapper {
   width: 100%;
   height: fit-content;
-  display: flex;
-  gap: 20px;
 }
 
 /*카드*/
@@ -260,16 +260,20 @@ h3 {
 }
 
 /*슬라이드 화살표*/
-.sec1 .swiper-wrapper ~ div {
+.sec1 :is(.swiper-button-prev, .swiper-button-next)::after {
+  display: none;
+}
+
+.sec1 :is(.swiper-button-prev, .swiper-button-next) {
   width: 30px;
   height: 30px;
   position: absolute;
-  top: 50%;
+  top: 60%;
   transform: translateY(-50%);
   cursor: pointer;
 }
 
-.sec1 .swiper-wrapper ~ div > img {
+.sec1 :is(.swiper-button-prev, .swiper-button-next) > img {
   width: 100%;
 }
 
@@ -287,7 +291,7 @@ h3 {
 }
 
 /*화살표에 호버했을 때*/
-.sec1 .swiper-wrapper ~ div:hover {
+.sec1 :is(.swiper-button-prev, .swiper-button-next):hover {
   filter: brightness(0.7);
 }
 

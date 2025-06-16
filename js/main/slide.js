@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 
 //메인 페이지 - 두번째 섹션 슬라이드
 let sec2Swiper = new Swiper(".sec2_swiper", {
@@ -76,27 +76,4 @@ slideBtn.forEach((element) => {
 
     videoTitle.innerHTML = currentSlide.children[0].getAttribute("data-h2");
   });
-});
-
-/*find_bef1 페이지 슬라이드*/
-let befSwiper = new Swiper(".bef_slide", {
-  spaceBetween: 20,
-  loop: true,
-  slidesPerView: 2,
-  slidesPerGroup: 1,
-
-  //화살표
-  navigation: {
-    nextEl: ".bef_btn_prev",
-    prevEl: ".bef_btn_next",
-  },
-
-  // 웹접근성
-  a11y: {
-    enabled: true,
-    prevSlideMessage: "이전 슬라이드",
-    nextSlideMessage: "다음 슬라이드",
-    slideLabelMessage:
-      "총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.",
-  },
 });

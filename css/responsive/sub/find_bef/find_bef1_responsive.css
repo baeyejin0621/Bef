@@ -83,8 +83,6 @@
 
   .sec1 .swiper-wrapper {
     width: 100%;
-    flex-direction: column;
-    align-items: center;
   }
 
   .sec1 .swiper-slide {
@@ -135,7 +133,7 @@
   /*info*/
   .sec1 .swiper-slide .info {
     gap: clamp(1px, 0.2vw, 2px);
-    font-size: clamp(var(--xxsm-size-font), 3.1vw, var(--sm-size-font));
+    font-size: clamp(var(--xxsm-size-font), 3.1vw, var(--xsm-size-font));
   }
 
   .sec1 .swiper-slide .info:nth-child(1) > div {
@@ -317,11 +315,6 @@
   /*첫번째 섹션*/
   .sec1 .top {
     flex-direction: row;
-  }
-
-  .sec1 .swiper-wrapper {
-    flex-direction: row;
-    gap: clamp(12px, 1vw, 20px);
   }
 
   .sec1 .swiper-slide {
