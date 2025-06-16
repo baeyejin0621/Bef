@@ -9,8 +9,8 @@ let sec2Swiper = new Swiper(".sec2_swiper", {
 
   //화살표
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".sec2_btn_next",
+    prevEl: ".sec2_btn_prev",
   },
 
   // 웹접근성
@@ -47,8 +47,8 @@ let sec5Swiper = new Swiper(".sec5_swiper", {
 
   //화살표
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".sec5_btn_next",
+    prevEl: ".sec5_btn_prev",
   },
 
   // 웹접근성

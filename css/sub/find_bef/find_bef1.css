@@ -84,29 +84,21 @@ h3 {
   height: fit-content;
   overflow: hidden;
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
 .sec1 .selected {
+  width: fit-content;
+  height: fit-content;
   display: flex;
   align-items: center;
-  padding: 12px 20px;
-  border-radius: 8px;
   gap: 12px;
-  background-color: var(--black-color10);
-}
-
-.sec1 .selected > span {
+  padding: 12px 20px;
+  padding-right: 36px;
+  border-radius: 8px;
   color: var(--black-color2);
-}
-
-.sec1 .selected > button {
-  width: 16px;
-  height: 16px;
-}
-
-.sec1 .selected > button > img {
-  width: 100%;
+  background-color: var(--black-color10);
 }
 
 /*내 위치 근처 모임*/

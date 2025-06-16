@@ -57,15 +57,12 @@
   }
 
   .sec1 .selected {
-    padding: clamp(6px, 1.5vw, 12px) clamp(12px, 3.7vw, 20px);
+    padding: clamp(8px, 2vw, 12px) clamp(10px, 2.5vw, 16px);
     border-radius: clamp(6px, 1vw, 8px);
-  }
-
-  .sec1 .selected > span {
     font-size: clamp(var(--xsm-size-font1), 3.4vw, var(--md-size-font));
   }
 
-  .sec1 .selected > button {
+  .sec1 .selected button {
     width: clamp(12px, 3.7vw, 16px);
     height: clamp(12px, 3.7vw, 16px);
   }

@@ -208,12 +208,21 @@ h1 img {
 }
 
 .mobile_submenu > li {
+  width: 100%;
+  height: fit-content;
   font-size: var(--sm-size-font);
   font-weight: var(--regular-weight-font);
   color: var(--black-color3);
-  padding: 16px 0;
-  line-height: 1.5;
   white-space: nowrap;
+}
+
+.icons .mobile_submenu > li > a {
+  display: block;
+  width: 100%;
+  height: fit-content;
+  text-align: center;
+  line-height: 1.5;
+  padding: 16px 0;
 }
 
 /*아이콘 영역*/
