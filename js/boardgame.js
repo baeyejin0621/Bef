@@ -455,25 +455,53 @@ let type = Array.from(document.querySelector("#type").children);
 
 /*키워드 설정하면 그 키워드에 맞는 보드게임 보이기*/
 keyword.forEach((element) => {
-  element.addEventListener("click", () => {
+  element.addEventListener("click", (event) => {
     //클릭된 키워드
     let playKey = play.find((elem) => {
-      return getComputedStyle(elem).color == "rgb(255, 255, 255)";
+      if (
+        play.includes(event.target) &&
+        getComputedStyle(event.target).color == "rgb(255, 255, 255)"
+      ) {
+        return elem == event.target;
+      } else {
+        return getComputedStyle(elem).color == "rgb(255, 255, 255)";
+      }
     });
     playKey = play.indexOf(playKey);
 
     let peopleKey = people.find((elem) => {
-      return getComputedStyle(elem).color == "rgb(255, 255, 255)";
+      if (
+        people.includes(event.target) &&
+        getComputedStyle(event.target).color == "rgb(255, 255, 255)"
+      ) {
+        return elem == event.target;
+      } else {
+        return getComputedStyle(elem).color == "rgb(255, 255, 255)";
+      }
     });
     peopleKey = people.indexOf(peopleKey);
 
     let ageKey = age.find((elem) => {
-      return getComputedStyle(elem).color == "rgb(255, 255, 255)";
+      if (
+        age.includes(event.target) &&
+        getComputedStyle(event.target).color == "rgb(255, 255, 255)"
+      ) {
+        return elem == event.target;
+      } else {
+        return getComputedStyle(elem).color == "rgb(255, 255, 255)";
+      }
     });
     ageKey = age.indexOf(ageKey);
 
     let typeKey = type.find((elem) => {
-      return getComputedStyle(elem).color == "rgb(255, 255, 255)";
+      if (
+        type.includes(event.target) &&
+        getComputedStyle(event.target).color == "rgb(255, 255, 255)"
+      ) {
+        return elem == event.target;
+      } else {
+        return getComputedStyle(elem).color == "rgb(255, 255, 255)";
+      }
     });
     typeKey = type.indexOf(typeKey);
 
@@ -504,6 +532,7 @@ keyword.forEach((element) => {
       });
     }
 
+    //클릭된 키워드에 걸리는 보드게임 보이기
     boardgameArr.forEach((elem, i) => {
       if (showBoard.includes(elem)) {
         boardgame[i].style.display = "block";
@@ -512,4 +541,144 @@ keyword.forEach((element) => {
       }
     });
   });
+});
+
+/*셀렉트 박스에서 키워드 선택하면 그 키워드에 맞는 보드게임 보이기*/
+//select 태그들
+const selectBox = Array.from(document.querySelectorAll(".select_box select"));
+
+//select value값이 바뀔 때마다 실행될 함수
+selectBox.forEach((element) => {
+  element.addEventListener("change", () => {
+    //더보기 버튼 없애기
+    moreBtn.style.display = "none";
+
+    //보드게임 숙련도 select value값
+    let playSelect = selectBox[0].value;
+
+    //인원 select value값
+    let peopleSelect = selectBox[1].value;
+
+    //나이 select value값
+    let ageSelect = selectBox[2].value;
+
+    //유형 select value값
+    let typeSelect = selectBox[3].value;
+
+    //편하게 편집할 보드게임 객체들을 담은 배열
+    let showBoard = boardgameArr;
+
+    if (playSelect > 0) {
+      showBoard = showBoard.filter((elem) => {
+        return elem.play.includes(playSelect - 1);
+      });
+    }
+
+    if (peopleSelect > 0) {
+      showBoard = showBoard.filter((elem) => {
+        return elem.people.includes(peopleSelect - 1);
+      });
+    }
+
+    if (ageSelect > 0) {
+      showBoard = showBoard.filter((elem) => {
+        return elem.age.includes(ageSelect - 1);
+      });
+    }
+
+    if (typeSelect > 0) {
+      showBoard = showBoard.filter((elem) => {
+        return elem.type.includes(typeSelect - 1);
+      });
+    }
+
+    //클릭된 키워드에 걸리는 보드게임 보이기
+    boardgameArr.forEach((elem, i) => {
+      if (showBoard.includes(elem)) {
+        boardgame[i].style.display = "block";
+      } else {
+        boardgame[i].style.display = "none";
+      }
+    });
+  });
+});
+
+/*브라우저 사이즈가 달라져 키워드 박스가 셀렉트 박스로 바뀌거나
+셀렉트 박스가 키워드 박스로 달라질 때 서로의 값 이어받기*/
+window.addEventListener("resize", () => {
+  if (innerWidth >= 1024) {
+    //보드게임 숙련도
+    if (selectBox[0].value > 0) {
+      play[selectBox[0].value - 1].style.backgroundColor = "var(--sub-color1)";
+      play[selectBox[0].value - 1].style.fontWeight =
+        "var(--semibold-weight-font)";
+      play[selectBox[0].value - 1].style.color = "var(--white-color1)";
+    }
+
+    //인원
+    if (selectBox[1].value > 0) {
+      people[selectBox[1].value - 1].style.backgroundColor =
+        "var(--sub-color1)";
+      people[selectBox[1].value - 1].style.fontWeight =
+        "var(--semibold-weight-font)";
+      people[selectBox[1].value - 1].style.color = "var(--white-color1)";
+    }
+
+    //나이
+    if (selectBox[2].value > 0) {
+      age[selectBox[2].value - 1].style.backgroundColor = "var(--sub-color1)";
+      age[selectBox[2].value - 1].style.fontWeight =
+        "var(--semibold-weight-font)";
+      age[selectBox[2].value - 1].style.color = "var(--white-color1)";
+    }
+
+    //유형
+    if (selectBox[3].value > 0) {
+      type[selectBox[3].value - 1].style.backgroundColor = "var(--sub-color1)";
+      type[selectBox[3].value - 1].style.fontWeight =
+        "var(--semibold-weight-font)";
+      type[selectBox[3].value - 1].style.color = "var(--white-color1)";
+    }
+  } else if (innerWidth < 1024) {
+    //클릭된 키워드
+    let playKey = play.find((elem) => {
+      return getComputedStyle(elem).color == "rgb(255, 255, 255)";
+    });
+    playKey = play.indexOf(playKey);
+
+    let peopleKey = people.find((elem) => {
+      return getComputedStyle(elem).color == "rgb(255, 255, 255)";
+    });
+    peopleKey = people.indexOf(peopleKey);
+
+    let ageKey = age.find((elem) => {
+      return getComputedStyle(elem).color == "rgb(255, 255, 255)";
+    });
+    ageKey = age.indexOf(ageKey);
+
+    let typeKey = type.find((elem) => {
+      return getComputedStyle(elem).color == "rgb(255, 255, 255)";
+    });
+    typeKey = type.indexOf(typeKey);
+
+    //보드게임 숙련도
+    if (playKey > -1) {
+      selectBox[0].value = playKey + 1;
+    }
+
+    //인원
+    if (peopleKey > -1) {
+      selectBox[1].value = peopleKey + 1;
+    }
+
+    //나이
+    if (ageKey > -1) {
+      selectBox[2].value = ageKey + 1;
+    }
+
+    //유형
+    if (typeKey > -1) {
+      selectBox[3].value = typeKey + 1;
+    }
+  }
 });
