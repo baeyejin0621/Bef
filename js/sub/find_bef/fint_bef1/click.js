@@ -141,6 +141,8 @@ selectBox.forEach((element) => {
 
 //등록 버튼
 const submitBtn = document.querySelector(".submit");
+//제목 input
+const postTitle = document.querySelector(".top input");
 //모임 날짜 input
 const date = document.querySelector("input[type=date]");
 //모임 시작 시간 input
@@ -151,6 +153,8 @@ const to = document.querySelector("#to");
 const place = document.querySelector("select.place");
 //보드게임 select
 const boardgame = document.querySelector(".select_game");
+//인원 input
+const people = document.querySelector("input[placeholder*=인원수]");
 
 /*모임 날짜를 오늘 이전으로 정할 수 없게 하기*/
 const today = new Date();
@@ -190,16 +194,129 @@ submitBtn.addEventListener("click", () => {
 
   //.top h4
   let h4 = document.createElement("h4");
+  let h4Text = document.createTextNode(postTitle.value);
+  h4.appendChild(h4Text);
   top.appendChild(h4);
-  console.log(postAfter);
 
   //.top span
   let timeAfter = document.createElement("span");
+  timeAfter = elaspsedTime(today.getTime());
+  top.appendChild(timeAfter);
 
-  //날짜
-  let dateVal = date.value;
-  //시작 시간
-  let fromVal = from.value;
-  //끝나는 시간
-  let toVal = to.value;
+  //.content
+  let content = document.createElement("div");
+  let contentClass = document.createAttribute("class");
+  contentClass.value = "content";
+  content.setAttributeNode(contentClass);
+  left.appendChild(content);
+
+  //.time_line
+  let timeLine = document.createElement("div");
+  let timeLineClass = document.createAttribute("class");
+  timeLineClass.value = "time_line";
+  timeLine.setAttribute(timeLineClass);
+  content.appendChild(timeLine);
+
+  //.date
+  let dateP = document.createElement("p");
+  let datePClass = document.createAttribute("class");
+  datePClass.value = "date";
+  dateP.setAttributeNode(datePClass);
+  let dateText = document.createTextNode(date.value);
+  dateP.appendChild(dateText);
+  timeLine.appendChild(dateP);
+
+  //.timeline span
+  let columnLine = document.createElement("span");
+  let columnLineText = document.createTextNode("|");
+  columnLine.appendChild(columnLineText);
+  timeLine.appendChild(columnLine);
+
+  //.time
+  let timeP = document.createElement("p");
+  let timePClass = document.createAttribute("class");
+  timePClass.value = "time";
+  timeP.setAttributeNode(timePClass);
+  timeLine.appendChild(timeP);
+
+  //.from
+  let fromP = document.createElement("p");
+  let fromPClass = document.createAttribute("class");
+  fromPClass.value = "from";
+  fromP.setAttributeNode(fromPClass);
+  let fromText = document.createTextNode(from.value);
+  fromP.appendChild(fromText);
+  timeP.appendChild(fromP);
+
+  //.time span
+  let rowLine = document.createElement("span");
+  let rowLineText = document.createTextNode("-");
+  rowLine.appendChild(rowLineText);
+  timeP.appendChild(rowLine);
+
+  //.to
+  let toP = document.createElement("p");
+  let toPClass = document.createAttribute("class");
+  toPClass.value = "to";
+  toP.setAttributeNode(toPClass);
+  let toPText = document.createTextNode(to.value);
+  toP.appendChild(toPText);
+  timeP.appendChild(toP);
+
+  //.place
+  let placeP = document.createElement("p");
+  let placePClass = document.createAttribute("class");
+  placePClass.value = "place";
+  placeP.setAttributeNode(placePClass);
+  let placePText = document.createTextNode(place.value);
+  placeP.appendChild(placePText);
+  content.appendChild(placeP);
+
+  //.boardgame
+  let boardgameP = document.createElement("p");
+  let boardgamePClass = document.createAttribute("class");
+  boardgamePClass.value = "boardgame";
+  boardgameP.setAttributeNode(boardgamePClass);
+  let boardgamePText = document.createTextNode(boardgame.value);
+  boardgameP.appendChild(boardgamePText);
+  content.appendChild(boardgameP);
+
+  //.people
+  let peopleP = document.createElement("p");
+  let peoplePClass = document.createAttribute("class");
+  peoplePClass.value = "people";
+  peopleP.setAttributeNode(peoplePClass);
+  let peoplePText = document.createTextNode(people.value);
+  peopleP.appendChild(peoplePText);
+  content.append(peopleP);
+
+  //.btn_area
 });
+
+/*게시글 게시 후 얼마나 시간이 지났는지 보여주는 함수*/
+function elaspsedTime(timeThen) {
+  let nowTime = new Date();
+  let thenTime = new Date(timeThen);
+
+  let timeSec = Math.floor((nowTime.getTime() - thenTime.getTime()) / 1000);
+
+  if (timeSec < 60) {
+    return "방금 전";
+  }
+
+  if (timeSec < 60 * 60) {
+    return `${Math.floor(timeSec / 60)}분 전`;
+  }
+
+  if (timeSec < 60 * 60 * 24) {
+    return `${Math.floor(timeSec / (60 * 60))}시간 전`;
+  }
+
+  if (timeSec < 60 * 60 * 24 * 7) {
+    return `${Math.floor(timeSec / (60 * 60 * 24))}일 전`;
+  }
+
+  if (timeSec >= 60 * 60 * 24 * 7) {
+    return thenTime;
+  }
+}
