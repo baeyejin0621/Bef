@@ -653,22 +653,46 @@
             <h3>내 모임</h3>
             <div class="con_wrap">
               <div class="post">
-                <div class="post_after"></div>
+                <div class="post_after">
+                  <!--임시 내용-->
+                  <div class="left">
+                    <div class="top">
+                      <h4>제목입니다.</h4>
+                      <span>7일 전</span>
+                    </div>
+                    <div class="content">
+                      <div class="time_line">
+                        <p class="date">2025-06-21</p>
+                        <span>|</span>
+                        <div class="time">
+                          <p class="from">오후 7시</p>
+                          <span>-</span>
+                          <p class="to">오후 9시</p>
+                        </div>
+                      </div>
+                      <p class="place">보드게임카페 레드버튼 시네마강남</p>
+                      <p class="boardgame">아컴호러</p>
+                      <p class="people"><span>4</span>/10</p>
+                    </div>
+                    <div class="btn_area">
+                      <button type="button" class="edit">수정</button>
+                      <button type="button" class="delete">삭제</button>
+                    </div>
+                  </div>
+                </div>
                 <div class="post_before">
-                  <div class="right"></div>
                   <div class="left">
                     <div class="top">
                       <input type="text" placeholder="제목을 입력해주세요." />
-                      <span>7일 전</span>
                     </div>
                     <div class="content">
                       <div class="time_line">
                         <input type="date" class="date" />
                         <span>|</span>
                         <div class="hour">
-                          <input type="time" />
+                          <input type="time" id="from" step="1800" />
                           <span>-</span>
-                          <input type="time" />
+                          <input type="time" id="to" />
                         </div>
                       </div>
                       <select class="place">
@@ -715,8 +739,6 @@
                       />
                     </div>
                     <div class="btn_area">
-                      <button type="button" class="edit">수정</button>
-                      <button type="button" class="delete">삭제</button>
                       <button type="button" class="submit">등록</button>
                     </div>
                   </div>
