@@ -61,6 +61,169 @@ h3 {
 }
 
 /*지도 영역*/
+#map {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.map_wrap a,
+.map_wrap a:hover,
+.map_wrap a:active {
+  text-decoration: none;
+}
+
+.map_wrap {
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+
+#menu_wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 250px;
+  margin: 10px 0 30px 10px;
+  padding: 10px 5px;
+  overflow-y: auto;
+  background: var(--white-color1);
+  z-index: 1;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.bg_white {
+  background: var(--white-color1);
+}
+
+/*검색 영역*/
+#menu_wrap .line {
+  display: block;
+  height: 1px;
+  background-color: var(--black-color9);
+  margin: 10px 0;
+}
+
+#menu_wrap .option {
+  text-align: center;
+}
+
+#menu_wrap .option p {
+  margin: 10px 0;
+}
+
+#menu_wrap .option form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 0 4px;
+  font-size: var(--sm-size-font);
+  color: var(--black-color2);
+  font-weight: var(--semibold-weight-font);
+}
+
+#menu_wrap .option input {
+  padding: 4px;
+  border-radius: 1px;
+  flex: 1;
+  background-color: var(--black-color10);
+  color: var(--black-color2);
+}
+
+#menu_wrap .option button {
+  font-size: var(--sm-size-font);
+  width: 18px;
+  height: 18px;
+  filter: invert(0.3);
+}
+
+#menu_wrap .option button > img {
+  width: 100%;
+}
+
+/*검색 결과 목록*/
+#placesList .item {
+  position: relative;
+  border-bottom: 1px solid var(--black-color9);
+  overflow: hidden;
+  cursor: pointer;
+  min-height: 65px;
+}
+
+#placesList .item span {
+  display: block;
+  margin-top: 4px;
+}
+
+#placesList .item h5,
+#placesList .item .info {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--black-color1);
+}
+
+#placesList .item .info {
+  padding: 10px 0 10px 45px;
+}
+
+#placesList .info .gray {
+  color: var(--black-color3);
+}
+
+#placesList .info .jibun {
+  padding-left: 29px;
+  background: url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_jibun.png)
+    no-repeat;
+}
+
+#placesList .info .tel {
+  color: var(--black-color4);
+}
+
+#placesList .item .markerbg {
+  float: left;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  margin: 10px 0 0 10px;
+  background: url(../../../img/sub/boardgame_cafe/boardgame_cafe1/sec1/map_pin.svg)
+    no-repeat;
+}
+
+/*페이지네이션*/
+#pagination {
+  margin: 10px auto;
+  text-align: center;
+}
+
+#pagination a {
+  display: inline-block;
+  margin-right: 10px;
+  color: var(--black-color4);
+}
+
+#pagination .on {
+  font-weight: bold;
+  cursor: default;
+  color: var(--black-color3);
+}
+/* 인포윈도우 */
+.info_window {
+  display: block;
+  background: #50627f;
+  color: #fff;
+  text-align: center;
+  height: 24px;
+  line-height: 22px;
+  border-radius: 4px;
+  padding: 0px 10px;
+}
 
 /*리뷰 영역*/
 .sec1 .review_area {
