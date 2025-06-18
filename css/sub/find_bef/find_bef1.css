@@ -325,7 +325,7 @@ h3 {
 .sec2 .post {
   width: 100%;
   height: fit-content;
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   gap: 20px;
 }
@@ -448,6 +448,7 @@ h3 {
   background-position: 100% 50%;
   padding-left: 8px;
   margin-bottom: 1px;
+  cursor: pointer;
 }
 
 /*인원수*/
@@ -462,6 +463,9 @@ h3 {
 }
 
 /*등록 후*/
+.sec2 .post > .post_after {
+  border: 1px solid var(--black-color6);
+}
 .sec2 .post_after .left {
   margin-top: 4px;
 }
@@ -628,7 +632,11 @@ h3 {
   white-space: nowrap;
 }
 
-/*pop-up1*/
+/*pop_up1*/
+.pop_up1 {
+  display: none;
+}
+
 .pop_up1 button {
   flex: 1;
 }
@@ -638,4 +646,9 @@ h3 {
   color: var(--main-color1);
   background-color: var(--white-color1);
   box-sizing: border-box;
+}
+
+/*pop_up2*/
+.pop_up2 {
+  display: none;
 }

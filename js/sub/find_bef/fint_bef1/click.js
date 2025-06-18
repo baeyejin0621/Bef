@@ -7,8 +7,8 @@ const selectBox = document.querySelectorAll(".top select");
 const slideArea = document.querySelector(".slide_area");
 //내 위치가 등록되지 않았을 때
 const none = document.querySelectorAll(".none");
-//내가 등록한 모임
-const myPost = document.querySelector(".post");
+//내 모임 보이는 영역
+const post = document.querySelector(".post");
 
 //첫번째 선택하면 두번째 선택 박스 초기화
 selectBox[0].addEventListener("change", () => {
@@ -112,7 +112,10 @@ selectBox.forEach((element) => {
         if (bottom.children.length === 1) {
           bottom.removeChild(selected[i]);
           slideArea.style.display = "none";
-          none[0].style.display = "block";
+          post.style.display = "none";
+          none.forEach((elem) => {
+            elem.style.display = "block";
+          });
           //셀렉트바 초기화
           selectBox[0].value = 0;
           selectBox[1].value = 0;
@@ -125,13 +128,13 @@ selectBox.forEach((element) => {
     /*내 위치가 등록되면 내 위치 근처 모임, 내가 등록한 모임 보이기*/
     if (selected.length > 0) {
       slideArea.style.display = "block";
-      myPost.style.display = "flex";
+      post.style.display = "flex";
       none.forEach((elem) => {
         elem.style.display = "none";
       });
     } else {
       slideArea.style.display = "none";
-      myPost.style.display = "none";
+      post.style.display = "none";
       none.forEach((elem) => {
         elem.style.display = "block";
       });
@@ -143,6 +146,7 @@ selectBox.forEach((element) => {
 const submitBtn = document.querySelector(".submit");
 //제목 input
 const postTitle = document.querySelector(".top input");
+console.log(postTitle.value);
 //모임 날짜 input
 const date = document.querySelector("input[type=date]");
 //모임 시작 시간 input
@@ -155,6 +159,12 @@ const place = document.querySelector("select.place");
 const boardgame = document.querySelector(".select_game");
 //인원 input
 const people = document.querySelector("input[placeholder*=인원수]");
+//pop_up_bg
+const popUpBg = document.querySelector(".pop_up_bg");
+//pop_up1
+const popUp1 = document.querySelector(".pop_up1");
+//pop_up2
+const popUp2 = document.querySelector(".pop_up2");
 
 /*모임 날짜를 오늘 이전으로 정할 수 없게 하기*/
 const today = new Date();
@@ -171,126 +181,227 @@ date.min = dateMin;
 
 /*등록 버튼 누르면 내 모임 등록되기*/
 submitBtn.addEventListener("click", () => {
-  //값 넣을 껍데기 만들기
-  //.post_after
-  let postAfter = document.createElement("div");
-  let postAfterClass = document.createAttribute("class");
-  postAfterClass.value = "post_after";
-  postAfter.setAttributeNode(postAfterClass);
+  /*등록 버튼 눌렀을 때 모든 내용이 채워져있지 않으면 레이어창 보이기*/
+  if (
+    postTitle.value &&
+    date.value &&
+    from.value &&
+    to.value &&
+    place.value > 0 &&
+    boardgame.value > 0 &&
+    people.value > 0
+  ) {
+    //값 넣을 껍데기 만들기
+    //.post_after
+    let postAfter = document.createElement("div");
+    let postAfterClass = document.createAttribute("class");
+    postAfterClass.value = "post_after";
+    postAfter.setAttributeNode(postAfterClass);
+    post.insertBefore(postAfter, post.childNodes[0]);
 
-  //.left
-  let left = document.createElement("div");
-  let leftClass = document.createAttribute("class");
-  leftClass.value = "left";
-  left.setAttributeNode(leftClass);
-  postAfter.appendChild(left);
+    //.left
+    let left = document.createElement("div");
+    let leftClass = document.createAttribute("class");
+    leftClass.value = "left";
+    left.setAttributeNode(leftClass);
+    postAfter.appendChild(left);
 
-  //.top
-  let top = document.createElement("div");
-  let topClass = document.createAttribute("class");
-  topClass.value = "top";
-  top.setAttributeNode(topClass);
-  left.appendChild(top);
+    //.top
+    let top = document.createElement("div");
+    let topClass = document.createAttribute("class");
+    topClass.value = "top";
+    top.setAttributeNode(topClass);
+    left.appendChild(top);
 
-  //.top h4
-  let h4 = document.createElement("h4");
-  let h4Text = document.createTextNode(postTitle.value);
-  h4.appendChild(h4Text);
-  top.appendChild(h4);
+    //.top h4
+    let h4 = document.createElement("h4");
+    let h4Text = document.createTextNode(postTitle.value);
+    h4.appendChild(h4Text);
+    top.appendChild(h4);
 
-  //.top span
-  let timeAfter = document.createElement("span");
-  timeAfter = elaspsedTime(today.getTime());
-  top.appendChild(timeAfter);
+    //.top span
+    let timeAfter = document.createElement("span");
+    let timeAfterText = document.createTextNode(elaspsedTime(today.getTime()));
+    timeAfter.appendChild(timeAfterText);
+    top.appendChild(timeAfter);
 
-  //.content
-  let content = document.createElement("div");
-  let contentClass = document.createAttribute("class");
-  contentClass.value = "content";
-  content.setAttributeNode(contentClass);
-  left.appendChild(content);
+    //.content
+    let content = document.createElement("div");
+    let contentClass = document.createAttribute("class");
+    contentClass.value = "content";
+    content.setAttributeNode(contentClass);
+    left.appendChild(content);
 
-  //.time_line
-  let timeLine = document.createElement("div");
-  let timeLineClass = document.createAttribute("class");
-  timeLineClass.value = "time_line";
-  timeLine.setAttribute(timeLineClass);
-  content.appendChild(timeLine);
+    //.time_line
+    let timeLine = document.createElement("div");
+    let timeLineClass = document.createAttribute("class");
+    timeLineClass.value = "time_line";
+    timeLine.setAttributeNode(timeLineClass);
+    content.appendChild(timeLine);
 
-  //.date
-  let dateP = document.createElement("p");
-  let datePClass = document.createAttribute("class");
-  datePClass.value = "date";
-  dateP.setAttributeNode(datePClass);
-  let dateText = document.createTextNode(date.value);
-  dateP.appendChild(dateText);
-  timeLine.appendChild(dateP);
+    //.date
+    let dateP = document.createElement("p");
+    let datePClass = document.createAttribute("class");
+    datePClass.value = "date";
+    dateP.setAttributeNode(datePClass);
+    let dateText = document.createTextNode(date.value);
+    dateP.appendChild(dateText);
+    timeLine.appendChild(dateP);
 
-  //.timeline span
-  let columnLine = document.createElement("span");
-  let columnLineText = document.createTextNode("|");
-  columnLine.appendChild(columnLineText);
-  timeLine.appendChild(columnLine);
+    //.timeline span
+    let columnLine = document.createElement("span");
+    let columnLineText = document.createTextNode("|");
+    columnLine.appendChild(columnLineText);
+    timeLine.appendChild(columnLine);
 
-  //.time
-  let timeP = document.createElement("p");
-  let timePClass = document.createAttribute("class");
-  timePClass.value = "time";
-  timeP.setAttributeNode(timePClass);
-  timeLine.appendChild(timeP);
+    //.time
+    let timeP = document.createElement("p");
+    let timePClass = document.createAttribute("class");
+    timePClass.value = "time";
+    timeP.setAttributeNode(timePClass);
+    timeLine.appendChild(timeP);
 
-  //.from
-  let fromP = document.createElement("p");
-  let fromPClass = document.createAttribute("class");
-  fromPClass.value = "from";
-  fromP.setAttributeNode(fromPClass);
-  let fromText = document.createTextNode(from.value);
-  fromP.appendChild(fromText);
-  timeP.appendChild(fromP);
+    //.from
+    let fromP = document.createElement("p");
+    let fromPClass = document.createAttribute("class");
+    fromPClass.value = "from";
+    fromP.setAttributeNode(fromPClass);
+    let fromText = document.createTextNode(from.value);
+    fromP.appendChild(fromText);
+    timeP.appendChild(fromP);
 
-  //.time span
-  let rowLine = document.createElement("span");
-  let rowLineText = document.createTextNode("-");
-  rowLine.appendChild(rowLineText);
-  timeP.appendChild(rowLine);
+    //.time span
+    let rowLine = document.createElement("span");
+    let rowLineText = document.createTextNode("-");
+    rowLine.appendChild(rowLineText);
+    timeP.appendChild(rowLine);
 
-  //.to
-  let toP = document.createElement("p");
-  let toPClass = document.createAttribute("class");
-  toPClass.value = "to";
-  toP.setAttributeNode(toPClass);
-  let toPText = document.createTextNode(to.value);
-  toP.appendChild(toPText);
-  timeP.appendChild(toP);
+    //.to
+    let toP = document.createElement("p");
+    let toPClass = document.createAttribute("class");
+    toPClass.value = "to";
+    toP.setAttributeNode(toPClass);
+    let toPText = document.createTextNode(to.value);
+    toP.appendChild(toPText);
+    timeP.appendChild(toP);
 
-  //.place
-  let placeP = document.createElement("p");
-  let placePClass = document.createAttribute("class");
-  placePClass.value = "place";
-  placeP.setAttributeNode(placePClass);
-  let placePText = document.createTextNode(place.value);
-  placeP.appendChild(placePText);
-  content.appendChild(placeP);
+    //.place
+    let placeP = document.createElement("p");
+    let placePClass = document.createAttribute("class");
+    placePClass.value = "place";
+    placeP.setAttributeNode(placePClass);
+    let placePText = Array.from(place.children).find((elem, i) => {
+      return i == place.value;
+    });
+    placePText = placePText.innerText;
+    placePText = document.createTextNode(placePText);
+    placeP.appendChild(placePText);
+    content.appendChild(placeP);
 
-  //.boardgame
-  let boardgameP = document.createElement("p");
-  let boardgamePClass = document.createAttribute("class");
-  boardgamePClass.value = "boardgame";
-  boardgameP.setAttributeNode(boardgamePClass);
-  let boardgamePText = document.createTextNode(boardgame.value);
-  boardgameP.appendChild(boardgamePText);
-  content.appendChild(boardgameP);
+    //.boardgame
+    let boardgameP = document.createElement("p");
+    let boardgamePClass = document.createAttribute("class");
+    boardgamePClass.value = "boardgame";
+    boardgameP.setAttributeNode(boardgamePClass);
+    let boardgamePText = Array.from(boardgame.children).find((elem, i) => {
+      return i == boardgame.value;
+    });
+    boardgamePText = boardgamePText.innerText;
+    boardgamePText = document.createTextNode(boardgamePText);
+    boardgameP.appendChild(boardgamePText);
+    content.appendChild(boardgameP);
 
-  //.people
-  let peopleP = document.createElement("p");
-  let peoplePClass = document.createAttribute("class");
-  peoplePClass.value = "people";
-  peopleP.setAttributeNode(peoplePClass);
-  let peoplePText = document.createTextNode(people.value);
-  peopleP.appendChild(peoplePText);
-  content.append(peopleP);
+    //.people
+    let peopleP = document.createElement("p");
+    let peoplePClass = document.createAttribute("class");
+    peoplePClass.value = "people";
+    peopleP.setAttributeNode(peoplePClass);
+    let peoplePSpan = document.createElement("span");
+    let peoplePSpanText = document.createTextNode("0");
+    peoplePSpan.appendChild(peoplePSpanText);
+    peopleP.appendChild(peoplePSpan);
+    let peoplePText = document.createTextNode(`/${people.value}`);
+    peopleP.appendChild(peoplePText);
+    content.append(peopleP);
 
-  //.btn_area
+    //.btn_area
+    let btnArea = document.createElement("div");
+    let btnAreaClass = document.createAttribute("class");
+    btnAreaClass.value = "btn_area";
+    btnArea.setAttributeNode(btnAreaClass);
+    left.appendChild(btnArea);
+
+    //.edit
+    let editBtn = document.createElement("button");
+    let editBtnType = document.createAttribute("type");
+    editBtnType.value = "button";
+    editBtn.setAttributeNode(editBtnType);
+    let editBtnClass = document.createAttribute("class");
+    editBtnClass.value = "edit";
+    editBtn.setAttributeNode(editBtnClass);
+    let editBtnText = document.createTextNode("수정");
+    editBtn.appendChild(editBtnText);
+    btnArea.appendChild(editBtn);
+
+    //.delete
+    let deleteBtn = document.createElement("button");
+    let deleteBtnType = document.createAttribute("type");
+    deleteBtnType.value = "button";
+    deleteBtn.setAttributeNode(deleteBtnType);
+    let deleteBtnClass = document.createAttribute("class");
+    deleteBtnClass.value = "delete";
+    deleteBtn.setAttributeNode(deleteBtnClass);
+    let deleteBtnText = document.createTextNode("삭제");
+    deleteBtn.appendChild(deleteBtnText);
+    btnArea.appendChild(deleteBtn);
+
+    /*등록 버튼 누른 후 내용 초기화*/
+    postTitle.value = "";
+    date.value = 0;
+    from.value = 0;
+    to.value = 0;
+    place.value = 0;
+    boardgame.value = 0;
+    people.value = "";
+  } else {
+    popUpBg.style.display = "block";
+    popUp1.style.display = "none";
+    popUp2.style.display = "flex";
+  }
+
+  /*확인 버튼 누르면 popUp2 사라지기*/
+  const ok = document.querySelector(".pop_up2 button");
+  ok.addEventListener("click", () => {
+    popUpBg.style.display = "none";
+    popUp2.style.display = "none";
+  });
+
+  /*delete 버튼 누르면 레이어창 뜨고 확인 버튼 누르면 삭제하기*/
+  const dltBtn = document.querySelectorAll(".delete");
+  dltBtn.forEach((element, i) => {
+    element.addEventListener("click", () => {
+      popUpBg.style.display = "block";
+      popUp1.style.display = "flex";
+      popUp2.style.display = "none";
+
+      //확인 버튼 누르면 게시글 삭제하기
+      //확인 버튼
+      const realDelete = document.querySelector(".pop_up1 .yes");
+      realDelete.addEventListener("click", () => {
+        const postAfter = document.querySelectorAll(".post_after");
+        post.removeChild(postAfter[i]);
+        popUp1.style.display = "none";
+        popUpBg.style.display = "none";
+      });
+
+      //취소 버튼
+      const cancel = document.querySelector(".pop_up1 .no");
+      cancel.addEventListener("click", () => {
+        popUp1.style.display = "none";
+        popUpBg.style.display = "none";
+      });
+    });
+  });
 });
 
 /*게시글 게시 후 얼마나 시간이 지났는지 보여주는 함수*/
