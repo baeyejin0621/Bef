@@ -213,16 +213,16 @@ h3 {
   cursor: default;
   color: var(--black-color3);
 }
-/* 인포윈도우 */
-.info_window {
-  display: block;
-  background: #50627f;
-  color: #fff;
-  text-align: center;
-  height: 24px;
-  line-height: 22px;
-  border-radius: 4px;
-  padding: 0px 10px;
+
+/*맵 핀 위에 뜰 장소명*/
+.place_name {
+  width: 50px;
+  height: 10px;
+  background-color: var(--white-color1);
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -150%);
 }
 
 /*리뷰 영역*/
@@ -314,6 +314,7 @@ h3 {
   border: 1px solid var(--black-color7);
   padding: 20px;
   transition: border 0.3s;
+  cursor: pointer;
 }
 
 /*프로필*/

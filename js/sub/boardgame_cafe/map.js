@@ -1,3 +1,5 @@
+"use strict";
+
 // 마커를 담을 배열입니다
 var markers = [];
 
@@ -12,11 +14,6 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 
 // 장소 검색 객체를 생성합니다
 var ps = new kakao.maps.services.Places();
-
-// 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
-var infowindow = new kakao.maps.InfoWindow({
-  zIndex: 1,
-});
 
 // 키워드로 장소를 검색합니다
 searchPlaces();
@@ -76,28 +73,31 @@ function displayPlaces(places) {
     // LatLngBounds 객체에 좌표를 추가합니다
     bounds.extend(placePosition);
 
-    // 마커와 검색결과 항목에 mouseover 했을때
-    // 해당 장소에 인포윈도우에 장소명을 표시합니다
-    // mouseout 했을 때는 인포윈도우를 닫습니다
-    (function (marker, title) {
-      kakao.maps.event.addListener(marker, "mouseover", function () {
-        displayInfowindow(marker, title);
-      });
-
-      kakao.maps.event.addListener(marker, "mouseout", function () {
-        infowindow.close();
-      });
-
-      itemEl.onmouseover = function () {
-        displayInfowindow(marker, title);
-      };
-
-      itemEl.onmouseout = function () {
-        infowindow.close();
-      };
-    })(marker, places[i].place_name);
-
     fragment.appendChild(itemEl);
+
+    /*마커 위에 말풍선으로 장소명 뜨기*/
+    //태그 껍데기 만들기
+    let placeName = document.createElement("div");
+    let placeNameClass = document.createAttribute("class");
+    placeNameClass.value = "place_name";
+    placeName.setAttributeNode(placeNameClass);
+
+    //핀 이미지 배열로 가져오기
+    let pinImg = Array.from(document.querySelectorAll("img"));
+    pinImg = pinImg.filter((element) => {
+      return getComputedStyle(element).width == "28px";
+    });
+    pinImg = pinImg.slice(2, -1); //맵 핀 이미지만 배열에 담기 완료
+
+    //맵 핀 이미지 부모 div들 담은 배열
+    let pinParent = [];
+    pinImg.forEach((element) => {
+      pinParent.push(element.parentNode);
+    });
+
+    pinParent.forEach((element, i) => {
+      element.appendChild(placeName);
+    });
   }
 
   // 검색결과 항목들을 검색결과 목록 Element에 추가합니다
@@ -143,8 +143,8 @@ function getListItem(index, places) {
 // 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
 function addMarker(position, idx, title) {
   var imageSrc =
-      "../../../img/sub/boardgame_cafe/boardgame_cafe1/sec1/map_pin_filled.svg", // 마커 이미지 url, 스프라이트 이미지를 씁니다
-    imageSize = new kakao.maps.Size(24, 24), // 마커 이미지의 크기
+      "../../../img/sub/boardgame_cafe/boardgame_cafe1/sec1/map_pin_filled.svg", // 마커 이미지 url, 커스텀 이미지
+    imageSize = new kakao.maps.Size(28, 28), // 마커 이미지의 크기
     imgOptions = {
       offset: new kakao.maps.Point(13, 37), // 마커 좌표에 일치시킬 이미지 내에서의 좌표
     },
@@ -199,32 +199,9 @@ function displayPagination(pagination) {
   paginationEl.appendChild(fragment);
 }
 
-// 검색결과 목록 또는 마커를 클릭했을 때 호출되는 함수입니다
-// 인포윈도우에 장소명을 표시합니다
-function displayInfowindow(marker, title) {
-  var content = '<div class="info_window">' + title + "</div>";
-
-  infowindow.setContent(content);
-  infowindow.open(map, marker);
-}
-
 // 검색결과 목록의 자식 Element를 제거하는 함수입니다
 function removeAllChildNods(el) {
   while (el.hasChildNodes()) {
     el.removeChild(el.lastChild);
   }
 }
-
-var infoTitle = document.querySelectorAll(".info_window");
-
-infoTitle.forEach(function (e) {
-  var w = e.offsetWidth + 10;
-  var ml = w / 2;
-  e.parentElement.style.top = "82px";
-  e.parentElement.style.left = "50%";
-  e.parentElement.style.marginLeft = -ml + "px";
-  e.parentElement.style.width = w + "px";
-  e.parentElement.previousSibling.style.display = "none";
-  e.parentElement.parentElement.style.border = "0px";
-  e.parentElement.parentElement.style.background = "unset";
-});
