@@ -1,26 +1,26 @@
 "use strict";
 
 // 마커를 담을 배열입니다
-var markers = [];
+let markers = [];
 
-var mapContainer = document.getElementById("map"), // 지도를 표시할 div
+let mapContainer = document.getElementById("map"), // 지도를 표시할 div
   mapOption = {
     center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
-    level: 3, // 지도의 확대 레벨
+    level: 1, // 지도의 확대 레벨
   };
 
 // 지도를 생성합니다
-var map = new kakao.maps.Map(mapContainer, mapOption);
+let map = new kakao.maps.Map(mapContainer, mapOption);
 
 // 장소 검색 객체를 생성합니다
-var ps = new kakao.maps.services.Places();
+let ps = new kakao.maps.services.Places();
 
 // 키워드로 장소를 검색합니다
 searchPlaces();
 
 // 키워드 검색을 요청하는 함수입니다
 function searchPlaces() {
-  var keyword = document.getElementById("keyword").value;
+  let keyword = document.getElementById("keyword").value;
 
   if (!keyword.replace(/^\s+|\s+$/g, "")) {
     alert("키워드를 입력해주세요!");
@@ -51,7 +51,7 @@ function placesSearchCB(data, status, pagination) {
 
 // 검색 결과 목록과 마커를 표출하는 함수입니다
 function displayPlaces(places) {
-  var listEl = document.getElementById("placesList"),
+  let listEl = document.getElementById("placesList"),
     menuEl = document.getElementById("menu_wrap"),
     fragment = document.createDocumentFragment(),
     bounds = new kakao.maps.LatLngBounds(),
@@ -63,9 +63,9 @@ function displayPlaces(places) {
   // 지도에 표시되고 있는 마커를 제거합니다
   removeMarker();
 
-  for (var i = 0; i < places.length; i++) {
+  for (let i = 0; i < places.length; i++) {
     // 마커를 생성하고 지도에 표시합니다
-    var placePosition = new kakao.maps.LatLng(places[i].y, places[i].x),
+    let placePosition = new kakao.maps.LatLng(places[i].y, places[i].x),
       marker = addMarker(placePosition, i),
       itemEl = getListItem(i, places[i]); // 검색 결과 항목 Element를 생성합니다
 
@@ -74,13 +74,6 @@ function displayPlaces(places) {
     bounds.extend(placePosition);
 
     fragment.appendChild(itemEl);
-
-    /*마커 위에 말풍선으로 장소명 뜨기*/
-    //태그 껍데기 만들기
-    let placeName = document.createElement("div");
-    let placeNameClass = document.createAttribute("class");
-    placeNameClass.value = "place_name";
-    placeName.setAttributeNode(placeNameClass);
 
     //핀 이미지 배열로 가져오기
     let pinImg = Array.from(document.querySelectorAll("img"));
@@ -95,9 +88,63 @@ function displayPlaces(places) {
       pinParent.push(element.parentNode);
     });
 
-    pinParent.forEach((element, i) => {
+    /*마커 위에 마우스 올리면 말풍선으로 장소명 뜨기*/
+    //태그 껍데기 만들기
+    let placeName = document.createElement("div");
+    let placeNameClass = document.createAttribute("class");
+    placeNameClass.value = "place_name";
+    placeName.setAttributeNode(placeNameClass);
+    let placeNameText = document.createTextNode(places[i].place_name);
+    placeName.appendChild(placeNameText);
+
+    pinParent.forEach((element) => {
       element.appendChild(placeName);
+      element.style.width = getComputedStyle(pinImg[0]).width;
     });
+
+    //placeName 담은 배열
+    const placeNameArr = document.querySelectorAll(".place_name");
+    //리뷰 영역
+    const reviewArea = document.querySelector(".review_area");
+    //리뷰 영역 장소명
+    const reviewTitle = document.querySelector(".left h4");
+
+    //마우스 올리면 placeName 뜨기
+    pinImg.forEach((element, index) => {
+      element.addEventListener("mouseover", () => {
+        placeNameArr[index].style.display = "block";
+      });
+
+      element.addEventListener("mouseout", () => {
+        placeNameArr[index].style.display = "none";
+      });
+
+      element.addEventListener("click", () => {
+        reviewTitle.innerText = placeNameArr[index].innerText;
+        reviewArea.style.display = "flex";
+      });
+    });
+
+    /*검색 결과 항목에 마우스 올리면 해당 placeName 뜨기*/
+    itemEl.addEventListener("mouseover", () => {
+      placeName.style.display = "block";
+      panTo();
+    });
+
+    itemEl.addEventListener("mouseout", () => {
+      placeName.style.display = "none";
+    });
+
+    itemEl.addEventListener("click", () => {
+      reviewTitle.innerText = placeNameArr[i].innerText;
+      reviewArea.style.display = "flex";
+    });
+
+    function panTo() {
+      // 지도 중심을 부드럽게 이동시킵니다
+      // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+      map.panTo(placePosition);
+    }
   }
 
   // 검색결과 항목들을 검색결과 목록 Element에 추가합니다
@@ -110,7 +157,7 @@ function displayPlaces(places) {
 
 // 검색결과 항목을 Element로 반환하는 함수입니다
 function getListItem(index, places) {
-  var el = document.createElement("li"),
+  let el = document.createElement("li"),
     itemStr =
       '<span class="markerbg marker_' +
       (index + 1) +
@@ -142,7 +189,7 @@ function getListItem(index, places) {
 
 // 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
 function addMarker(position, idx, title) {
-  var imageSrc =
+  let imageSrc =
       "../../../img/sub/boardgame_cafe/boardgame_cafe1/sec1/map_pin_filled.svg", // 마커 이미지 url, 커스텀 이미지
     imageSize = new kakao.maps.Size(28, 28), // 마커 이미지의 크기
     imgOptions = {
@@ -162,7 +209,7 @@ function addMarker(position, idx, title) {
 
 // 지도 위에 표시되고 있는 마커를 모두 제거합니다
 function removeMarker() {
-  for (var i = 0; i < markers.length; i++) {
+  for (let i = 0; i < markers.length; i++) {
     markers[i].setMap(null);
   }
   markers = [];
@@ -170,7 +217,7 @@ function removeMarker() {
 
 // 검색결과 목록 하단에 페이지번호를 표시는 함수입니다
 function displayPagination(pagination) {
-  var paginationEl = document.getElementById("pagination"),
+  let paginationEl = document.getElementById("pagination"),
     fragment = document.createDocumentFragment(),
     i;
 
@@ -179,19 +226,20 @@ function displayPagination(pagination) {
     paginationEl.removeChild(paginationEl.lastChild);
   }
 
-  for (i = 1; i <= pagination.last; i++) {
-    var el = document.createElement("a");
+  for (let i = 1; i <= pagination.last; i++) {
+    let el = document.createElement("a");
     el.href = "#";
     el.innerHTML = i;
 
     if (i === pagination.current) {
       el.className = "on";
     } else {
-      el.onclick = (function (i) {
-        return function () {
-          pagination.gotoPage(i);
-        };
-      })(i);
+      el.addEventListener("click", (event) => {
+        pagination.gotoPage(i);
+
+        //a태그로의 버블링 막기
+        event.preventDefault();
+      });
     }
 
     fragment.appendChild(el);

@@ -132,7 +132,7 @@ h3 {
   border-radius: 1px;
   flex: 1;
   background-color: var(--black-color10);
-  color: var(--black-color2);
+  color: var(--black-color1);
 }
 
 #menu_wrap .option button {
@@ -144,6 +144,11 @@ h3 {
 
 #menu_wrap .option button > img {
   width: 100%;
+}
+
+/*검색 버튼에 호버하면*/
+#menu_wrap .option button:hover {
+  filter: invert(0.7);
 }
 
 /*검색 결과 목록*/
@@ -216,18 +221,43 @@ h3 {
 
 /*맵 핀 위에 뜰 장소명*/
 .place_name {
-  width: 50px;
-  height: 10px;
+  width: fit-content;
+  height: fit-content;
+  padding: 4px;
+  border-radius: 4px;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.4));
   background-color: var(--white-color1);
   position: absolute;
-  left: 0;
+  left: 50%;
   top: 0;
-  transform: translate(-50%, -150%);
+  z-index: 2;
+  transform: translate(-50%, -120%);
+  white-space: nowrap;
+  font-size: var(--xsm-size-font);
+  color: var(--black-color1);
+  display: none;
+}
+
+.place_name::before {
+  content: "arrow";
+  font-size: 0;
+  display: block;
+  width: 8px;
+  height: 4px;
+  border-left: 4px solid var(--white-color1);
+  border-right: 4px solid transparent;
+  border-top: 4px solid var(--white-color1);
+  border-bottom: 4px solid transparent;
+  box-sizing: border-box;
+  position: absolute;
+  top: 94%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(225deg);
 }
 
 /*리뷰 영역*/
 .sec1 .review_area {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 24px;
 }
