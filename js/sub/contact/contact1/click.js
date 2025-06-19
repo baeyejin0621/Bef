@@ -18,7 +18,8 @@ arrowBtn.forEach((element, i) => {
       arrowDown[i].style.display = "none";
       arrowUp[i].style.display = "block";
       //답변 높이
-      const answerHeight = getComputedStyle(answerP[i]).height;
+      const answerHeight =
+        Number(getComputedStyle(answerP[i]).height.slice(0, -2)) + 32 + "px";
       answer[i].style.height = answerHeight;
     } else if (getComputedStyle(arrowDown[i]).display == "none") {
       arrowDown[i].style.display = "block";
@@ -26,4 +27,11 @@ arrowBtn.forEach((element, i) => {
       answer[i].style.height = 0;
     }
   });
+});
+
+/*커스텀한 input[type=file] 태그에 첨부한 파일명 보이게 하기*/
+const fileUpload = document.querySelector("#file_upload");
+fileUpload.addEventListener("change", () => {
+  const fileName = document.querySelector(".file_name");
+  fileName.value = fileUpload.value;
 });
