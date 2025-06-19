@@ -36,6 +36,15 @@
 
   /*첫번째 섹션*/
   /*지도 영역*/
+  #menu_wrap {
+    height: fit-content;
+  }
+
+  #placesList,
+  #pagination,
+  .line {
+    display: none;
+  }
 
   /*리뷰 영역*/
   .sec1 .review_area {
@@ -127,6 +136,20 @@
   .sec1 .content > span {
     width: clamp(100px, 27vw, 217px);
     font-size: clamp(var(--xxsm-size-font2), 2.2vw, var(--sm-size-font));
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /*첫번째 섹션*/
+  /*지도 영역*/
+  #menu_wrap {
+    height: clamp(80%, 50vw, 90%);
+  }
+
+  #placesList,
+  #pagination,
+  .line {
+    display: block;
   }
 }
 

@@ -122,6 +122,10 @@ function displayPlaces(places) {
       element.addEventListener("click", () => {
         reviewTitle.innerText = placeNameArr[index].innerText;
         reviewArea.style.display = "flex";
+        placeNameArr.forEach((elem) => {
+          elem.style.display = "none";
+        });
+        placeNameArr[index].style.display = "block";
       });
     });
 
@@ -138,6 +142,10 @@ function displayPlaces(places) {
     itemEl.addEventListener("click", () => {
       reviewTitle.innerText = placeNameArr[i].innerText;
       reviewArea.style.display = "flex";
+      placeNameArr.forEach((elem) => {
+        elem.style.display = "none";
+      });
+      placeNameArr[index].style.display = "block";
     });
 
     function panTo() {

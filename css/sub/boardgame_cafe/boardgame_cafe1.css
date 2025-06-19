@@ -102,7 +102,6 @@ h3 {
 
 /*검색 영역*/
 #menu_wrap .line {
-  display: block;
   height: 1px;
   background-color: var(--black-color9);
   margin: 10px 0;
