@@ -11,14 +11,15 @@ const arrowUp = document.querySelectorAll(".top button img:first-child");
 const answer = document.querySelectorAll(".bottom");
 //답변
 const answerP = document.querySelectorAll(".bottom p");
+//답변 높이
+let answerHeight;
 
 arrowBtn.forEach((element, i) => {
   element.addEventListener("click", () => {
     if (getComputedStyle(arrowDown[i]).display == "block") {
       arrowDown[i].style.display = "none";
       arrowUp[i].style.display = "block";
-      //답변 높이
-      const answerHeight =
+      answerHeight =
         Number(getComputedStyle(answerP[i]).height.slice(0, -2)) + 32 + "px";
       answer[i].style.height = answerHeight;
     } else if (getComputedStyle(arrowDown[i]).display == "none") {
@@ -26,6 +27,13 @@ arrowBtn.forEach((element, i) => {
       arrowUp[i].style.display = "none";
       answer[i].style.height = 0;
     }
+
+    window.addEventListener("resize", () => {
+      //답변 높이
+      answerHeight =
+        Number(getComputedStyle(answerP[i]).height.slice(0, -2)) + 32 + "px";
+      answer[i].style.height = answerHeight;
+    });
   });
 });
 
