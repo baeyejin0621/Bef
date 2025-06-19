@@ -115,6 +115,7 @@ h3 {
 .sec1 .bottom {
   height: 0;
   overflow: hidden;
+  transition: 0.5s;
 }
 
 .sec1 .bottom > p {
