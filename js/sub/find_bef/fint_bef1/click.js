@@ -55,7 +55,7 @@ selectBox.forEach((element) => {
 
       //img 태그 속성
       let xSrc = document.createAttribute("src");
-      xSrc.value = "../../img/sub/find_Bef/find_Bef1/sec1/x.svg";
+      xSrc.value = "../../img/sub/find_bef/find_bef1/sec1/x.svg";
       let xAlt = document.createAttribute("alt");
       xAlt.value = "x";
 
