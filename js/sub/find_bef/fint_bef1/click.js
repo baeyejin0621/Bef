@@ -177,8 +177,6 @@ let dateMin = [
 dateMin = dateMin.join("-");
 date.min = dateMin;
 
-/*모임 끝나는 시간을 모임 시작 시간보다 빠르게 정할 수 없게 하기*/
-
 /*등록 버튼 누르면 내 모임 등록되기*/
 submitBtn.addEventListener("click", () => {
   /*등록 버튼 눌렀을 때 모든 내용이 채워져있지 않으면 레이어창 보이기*/

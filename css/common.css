@@ -452,14 +452,14 @@ footer .copy {
   /*헤더*/
   header {
     width: 100%;
-    height: 80px;
+    height: 60px;
     border-radius: 0;
     filter: none;
     top: 0px;
     left: 0;
     transform: translate(0);
     border-bottom: 1px solid var(--black-color14);
-    padding: 20px 0 0;
+    padding: 10px 0 0;
   }
 
   header > .con_wrap {
