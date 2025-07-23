@@ -61,7 +61,7 @@
   }
 
   .sec1 .select_box {
-    gap: clamp(4px, 2.5vw, 16px);
+    gap: clamp(4px, 2.4vw, 16px);
   }
 
   .sec1 .select_box select {
