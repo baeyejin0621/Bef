@@ -66,6 +66,7 @@ h3 {
   border: 1px solid var(--black-color7);
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .sec1 .top {

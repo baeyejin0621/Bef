@@ -2,7 +2,7 @@
 
 /*아래 화살표 누르면 답변 보이고 위 화살표 누르면 안 보이게 하기*/
 //버튼
-const arrowBtn = document.querySelectorAll(".top button");
+const arrowBtn = document.querySelectorAll(".content");
 //아래 화살표
 const arrowDown = document.querySelectorAll(".top button img:last-child");
 //위 화살표
